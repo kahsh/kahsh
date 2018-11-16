@@ -1812,6 +1812,29 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     return ret;
 }
 
+int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZPIVStake)
+{
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        if (nHeight < 200)
+                return 0;
+    }
+
+    int64_t ret = 0;
+
+    if (nHeight < 43200) {
+        ret = blockValue / 10; // 10%
+    } else if (nHeight < 86400 && nHeight >= 43200) {
+        ret = blockValue / 100 * 8; // 8%
+    } else {
+        //When zPIV is staked, masternode only gets 2 PIV
+        ret = blockValue / 100 * 8;
+//        if (isZPIVStake)
+//            ret = 2 * COIN;
+    }
+
+    return ret;
+}
+
 bool IsInitialBlockDownload()
 {
     LOCK(cs_main);
