@@ -441,6 +441,8 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
 
             COutPoint outpoint = COutPoint(mnTxHash, nIndex);
             confLockedCoins.push_back(outpoint);
+
+            LOCK(pwalletMain->cs_wallet);
             pwalletMain->UnlockCoin(outpoint);
         }
     }
@@ -450,13 +452,14 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
 
     // Lock MN coins from masternode.conf back if they where temporary unlocked
     if (!confLockedCoins.empty()) {
+        LOCK(pwalletMain->cs_wallet);
         BOOST_FOREACH (COutPoint outpoint, confLockedCoins)
             pwalletMain->LockCoin(outpoint);
     }
 
     // Filter
     BOOST_FOREACH (const COutput& out, vCoins) {
-        if (out.tx->vout[out.i].nValue == 10000 * COIN) { //exactly
+        if (IsMasternodeCollateral(out.tx->vout[out.i].nValue)) { //exactly
             filteredCoins.push_back(out);
         }
     }

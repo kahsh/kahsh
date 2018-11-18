@@ -1812,6 +1812,24 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     return ret;
 }
 
+bool IsMasternodeCollateral(CAmount value)
+{
+    if(IsSporkActive(SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT)) {
+        return (value == MASTERNODE_COLLATERAL_NEW);
+    } else {
+        return (value == MASTERNODE_COLLATERAL_OLD || value == MASTERNODE_COLLATERAL_NEW);
+    }
+}
+
+CAmount GetSpentTestAmount()
+{
+    if(IsSporkActive(SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT)) {
+        return MASTERNODE_COLLATERAL_NEW - CENT;
+    } else {
+        return MASTERNODE_COLLATERAL_OLD - CENT;
+    }
+}
+
 bool IsInitialBlockDownload()
 {
     LOCK(cs_main);
