@@ -324,11 +324,14 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
              * Two additional outputs are appended as the masternode and development payment
              */
             unsigned int i = txNew.vout.size();
-            txNew.vout.resize(i + 2);
+            txNew.vout.resize(i + 1);
             txNew.vout[i].scriptPubKey = payee;
             txNew.vout[i].nValue = masternodePayment;
-            txNew.vout[i+1].scriptPubKey = developmentPayee;
-            txNew.vout[i+1].nValue = developmentPayment;
+            if (developmentPayment > CAmount(0)) {
+                txNew.vout.resize(i + 2);
+                txNew.vout[i+1].scriptPubKey = developmentPayee;
+                txNew.vout[i+1].nValue = developmentPayment;
+            }
 
             //subtract mn and dev payment from the stake reward
             if (!txNew.vout[1].IsZerocoinMint()) {
@@ -337,11 +340,14 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
             }
 
         } else {
-            txNew.vout.resize(3);
+            txNew.vout.resize(2);
             txNew.vout[1].scriptPubKey = payee;
             txNew.vout[1].nValue = masternodePayment;
-            txNew.vout[2].scriptPubKey = developmentPayee;
-            txNew.vout[2].nValue = developmentPayment;
+            if (developmentPayment > CAmount(0)) {
+                txNew.vout.resize(3);
+                txNew.vout[2].scriptPubKey = developmentPayee;
+                txNew.vout[2].nValue = developmentPayment;
+            }
             txNew.vout[0].nValue = blockValue - masternodePayment - developmentPayment;
             assert(txNew.vout[0].nValue > 0);
         }
@@ -354,8 +360,14 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
                 FormatMoney(masternodePayment).c_str(), address2.ToString().c_str(),
                 FormatMoney(developmentPayment).c_str(), Params().DevBlockRewardAddress().c_str());
     } else {
-        if (!fProofOfStake)
+        if (!fProofOfStake) {
             txNew.vout[0].nValue = blockValue - developmentPayment;
+            if (developmentPayment > CAmount(0)) {
+                txNew.vout.resize(2);
+                txNew.vout[1].scriptPubKey = developmentPayee;
+                txNew.vout[1].nValue = developmentPayment;
+            }
+        }
     }
 }
 
@@ -565,21 +577,24 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
     CScript developmentPayee = GetScriptForDestination(CBitcoinAddress(Params().DevBlockRewardAddress()).Get());
     CAmount requiredDevelopmentPayment = GetDevelopmentPayment(nBlockHeight, nReward, txNew.IsZerocoinSpend());
 
+
     // Note: The fee correctness is not checked during initial block download for performance reasons.
     // However, SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT needs to be ACTIVE on the mainnet!
-    bool foundDevFee = false;
-    for (auto const& out: txNew.vout) {
-        if(out.scriptPubKey == developmentPayee) {
-            if(out.nValue == requiredDevelopmentPayment) {
-                foundDevFee = true;
-                break;
+    if (requiredDevelopmentPayment > CAmount(0)) {
+        bool foundDevFee = false;
+        for (auto const& out: txNew.vout) {
+            if(out.scriptPubKey == developmentPayee) {
+                if(out.nValue == requiredDevelopmentPayment) {
+                    foundDevFee = true;
+                    break;
+                }
             }
         }
-    }
 
-    if(!foundDevFee) {
-        LogPrint("masternode","CMasternodePayments::IsTransactionValid - Missing required developer fee of %s\n", FormatMoney(requiredDevelopmentPayment).c_str());
-        return false;
+        if(!foundDevFee) {
+            LogPrint("masternode","CMasternodePayments::IsTransactionValid - Missing required developer fee of %s\n", FormatMoney(requiredDevelopmentPayment).c_str());
+            return false;
+        }
     }
 
     //require at least 6 signatures

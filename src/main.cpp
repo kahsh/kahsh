@@ -1821,15 +1821,14 @@ int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZPIVStake)
 
     int64_t ret = 0;
 
-    if (nHeight < 43200) {
-        ret = blockValue / 10; // 10%
+    if (nHeight < 50) {
+        ret = 0;
+    } else if (nHeight < 43200 && nHeight >= 50) {
+        ret = blockValue / 100 * 5;
     } else if (nHeight < 86400 && nHeight >= 43200) {
-        ret = blockValue / 100 * 8; // 8%
-    } else {
-        //When zPIV is staked, masternode only gets 2 PIV
         ret = blockValue / 100 * 8;
-//        if (isZPIVStake)
-//            ret = 2 * COIN;
+    } else {
+        ret = blockValue / 100 * 1;
     }
 
     return ret;
