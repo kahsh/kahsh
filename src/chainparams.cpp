@@ -220,6 +220,9 @@ public:
         nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zpiv to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+
+        /** Developer block reward */
+        strDevBlockRewardAddress = "dGrNvXcQNfvXPMayFkENRGoqoJu42WebaD";
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -304,6 +307,9 @@ public:
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
+
+        /** Developer block reward */
+        strDevBlockRewardAddress = "dGrNvXcQNfvXPMayFkENRGoqoJu42WebaD";
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {

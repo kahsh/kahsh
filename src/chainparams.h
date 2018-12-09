@@ -126,6 +126,9 @@ public:
     int Zerocoin_Block_V2_Start() const { return nBlockZerocoinV2; }
     CAmount InvalidAmountFiltered() const { return nInvalidAmountFiltered; };
 
+    /** Developer block reward */
+    std::string DevBlockRewardAddress() const { return strDevBlockRewardAddress; }
+
 protected:
     CChainParams() {}
 
@@ -188,6 +191,8 @@ protected:
     int nBlockLastGoodCheckpoint;
     int nBlockEnforceInvalidUTXO;
     int nBlockZerocoinV2;
+
+    std::string strDevBlockRewardAddress;
 };
 
 /**
