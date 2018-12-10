@@ -106,8 +106,8 @@ static const unsigned int DATABASE_WRITE_INTERVAL = 3600;
 static const unsigned int MAX_REJECT_MESSAGE_LENGTH = 111;
 
 /** Masternode collateral */
-static const CAmount MASTERNODE_COLLATERAL_OLD = 5000 * COIN;
-static const CAmount MASTERNODE_COLLATERAL_NEW = 10000 * COIN;
+static const CAmount MASTERNODE_COLLATERAL_OLD = 1000 * COIN;
+static const CAmount MASTERNODE_COLLATERAL_NEW = 2000 * COIN;
 
 /** Enable bloom filter */
  static const bool DEFAULT_PEERBLOOMFILTERS = true;
