@@ -1776,15 +1776,17 @@ int64_t GetBlockValue(int nHeight)
 
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
-        nSubsidy = 60001 * COIN;
-    } else if (nHeight < 86400 && nHeight > 0) {
-        nSubsidy = 250 * COIN;
-    } else if (nHeight < 647800 && nHeight >= 86400) {
-        nSubsidy = 40 * COIN;
-//    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
-//        nSubsidy = 4.5 * COIN;
+        nSubsidy = 80000 * COIN;
+    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0) {
+        nSubsidy = 425 * COIN;
+    } else if (nHeight < 262800 && nHeight >= Params().LAST_POW_BLOCK()) {
+        nSubsidy = 1.20 * COIN;
+    } else if (nHeight < 525600 && nHeight >= 262800) {
+        nSubsidy = 0.84 * COIN;
+    } else if (nHeight < 788400 && nHeight >= 525600) {
+        nSubsidy = 0.58 * COIN;
     } else {
-        nSubsidy = 5 * COIN;
+        nSubsidy = 0.08 * COIN;
     }
     return nSubsidy;
 }
@@ -1798,15 +1800,12 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     int64_t ret = 0;
 
-    if (nHeight < 43200) {
-        ret = blockValue / 5 * 4; // 80%
-    } else if (nHeight < 86400 && nHeight >= 43200) {
-        ret = blockValue / 10 * 7; // 70%
+    if (nHeight == 0) {
+        ret = 0;
+    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0) {
+        ret = 0;
     } else {
-        //When zPIV is staked, masternode only gets 2 PIV
-        ret = 3 * COIN;
-        if (isZPIVStake)
-            ret = 2 * COIN;
+        ret = blockValue / 10 * 8;
     }
 
     return ret;
@@ -1821,14 +1820,12 @@ int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZPIVStake)
 
     int64_t ret = 0;
 
-    if (nHeight < 50) {
+    if (nHeight == 0) {
         ret = 0;
-    } else if (nHeight < 43200 && nHeight >= 50) {
-        ret = blockValue / 100 * 5;
-    } else if (nHeight < 86400 && nHeight >= 43200) {
-        ret = blockValue / 100 * 8;
+    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0) {
+        ret = 0;
     } else {
-        ret = blockValue / 100 * 1;
+        ret = blockValue / 100 * 5;
     }
 
     return ret;
