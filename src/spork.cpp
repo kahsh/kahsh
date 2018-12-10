@@ -104,6 +104,10 @@ void ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 
         // PIVX: add to spork database.
         pSporkDB->WriteSpork(spork.nSporkID, spork);
+
+        //does a task if needed
+        ExecuteSpork(spork.nSporkID, spork.nValue);
+
     }
     if (strCommand == "getsporks") {
         std::map<int, CSporkMessage>::iterator it = mapSporksActive.begin();
@@ -135,6 +139,7 @@ int64_t GetSporkValue(int nSporkID)
         if (nSporkID == SPORK_14_NEW_PROTOCOL_ENFORCEMENT) r = SPORK_14_NEW_PROTOCOL_ENFORCEMENT_DEFAULT;
         if (nSporkID == SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) r = SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2_DEFAULT;
         if (nSporkID == SPORK_16_ZEROCOIN_MAINTENANCE_MODE) r = SPORK_16_ZEROCOIN_MAINTENANCE_MODE_DEFAULT;
+        if (nSporkID == SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT) r = SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT_DEFAULT;
 
         if (r == -1) LogPrintf("%s : Unknown Spork %d\n", __func__, nSporkID);
     }
@@ -150,6 +155,14 @@ bool IsSporkActive(int nSporkID)
     return r < GetTime();
 }
 
+void ExecuteSpork(int nSporkID, int nValue)
+{
+    // remove masternodes with old collateral
+    if (nSporkID == SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT && nValue == 1) {
+        //Note: the ThreadCheckObfuScationPool() thread will do the actual node clean up
+        mnodeman.Check();
+    }
+}
 
 void ReprocessBlocks(int nBlocks)
 {
@@ -282,6 +295,7 @@ int CSporkManager::GetSporkIDByName(std::string strName)
     if (strName == "SPORK_14_NEW_PROTOCOL_ENFORCEMENT") return SPORK_14_NEW_PROTOCOL_ENFORCEMENT;
     if (strName == "SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2") return SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2;
     if (strName == "SPORK_16_ZEROCOIN_MAINTENANCE_MODE") return SPORK_16_ZEROCOIN_MAINTENANCE_MODE;
+    if (strName == "SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT") return SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT;
 
     return -1;
 }
@@ -299,6 +313,7 @@ std::string CSporkManager::GetSporkNameByID(int id)
     if (id == SPORK_14_NEW_PROTOCOL_ENFORCEMENT) return "SPORK_14_NEW_PROTOCOL_ENFORCEMENT";
     if (id == SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) return "SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2";
     if (id == SPORK_16_ZEROCOIN_MAINTENANCE_MODE) return "SPORK_16_ZEROCOIN_MAINTENANCE_MODE";
+    if (id == SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT) return "SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT";
 
     return "Unknown";
 }
