@@ -123,6 +123,7 @@ qa/pull-tester/test.*/*
 
 !src/leveldb*/Makefile
 
+.settings/
 .cproject
 .project
 /doc/doxygen/
