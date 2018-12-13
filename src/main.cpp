@@ -1776,15 +1776,17 @@ int64_t GetBlockValue(int nHeight)
 
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
-        nSubsidy = 60001 * COIN;
-    } else if (nHeight < 86400 && nHeight > 0) {
-        nSubsidy = 250 * COIN;
-    } else if (nHeight < 647800 && nHeight >= 86400) {
-        nSubsidy = 40 * COIN;
-//    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
-//        nSubsidy = 4.5 * COIN;
+        nSubsidy = 80000 * COIN;
+    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0) {
+        nSubsidy = 425 * COIN;
+    } else if (nHeight < 262800 && nHeight >= Params().LAST_POW_BLOCK()) {
+        nSubsidy = 1.20 * COIN;
+    } else if (nHeight < 525600 && nHeight >= 262800) {
+        nSubsidy = 0.84 * COIN;
+    } else if (nHeight < 788400 && nHeight >= 525600) {
+        nSubsidy = 0.58 * COIN;
     } else {
-        nSubsidy = 5 * COIN;
+        nSubsidy = 0.08 * COIN;
     }
     return nSubsidy;
 }
@@ -1798,18 +1800,53 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     int64_t ret = 0;
 
-    if (nHeight < 43200) {
-        ret = blockValue / 5 * 4; // 80%
-    } else if (nHeight < 86400 && nHeight >= 43200) {
-        ret = blockValue / 10 * 7; // 70%
+    if (nHeight == 0) {
+        ret = 0;
+    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0) {
+        ret = 0;
     } else {
-        //When zPIV is staked, masternode only gets 2 PIV
-        ret = 3 * COIN;
-        if (isZPIVStake)
-            ret = 2 * COIN;
+        ret = blockValue / 10 * 8;
     }
 
     return ret;
+}
+
+int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZPIVStake)
+{
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        if (nHeight < 200)
+                return 0;
+    }
+
+    int64_t ret = 0;
+
+    if (nHeight == 0) {
+        ret = 0;
+    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0) {
+        ret = 0;
+    } else {
+        ret = blockValue / 100 * 5;
+    }
+
+    return ret;
+}
+
+bool IsMasternodeCollateral(CAmount value)
+{
+    if(IsSporkActive(SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT)) {
+        return (value == MASTERNODE_COLLATERAL_NEW);
+    } else {
+        return (value == MASTERNODE_COLLATERAL_OLD || value == MASTERNODE_COLLATERAL_NEW);
+    }
+}
+
+CAmount GetSpentTestAmount()
+{
+    if(IsSporkActive(SPORK_17_MASTERNODE_COLLATERAL_ENFORCEMENT)) {
+        return MASTERNODE_COLLATERAL_NEW - CENT;
+    } else {
+        return MASTERNODE_COLLATERAL_OLD - CENT;
+    }
 }
 
 bool IsInitialBlockDownload()
@@ -2508,7 +2545,7 @@ bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError
     return true;
 }
 
-bool UpdateZPIVSupply(const CBlock& block, CBlockIndex* pindex)
+bool UpdateZPIVSupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
 {
     std::list<CZerocoinMint> listMints;
     bool fFilterInvalid = pindex->nHeight >= Params().Zerocoin_Block_RecalculateAccumulators();
@@ -2533,7 +2570,7 @@ bool UpdateZPIVSupply(const CBlock& block, CBlockIndex* pindex)
             pindex->mapZerocoinSupply.at(denom)++;
 
             //Remove any of our own mints from the mintpool
-            if (pwalletMain) {
+            if (!fJustCheck && pwalletMain) {
                 if (pwalletMain->IsMyMint(m.GetValue())) {
                     pwalletMain->UpdateMint(m.GetValue(), pindex->nHeight, m.GetTxHash(), m.GetDenomination());
 
@@ -2779,7 +2816,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     }
 
     //Track zPIV money supply in the block index
-    if (!UpdateZPIVSupply(block, pindex))
+    if (!UpdateZPIVSupply(block, pindex, fJustCheck))
         return state.DoS(100, error("%s: Failed to calculate new zPIV supply for block=%s height=%d", __func__,
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID);
 
@@ -2843,13 +2880,15 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     }
 
     //Record zPIV serials
-    set<uint256> setAddedTx;
-    for (pair<CoinSpend, uint256> pSpend : vSpends) {
-        // Send signal to wallet if this is ours
-        if (pwalletMain) {
+    if (pwalletMain) {
+        std::set<uint256> setAddedTx;
+        for (std::pair<CoinSpend, uint256> pSpend : vSpends) {
+            // Send signal to wallet if this is ours
             if (pwalletMain->IsMyZerocoinSpend(pSpend.first.getCoinSerialNumber())) {
-                LogPrintf("%s: %s detected zerocoinspend in transaction %s \n", __func__, pSpend.first.getCoinSerialNumber().GetHex(), pSpend.second.GetHex());
-                pwalletMain->NotifyZerocoinChanged(pwalletMain, pSpend.first.getCoinSerialNumber().GetHex(), "Used", CT_UPDATED);
+                LogPrintf("%s: %s detected zerocoinspend in transaction %s \n", __func__,
+                          pSpend.first.getCoinSerialNumber().GetHex(), pSpend.second.GetHex());
+                pwalletMain->NotifyZerocoinChanged(pwalletMain, pSpend.first.getCoinSerialNumber().GetHex(), "Used",
+                                                   CT_UPDATED);
 
                 //Don't add the same tx multiple times
                 if (setAddedTx.count(pSpend.second))
