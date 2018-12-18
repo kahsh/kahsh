@@ -1,5 +1,5 @@
 ---
-name: "dilithium-osx-3.2"
+name: "dilithium-osx-1.0"
 enable_cache: true
 suites:
 - "bionic"

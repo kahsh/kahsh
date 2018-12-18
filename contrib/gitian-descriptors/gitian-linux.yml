@@ -1,5 +1,5 @@
 ---
-name: "dilithium-linux-3.2"
+name: "dilithium-linux-1.0"
 enable_cache: true
 suites:
 - "bionic"
