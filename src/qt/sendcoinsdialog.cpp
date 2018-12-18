@@ -76,6 +76,10 @@ SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent, Qt::WindowSy
         CoinControlDialog::coinControl->useSwiftTX = useSwiftTX;
     }
 
+    // Always disable SwiftTX checkbox
+    ui->checkSwiftTX->setVisible(false);
+    CoinControlDialog::coinControl->useSwiftTX = false;
+
     connect(ui->checkSwiftTX, SIGNAL(stateChanged(int)), this, SLOT(updateSwiftTX()));
 
     // Coin Control: clipboard actions
