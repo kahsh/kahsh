@@ -176,8 +176,8 @@ public:
         assert(hashGenesisBlock == uint256("0x00000ebd26fad9ac69056c9c56fa335a6066eeca24c16882d5a40a8e0e62b5de"));
         assert(genesis.hashMerkleRoot == uint256("0xce976251adc488e3dae3679d6121d335e918f0408fafa6ecf04234c66b91d852"));
 
-        vSeeds.push_back(CDNSSeedData("dilithiumcoin.io", "seed.dilithiumcoin.io"));
-        vSeeds.push_back(CDNSSeedData("dilithiumcoin.io", "seed2.dilithiumcoin.io"));
+        vSeeds.push_back(CDNSSeedData("dilithiumcoin.io", "xdhseed.cryptertech.io"));
+        vSeeds.push_back(CDNSSeedData("dilithiumcoin.io", "xdhseed2.cryptertech.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 90);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 17);
