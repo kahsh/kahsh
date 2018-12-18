@@ -4,8 +4,10 @@
 /* dark-green :        #002913                                                          */
 /* transparent-purple: #e9e7ef (for inactive backgrounds)                               */
 /*                                                                                      */
-/* light-purple1:      #b396f6 (main purple for white backgrounds)                      */
-/* light-purple2:      #9179c7 (sligtly darker for gradients)                           */
+/* light-purple1:      #667f72 (main purple for white backgrounds)                      */
+/* light-green1:       #667f72 (main purple for white backgrounds)                      */
+/* light-purple2:      #557162 (sligtly darker for gradients)                           */
+/* light-green2:       #557162 (sligtly darker for gradients)                           */
 /*                                                                                      */
 /* medium-purple1:     #6f5ca3 (on hover)                                               */
 /* medium-green1:      #456353 (on hover)                                               */
@@ -494,7 +496,7 @@ min-height:10px;
 }
 
 QScrollBar::handle:vertical:pressed { /* Scroll Bar Slider - vertical */
-background:#9179c7;
+background:#557162;
 min-height:10px;
 }
 
@@ -504,7 +506,7 @@ min-width:10px;
 }
 
 QScrollBar::handle:horizontal:pressed { /* Scroll Bar Slider - horizontal */
-background:#9179c7;
+background:#557162;
 min-width:10px;
 }
 
@@ -573,14 +575,14 @@ border-radius: 4px;
 
 QSlider::sub-page:horizontal {
 /* background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #5B4C86, stop: 1 #7b67a9); */
-background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #9179c7, stop: 1 #b396f6);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #557162, stop: 1 #667f72);
 border: 1px solid #333;
 height: 10px;
 border-radius: 4px;
 }
 
 QSlider::add-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #173c28, stop: 1 #9179c7);
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #173c28, stop: 1 #557162);
 border: 1px solid #333;
 height: 10px;
 border-radius: 4px;
