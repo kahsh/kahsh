@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dilithium
+Comment=Dilithium P2P Cryptocurrency
+Comment[fr]=Dilithium, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Dilithium, eşten eşe kriptografik sanal para birimi
+Exec=dilithium-qt %u
+Terminal=false
+Type=Application
+Icon=dilithium128
+MimeType=x-scheme-handler/dilithium;
+Categories=Office;Finance;
