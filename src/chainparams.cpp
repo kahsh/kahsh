@@ -128,15 +128,15 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Dilithium: 1 day
         nTargetSpacing = 1 * 60;  // Dilithium: 1 minute
-        nMaturity = 4; // TODO
+        nMaturity = 174;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 200;
+        nLastPOWBlock = 400;
         nModifierUpdateBlock = 615800;
         nZerocoinStartHeight = 863787;
-        nZerocoinStartTime = 1808214600; // TODO
+        nZerocoinStartTime = 1808214600;
         nBlockEnforceSerialRange = 895400; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 891737; //First block that bad serials emerged
