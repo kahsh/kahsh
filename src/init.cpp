@@ -1831,18 +1831,18 @@ bool AppInit2()
         }
     }
 
-    fEnableZeromint = GetBoolArg("-enablezeromint", true);
-
-    nZeromintPercentage = GetArg("-zeromintpercentage", 10);
-    if (nZeromintPercentage > 100) nZeromintPercentage = 100;
-    if (nZeromintPercentage < 1) nZeromintPercentage = 1;
-
-    nPreferredDenom  = GetArg("-preferredDenom", 0);
-    if (nPreferredDenom != 0 && nPreferredDenom != 1 && nPreferredDenom != 5 && nPreferredDenom != 10 && nPreferredDenom != 50 &&
-        nPreferredDenom != 100 && nPreferredDenom != 500 && nPreferredDenom != 1000 && nPreferredDenom != 5000){
-        LogPrintf("-preferredDenom: invalid denomination parameter %d. Default value used\n", nPreferredDenom);
-        nPreferredDenom = 0;
-    }
+//    fEnableZeromint = GetBoolArg("-enablezeromint", true);
+//
+//    nZeromintPercentage = GetArg("-zeromintpercentage", 10);
+//    if (nZeromintPercentage > 100) nZeromintPercentage = 100;
+//    if (nZeromintPercentage < 1) nZeromintPercentage = 1;
+//
+//    nPreferredDenom  = GetArg("-preferredDenom", 0);
+//    if (nPreferredDenom != 0 && nPreferredDenom != 1 && nPreferredDenom != 5 && nPreferredDenom != 10 && nPreferredDenom != 50 &&
+//        nPreferredDenom != 100 && nPreferredDenom != 500 && nPreferredDenom != 1000 && nPreferredDenom != 5000){
+//        LogPrintf("-preferredDenom: invalid denomination parameter %d. Default value used\n", nPreferredDenom);
+//        nPreferredDenom = 0;
+//    }
 
 // XX42 Remove/refactor code below. Until then provide safe defaults
     nAnonymizeDilithiumAmount = 2;
