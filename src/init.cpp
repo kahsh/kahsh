@@ -999,7 +999,7 @@ bool AppInit2()
     bSpendZeroConfChange = GetBoolArg("-spendzeroconfchange", false);
     bdisableSystemnotifications = GetBoolArg("-disablesystemnotifications", false);
     fSendFreeTransactions = GetBoolArg("-sendfreetransactions", false);
-    fEnableAutoConvert = GetBoolArg("-enableautoconvertaddress", DEFAULT_AUTOCONVERTADDRESS);
+    // fEnableAutoConvert = GetBoolArg("-enableautoconvertaddress", DEFAULT_AUTOCONVERTADDRESS);
 
     std::string strWalletFile = GetArg("-wallet", "wallet.dat");
 #endif // ENABLE_WALLET

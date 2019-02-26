@@ -41,13 +41,16 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nOptionsDialogWindow", this->size(), this);
 
-    // Hide some elements (automint)
+    // Hide some elements (automint, autoconvert)
     ui->checkBoxZeromintEnable->setEnabled(false);
     ui->checkBoxZeromintEnable->hide();
     ui->labelPreferredDenom->hide();
     ui->preferredDenom->hide();
     ui->percentage_label->hide();
     ui->zeromintPercentage->hide();
+
+    ui->checkBoxZeromintAddresses->setEnabled(false);
+    ui->checkBoxZeromintAddresses->hide();
 
     /* Main elements init */
     ui->databaseCache->setMinimum(nMinDbCache);
