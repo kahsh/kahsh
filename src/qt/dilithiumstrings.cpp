@@ -32,8 +32,8 @@ QT_TRANSLATE_NOOP("dilithium-core", ""
 QT_TRANSLATE_NOOP("dilithium-core", ""
 "Calculated accumulator checkpoint is not what is recorded by block index"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
-"Cannot obtain a lock on data directory %s. Dilithium Core is probably already "
-"running."),
+"Cannot obtain a lock on data directory %s. Dilithium Core is probably "
+"already running."),
 QT_TRANSLATE_NOOP("dilithium-core", ""
 "Change automatic finalized budget voting behavior. mode=auto: Vote for only "
 "exact finalized budget match to my generated budget. (string, default: auto)"),
@@ -58,6 +58,8 @@ QT_TRANSLATE_NOOP("dilithium-core", ""
 QT_TRANSLATE_NOOP("dilithium-core", ""
 "Enable SwiftX, show confirmations for locked transactions (bool, default: %s)"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
+"Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)"),
+QT_TRANSLATE_NOOP("dilithium-core", ""
 "Enable automatic wallet backups triggered after each zXDH minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
@@ -69,6 +71,8 @@ QT_TRANSLATE_NOOP("dilithium-core", ""
 QT_TRANSLATE_NOOP("dilithium-core", ""
 "Enter regression test mode, which uses a special chain in which blocks can "
 "be solved instantly."),
+QT_TRANSLATE_NOOP("dilithium-core", ""
+"Error loading wallet.dat: Wallet requires newer version of Dilithium Core"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
 "Error: Listening for incoming connections failed (listen returned error %s)"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
@@ -134,8 +138,13 @@ QT_TRANSLATE_NOOP("dilithium-core", ""
 "Maintain a full transaction index, used by the getrawtransaction rpc call "
 "(default: %u)"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
+"Maximum average size of an index occurrence in the block spam filter "
+"(default: %u)"),
+QT_TRANSLATE_NOOP("dilithium-core", ""
 "Maximum size of data in data carrier transactions we relay and mine "
 "(default: %u)"),
+QT_TRANSLATE_NOOP("dilithium-core", ""
+"Maximum size of the list of indexes in the block spam filter (default: %u)"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
 "Maximum total fees to use in a single wallet transaction, setting too low "
 "may abort large transactions (default: %s)"),
@@ -185,6 +194,11 @@ QT_TRANSLATE_NOOP("dilithium-core", ""
 "SwiftX requires inputs with at least 6 confirmations, you might need to wait "
 "a few minutes and try again."),
 QT_TRANSLATE_NOOP("dilithium-core", ""
+"The block database contains a block which appears to be from the future. "
+"This may be due to your computer's date and time being set incorrectly. Only "
+"rebuild the block database if you are sure that your computer's date and "
+"time are correct"),
+QT_TRANSLATE_NOOP("dilithium-core", ""
 "This is a pre-release test build - use at your own risk - do not use for "
 "staking or merchant applications!"),
 QT_TRANSLATE_NOOP("dilithium-core", ""
@@ -192,7 +206,11 @@ QT_TRANSLATE_NOOP("dilithium-core", ""
 "the OpenSSL Toolkit <https://www.openssl.org/> and cryptographic software "
 "written by Eric Young and UPnP software written by Thomas Bernard."),
 QT_TRANSLATE_NOOP("dilithium-core", ""
-"Unable to bind to %s on this computer. Dilithium Core is probably already running."),
+"Total length of network version string (%i) exceeds maximum length (%i). "
+"Reduce the number or size of uacomments."),
+QT_TRANSLATE_NOOP("dilithium-core", ""
+"Unable to bind to %s on this computer. Dilithium Core is probably already "
+"running."),
 QT_TRANSLATE_NOOP("dilithium-core", ""
 "Unable to locate enough Obfuscation denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("dilithium-core", ""
@@ -247,6 +265,7 @@ QT_TRANSLATE_NOOP("dilithium-core", "Add a node to connect to and attempt to kee
 QT_TRANSLATE_NOOP("dilithium-core", "Allow DNS lookups for -addnode, -seednode and -connect"),
 QT_TRANSLATE_NOOP("dilithium-core", "Already have that input."),
 QT_TRANSLATE_NOOP("dilithium-core", "Always query for peer addresses via DNS lookup (default: %u)"),
+QT_TRANSLATE_NOOP("dilithium-core", "Append comment to the user agent string"),
 QT_TRANSLATE_NOOP("dilithium-core", "Attempt to force blockchain corruption recovery"),
 QT_TRANSLATE_NOOP("dilithium-core", "Attempt to recover private keys from a corrupt wallet.dat"),
 QT_TRANSLATE_NOOP("dilithium-core", "Automatically create Tor hidden service (default: %d)"),
@@ -268,7 +287,8 @@ QT_TRANSLATE_NOOP("dilithium-core", "Connect to a node to retrieve peer addresse
 QT_TRANSLATE_NOOP("dilithium-core", "Connection options:"),
 QT_TRANSLATE_NOOP("dilithium-core", "Copyright (C) 2009-%i The Bitcoin Core Developers"),
 QT_TRANSLATE_NOOP("dilithium-core", "Copyright (C) 2014-%i The Dash Core Developers"),
-QT_TRANSLATE_NOOP("dilithium-core", "Copyright (C) 2015-%i The Dilithium Core Developers"),
+QT_TRANSLATE_NOOP("dilithium-core", "Copyright (C) 2015-%i The PIVX Core Developers"),
+QT_TRANSLATE_NOOP("dilithium-core", "Copyright (C) 2018-%i The Dilithium Core Developers"),
 QT_TRANSLATE_NOOP("dilithium-core", "Corrupted block database detected"),
 QT_TRANSLATE_NOOP("dilithium-core", "Could not parse masternode.conf"),
 QT_TRANSLATE_NOOP("dilithium-core", "Debugging/Testing options:"),
@@ -297,7 +317,6 @@ QT_TRANSLATE_NOOP("dilithium-core", "Error initializing wallet database environm
 QT_TRANSLATE_NOOP("dilithium-core", "Error loading block database"),
 QT_TRANSLATE_NOOP("dilithium-core", "Error loading wallet.dat"),
 QT_TRANSLATE_NOOP("dilithium-core", "Error loading wallet.dat: Wallet corrupted"),
-QT_TRANSLATE_NOOP("dilithium-core", "Error loading wallet.dat: Wallet requires newer version of Dilithium Core"),
 QT_TRANSLATE_NOOP("dilithium-core", "Error opening block database"),
 QT_TRANSLATE_NOOP("dilithium-core", "Error reading from database, shutting down."),
 QT_TRANSLATE_NOOP("dilithium-core", "Error recovering public key."),
@@ -454,6 +473,7 @@ QT_TRANSLATE_NOOP("dilithium-core", "Stop running after importing blocks from di
 QT_TRANSLATE_NOOP("dilithium-core", "Submitted following entries to masternode: %u / %d"),
 QT_TRANSLATE_NOOP("dilithium-core", "Submitted to masternode, waiting for more entries ( %u / %d ) %s"),
 QT_TRANSLATE_NOOP("dilithium-core", "Submitted to masternode, waiting in queue %s"),
+QT_TRANSLATE_NOOP("dilithium-core", "Support the zerocoin light node protocol (default: %u)"),
 QT_TRANSLATE_NOOP("dilithium-core", "SwiftX options:"),
 QT_TRANSLATE_NOOP("dilithium-core", "Synchronization failed"),
 QT_TRANSLATE_NOOP("dilithium-core", "Synchronization finished"),
@@ -497,7 +517,9 @@ QT_TRANSLATE_NOOP("dilithium-core", "Upgrade wallet to latest format"),
 QT_TRANSLATE_NOOP("dilithium-core", "Use UPnP to map the listening port (default: %u)"),
 QT_TRANSLATE_NOOP("dilithium-core", "Use UPnP to map the listening port (default: 1 when listening)"),
 QT_TRANSLATE_NOOP("dilithium-core", "Use a custom max chain reorganization depth (default: %u)"),
+QT_TRANSLATE_NOOP("dilithium-core", "Use block spam filter (default: %u)"),
 QT_TRANSLATE_NOOP("dilithium-core", "Use the test network"),
+QT_TRANSLATE_NOOP("dilithium-core", "User Agent comment (%s) contains unsafe characters."),
 QT_TRANSLATE_NOOP("dilithium-core", "Username for JSON-RPC connections"),
 QT_TRANSLATE_NOOP("dilithium-core", "Value is below the smallest available denomination (= 1) of zXDH"),
 QT_TRANSLATE_NOOP("dilithium-core", "Value more than Obfuscation pool maximum allows."),
