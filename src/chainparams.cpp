@@ -53,7 +53,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000ebd26fad9ac69056c9c56fa335a6066eeca24c16882d5a40a8e0e62b5de"));
+    (0, uint256("0x00000f65ac83727b5cfff86eae9ae3c8cddfc85851ae7cb83890fab5c2ffa652"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -65,7 +65,7 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
-    (0, uint256("0x00000952e75585a626b6ce822efbb329da0e715837e11b5028cacf0279ca4531"));
+    (0, uint256("0x000005e64c6a65003f435770addae6ead8769bb9d0ab903e776ab9641925562c"));
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
@@ -75,7 +75,7 @@ static const Checkpoints::CCheckpointData dataTestnet = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of
-    (0, uint256("0x42938326c5ae523464369bcddce5a841d62e84bbd9d0373033238df2a2249144"));
+    (0, uint256("0x5bc16e63b2b6a2af3f2fa920ffe8fbf25cce7132b8c7fcf0d9fbb9011171f016"));
 
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
@@ -99,6 +99,28 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
         return &ZCParamsHex;
 
     return &ZCParamsDec;
+}
+
+bool FindGenesisBlock(CBlock &block)
+{
+    uint256 bnTarget;
+    bnTarget.SetCompact(block.nBits);
+
+    for (uint32_t nNonce = 0; nNonce < UINT32_MAX; nNonce++) {
+        block.nNonce = nNonce;
+
+        uint256 hash = block.GetHash();
+        if (hash <= bnTarget){
+            printf("genesis block.nNonce = %u \n", block.nNonce);
+            printf("genesis block.GetHash = %s\n", hash.ToString().c_str());
+            printf("genesis block.hashMerkleRoot = %s\n", block.hashMerkleRoot.ToString().c_str());
+
+            return true;
+        }
+    }
+
+    // This is very unlikely to happen as we start with a very low difficulty.
+    assert(false);
 }
 
 class CMainParams : public CChainParams
@@ -170,10 +192,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1542193313;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 2085474;
+        genesis.nNonce = 2440461;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000ebd26fad9ac69056c9c56fa335a6066eeca24c16882d5a40a8e0e62b5de"));
+        // FindGenesisBlock(genesis);
+        assert(hashGenesisBlock == uint256("0x00000f65ac83727b5cfff86eae9ae3c8cddfc85851ae7cb83890fab5c2ffa652"));
         assert(genesis.hashMerkleRoot == uint256("0xce976251adc488e3dae3679d6121d335e918f0408fafa6ecf04234c66b91d852"));
 
         vSeeds.push_back(CDNSSeedData("dilithiumcoin.io", "xdhseed.cryptertech.io"));
@@ -273,10 +296,11 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1543057352;
-        genesis.nNonce = 913330;
+        genesis.nNonce = 420922;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000952e75585a626b6ce822efbb329da0e715837e11b5028cacf0279ca4531"));
+        // FindGenesisBlock(genesis);
+        assert(hashGenesisBlock == uint256("0x000005e64c6a65003f435770addae6ead8769bb9d0ab903e776ab9641925562c"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -357,10 +381,11 @@ public:
         //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1542193313;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 3;
+        genesis.nNonce = 6;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x42938326c5ae523464369bcddce5a841d62e84bbd9d0373033238df2a2249144"));
+        // FindGenesisBlock(genesis);
+        assert(hashGenesisBlock == uint256("0x5bc16e63b2b6a2af3f2fa920ffe8fbf25cce7132b8c7fcf0d9fbb9011171f016"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.

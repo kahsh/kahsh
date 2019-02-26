@@ -114,7 +114,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         LOCK(cs_main);
         pindexPrev = chainActive.Tip();
     }
-    const int nHeight = pindexPrev->nHeight + 1;
+    int nHeight = pindexPrev->nHeight + 1;
 
     // Make sure to create the correct block version after zerocoin is enabled
     bool fZerocoinActive = nHeight >= Params().Zerocoin_StartHeight();
@@ -190,6 +190,9 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
     {
         LOCK2(cs_main, mempool.cs);
+
+        pindexPrev = chainActive.Tip();
+        nHeight = pindexPrev->nHeight + 1;
 
         CCoinsViewCache view(pcoinsTip);
 
@@ -512,6 +515,15 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 }
             } else if (!SignBlock(*pblock, *pwallet)) {
                 LogPrintf("BitcoinMiner(): Signing new block with UTXO key failed \n");
+                return NULL;
+            }
+        }
+
+        // sanity check (avoid crashes in TestBlockValidity)
+        {   // Don't keep cs_main locked
+            LOCK(cs_main);
+            if (pindexPrev != chainActive.Tip()) {
+                LogPrintf("BitcoinMiner(): race condition \n");
                 return NULL;
             }
         }
