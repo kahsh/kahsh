@@ -83,6 +83,10 @@ void Accumulator::setValue(CBigNum bnValue) {
     this->value = bnValue;
 }
 
+void Accumulator::setInitialValue() {
+    this->value = this->params->accumulatorBase;
+}
+
 Accumulator& Accumulator::operator += (const PublicCoin& c) {
     this->accumulate(c);
     return *this;
@@ -115,6 +119,10 @@ void AccumulatorWitness::addRawValue(const CBigNum& bnValue) {
 
 const CBigNum& AccumulatorWitness::getValue() const {
     return this->witness.getValue();
+}
+
+const PublicCoin& AccumulatorWitness::getPublicCoin() const {
+    return this->element;
 }
 
 bool AccumulatorWitness::VerifyWitness(const Accumulator& a, const PublicCoin &publicCoin) const {

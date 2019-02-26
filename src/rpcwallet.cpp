@@ -2124,11 +2124,14 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "{\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
             "  \"balance\": xxxxxxx,         (numeric) the total XDH balance of the wallet\n"
+            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in XDH\n"
+            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in XDH\n"
             "  \"txcount\": xxxxxxx,         (numeric) the total number of transactions in the wallet\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
             "  \"paytxfee\": x.xxxx,         (numeric) the transaction fee configuration, set in XDH/kB\n"
+            "  \"automintaddresses\": status (boolean) the status of automint addresses (true if enabled, false if disabled)\n"
             "}\n"
 
             "\nExamples:\n" +
@@ -2139,12 +2142,15 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
     UniValue obj(UniValue::VOBJ);
     obj.push_back(Pair("walletversion", pwalletMain->GetVersion()));
     obj.push_back(Pair("balance", ValueFromAmount(pwalletMain->GetBalance())));
+    obj.push_back(Pair("unconfirmed_balance", ValueFromAmount(pwalletMain->GetUnconfirmedBalance())));
+    obj.push_back(Pair("immature_balance",    ValueFromAmount(pwalletMain->GetImmatureBalance())));
     obj.push_back(Pair("txcount", (int)pwalletMain->mapWallet.size()));
     obj.push_back(Pair("keypoololdest", pwalletMain->GetOldestKeyPoolTime()));
     obj.push_back(Pair("keypoolsize", (int)pwalletMain->GetKeyPoolSize()));
     if (pwalletMain->IsCrypted())
         obj.push_back(Pair("unlocked_until", nWalletUnlockTime));
     obj.push_back(Pair("paytxfee",      ValueFromAmount(payTxFee.GetFeePerK())));
+    obj.push_back(Pair("automintaddresses", fEnableAutoConvert));
     return obj;
 }
 
@@ -2586,7 +2592,9 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             "    \"version\": n,   (numeric) Zerocoin version number.\n"
             "    \"zXDH ID\": \"xxx\",   (string) Pubcoin in hex format.\n"
             "    \"denomination\": n,   (numeric) Coin denomination.\n"
+            "    \"mint height\": n     (numeric) Height of the block containing this mint.\n"
             "    \"confirmations\": n   (numeric) Number of confirmations.\n"
+            "    \"hash stake\": \"xxx\",   (string) Mint serialstake hash in hex format.\n"
             "  }\n"
             "  ,..."
             "]\n"
@@ -2610,7 +2618,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
 
     UniValue jsonList(UniValue::VARR);
     if (fVerbose) {
-        for (const CMintMeta& m : setMints) {
+        for (auto m : setMints) {
             // Construct mint object
             UniValue objMint(UniValue::VOBJ);
             objMint.push_back(Pair("serial hash", m.hashSerial.GetHex()));  // Serial hash
@@ -2618,8 +2626,20 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             objMint.push_back(Pair("zXDH ID", m.hashPubcoin.GetHex()));     // PubCoin
             int denom = libzerocoin::ZerocoinDenominationToInt(m.denom);
             objMint.push_back(Pair("denomination", denom));                 // Denomination
+            objMint.push_back(Pair("mint height", m.nHeight));              // Mint Height
             int nConfirmations = (m.nHeight && nBestHeight > m.nHeight) ? nBestHeight - m.nHeight : 0;
             objMint.push_back(Pair("confirmations", nConfirmations));       // Confirmations
+            // hashStake
+            if (m.hashStake == 0) {
+                CZerocoinMint mint;
+                if (pwalletMain->GetMint(m.hashSerial, mint)) {
+                    uint256 hashStake = mint.GetSerialNumber().getuint256();
+                    hashStake = Hash(hashStake.begin(), hashStake.end());
+                    m.hashStake = hashStake;
+                    pwalletMain->zxdhTracker->UpdateState(m);
+                }
+            }
+            objMint.push_back(Pair("hash stake", m.hashStake.GetHex()));       // Confirmations
             // Push back mint object
             jsonList.push_back(objMint);
         }
@@ -3636,4 +3656,41 @@ UniValue searchdzxdh(const UniValue& params, bool fHelp)
 
     //todo: better response
     return "done";
+}
+
+UniValue enableautomintaddress(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() != 1)
+        throw std::runtime_error(
+                "enableautomintaddress enable\n"
+                "\nEnables or disables automint address functionality\n"
+
+                "\nArguments\n"
+                "1. enable     (boolean, required) Enable or disable automint address functionality\n"
+
+                "\nExamples\n" +
+                HelpExampleCli("enableautomintaddress", "true") + HelpExampleRpc("enableautomintaddress", "false"));
+
+    fEnableAutoConvert = params[0].get_bool();
+
+    return NullUniValue;
+}
+
+UniValue createautomintaddress(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() != 0)
+        throw std::runtime_error(
+                "createautomintaddress\n"
+                "\nGenerates new auto mint address\n" +
+                HelpRequiringPassphrase() + "\n"
+
+                "\nResult\n"
+                "\"address\"     (string) Dilithium address for auto minting\n" +
+                HelpExampleCli("createautomintaddress", "") +
+                HelpExampleRpc("createautomintaddress", ""));
+
+    EnsureWalletIsUnlocked();
+    LOCK(pwalletMain->cs_wallet);
+    CBitcoinAddress address = pwalletMain->GenerateNewAutoMintKey();
+    return address.ToString();
 }

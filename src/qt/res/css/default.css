@@ -9,6 +9,7 @@
 /* medium-green1:      #456353 (on hover)                                               */
 /* medium-green1:      #173c28 (main green for dark backgrounds)                        */
 /*                                                                                      */
+/* fuchsia:            #df1cca                                                          */
 /* background:         #f8f6f6                                                          */
 /* input fields:       #e7e7e7                                                          */
 /****************************************************************************************/
@@ -1698,4 +1699,41 @@ color:#333;
 
 QCalendarWidget QAbstractItemView:disabled { /* Calendar widget days not in month */
 color:#818181;
+}
+
+QWidget#GovernancePage .QFrame#frame_Content {
+    background-color:#ffffff;
+}
+
+QWidget#GovernancePage .ProposalFrame {
+    border-radius:5px;
+    margin:2px;
+    max-height:250px;
+}
+
+QWidget#GovernancePage .ProposalFrame#proposalFrame {
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #b6d3a0, stop: 1 #667f72);
+    border:1px solid #667f72;
+}
+
+QWidget#GovernancePage .ProposalFrame#proposalFramePassing {
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #00cc00, stop: 1 #00ef00);
+    border:1px solid #00ef00;
+}
+
+QWidget#GovernancePage .ProposalFrame > QLabel#strProposalName, QLabel#strMonthlyPayout, QLabel#strRemainingPaymentCount {
+    font-size:18pt;
+}
+
+QWidget#GovernancePage .ProposalFrame > QLabel#strProposalURL {
+    font-size:14pt;
+}
+
+QWidget#GovernancePage .QScrollArea, .QWidget#scrollAreaWidgetContents {
+    background-color:#fff;
+}
+
+QWidget#GovernancePage .QGridLayout#proposalGrid {
+    margin-right:35px!important;
+    padding-right:35px!important;
 }

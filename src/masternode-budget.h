@@ -367,8 +367,8 @@ public:
         return true;
     }
 
-    //check to see if we should vote on this
-    void AutoCheck();
+    // Verify and vote on finalized budget
+    void CheckAndVote();
     //total dilithium paid out by this budget
     CAmount GetTotalPayout();
     //vote on this finalized budget as a masternode
@@ -515,16 +515,16 @@ public:
     int GetBlockCurrentCycle();
     int GetBlockEndCycle();
     double GetRatio();
-    int GetYeas();
-    int GetNays();
-    int GetAbstains();
+    int GetYeas() const;
+    int GetNays() const;
+    int GetAbstains() const;
     CAmount GetAmount() { return nAmount; }
     void SetAllotted(CAmount nAllotedIn) { nAlloted = nAllotedIn; }
     CAmount GetAllotted() { return nAlloted; }
 
     void CleanAndRemove(bool fSignatureCheck);
 
-    uint256 GetHash()
+    uint256 GetHash() const
     {
         CHashWriter ss(SER_GETHASH, PROTOCOL_VERSION);
         ss << strProposalName;

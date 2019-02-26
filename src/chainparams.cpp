@@ -328,11 +328,11 @@ public:
     {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
-        strNetworkID = "regtest";
         pchMessageStart[0] = 0xa1;
         pchMessageStart[1] = 0xcf;
         pchMessageStart[2] = 0x7e;
         pchMessageStart[3] = 0xac;
+        nDefaultPort = 28680;
         nSubsidyHalvingInterval = 150;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -341,12 +341,25 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Dilithium: 1 day
         nTargetSpacing = 1 * 60;        // Dilithium: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
+        nLastPOWBlock = 250;
+        nMaturity = 100;
+        nMasternodeCountDrift = 4;
+        nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
+        nMaxMoneyOut = 43199500 * COIN;
+        nZerocoinStartHeight = 300;
+        nBlockZerocoinV2 = 300;
+        nZerocoinStartTime = 1501776000;
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+
+        //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1542193313;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 3;
 
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 28680;
         assert(hashGenesisBlock == uint256("0x42938326c5ae523464369bcddce5a841d62e84bbd9d0373033238df2a2249144"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
@@ -357,6 +370,7 @@ public:
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
+        fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const

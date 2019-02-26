@@ -161,6 +161,7 @@ BITCOIN_CORE_H = \
   sporkdb.h \
   stakeinput.h \
   streams.h \
+  support/cleanse.h \
   sync.h \
   threadsafety.h \
   timedata.h \
@@ -183,6 +184,9 @@ BITCOIN_CORE_H = \
   zxdhchain.h \
   zxdhtracker.h \
   zxdhwallet.h \
+  genwit.h \
+  concurrentqueue.h \
+  lightzxdhthread.h \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h \
   zmq/zmqnotificationinterface.h \
@@ -273,6 +277,8 @@ libbitcoin_wallet_a_SOURCES = \
   zxdhwallet.cpp \
   zxdhtracker.cpp \
   stakeinput.cpp \
+  genwit.cpp \
+  lightzxdhthread.cpp \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
@@ -388,6 +394,7 @@ libbitcoin_util_a_SOURCES = \
   compat/strnlen.cpp \
   random.cpp \
   rpc/protocol.cpp \
+  support/cleanse.cpp \
   sync.cpp \
   uint256.cpp \
   util.cpp \
