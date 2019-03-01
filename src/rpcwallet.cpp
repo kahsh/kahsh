@@ -2227,6 +2227,11 @@ UniValue setstakesplitthreshold(const UniValue& params, bool fHelp)
     if (nStakeSplitThreshold > 999999)
         throw runtime_error("Value out of range, max allowed is 999999");
 
+    if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT)) {
+        if (nStakeSplitThreshold < Params().Stake_MinAmount())
+            throw runtime_error("Value out of range, below min stake value");
+    }
+
     CWalletDB walletdb(pwalletMain->strWalletFile);
     LOCK(pwalletMain->cs_wallet);
     {

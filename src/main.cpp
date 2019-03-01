@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2019 The Bulwark developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -80,7 +81,7 @@ bool fVerifyingBlocks = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
-unsigned int nStakeMinAge = 60 * 60;
+const unsigned int nStakeMinAge = 60 * 60 * 2; // 2 hours
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in uxdh) are considered zero fee (for relaying and mining)
@@ -3954,6 +3955,35 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         for (unsigned int i = 2; i < block.vtx.size(); i++)
             if (block.vtx[i].IsCoinStake())
                 return state.DoS(100, error("CheckBlock() : more than one coinstake"));
+
+        if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT) && block.GetBlockTime() >= GetSporkValue(SPORK_18_STAKING_ENFORCEMENT)) {
+            // Check for minimum value
+            if (block.vtx[1].vout[1].nValue < Params().Stake_MinAmount())
+                return state.DoS(100, error("CheckBlock() : stake under min stake value"));
+
+            // Check for coin age
+            // First try finding the previous transaction in database
+            CTransaction txPrev;
+            uint256 hashBlockPrev;
+            if (!GetTransaction(block.vtx[1].vin[0].prevout.hash, txPrev, hashBlockPrev, true))
+                return state.DoS(100, error("CheckBlock() : stake failed to find vin transaction"));
+
+            // Find block in map
+            CBlockIndex* pindex = nullptr;
+            BlockMap::iterator it = mapBlockIndex.find(hashBlockPrev);
+            if (it != mapBlockIndex.end())
+                pindex = it->second;
+            else
+                return state.DoS(100, error("CheckBlock() : stake failed to find block index"));
+
+            // Check block time vs stake age requirement
+            if (pindex->GetBlockHeader().nTime + Params().Stake_MinAge() > GetAdjustedTime())
+                return state.DoS(100, error("CheckBlock() : stake under min stake age"));
+
+            // Check that the prev. stake block has required confirmations by height
+            if (chainActive.Height() - pindex->nHeight < Params().Stake_MinConfirmations())
+                return state.DoS(100, error("CheckBlock() : stake under min required confirmations"));
+        }
     }
 
     // ----------- swiftTX transaction scanning -----------

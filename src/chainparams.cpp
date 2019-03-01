@@ -246,6 +246,12 @@ public:
 
         /** Developer block reward */
         strDevBlockRewardAddress = "dGrNvXcQNfvXPMayFkENRGoqoJu42WebaD";
+
+        /** Staking Requirements (spork activated) */
+        nStakeMinConfirmations = 720; // Required number of confirmations
+        nStakeMinAmount = 20 * COIN; // Minimum required staking amount
+        nStakeMinAge = 60 * 60 * 12; // 12 hours
+
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -334,6 +340,11 @@ public:
 
         /** Developer block reward */
         strDevBlockRewardAddress = "dGrNvXcQNfvXPMayFkENRGoqoJu42WebaD";
+
+        /** Staking Requirements (spork activated) */
+        nStakeMinConfirmations = 470; // Required number of confirmations
+        nStakeMinAmount = 5 * COIN; // Minimum required staking amount
+        nStakeMinAge = 60 * 60 * 4; // 4 hours
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {

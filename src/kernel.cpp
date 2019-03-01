@@ -6,6 +6,7 @@
 #include <boost/assign/list_of.hpp>
 
 #include "db.h"
+#include "spork.h"
 #include "kernel.h"
 #include "script/interpreter.h"
 #include "timedata.h"
@@ -304,10 +305,16 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
         if (nTimeTx < nTimeBlockFrom)
             return error("CheckStakeKernelHash() : nTime violation");
 
-        if ((nTimeBlockFrom + nStakeMinAge > nTimeTx)) // Min age requirement
+        unsigned int nMinStakeAge = nStakeMinAge;
+
+        if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT) && nTimeBlockFrom >= GetSporkValue(SPORK_18_STAKING_ENFORCEMENT)) {
+            nMinStakeAge = Params().Stake_MinAge();
+        }
+
+        // Min age requirement
+        if ((nTimeBlockFrom + nMinStakeAge > nTimeTx))
             return error("CheckStakeKernelHash() : min age violation - nTimeBlockFrom=%d nStakeMinAge=%d nTimeTx=%d",
                          nTimeBlockFrom, nStakeMinAge, nTimeTx);
-
     }
 
     //grab difficulty

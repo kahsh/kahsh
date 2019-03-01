@@ -129,6 +129,11 @@ public:
     /** Developer block reward */
     std::string DevBlockRewardAddress() const { return strDevBlockRewardAddress; }
 
+    /** Staking Requirements */
+    uint32_t Stake_MinConfirmations() const { return nStakeMinConfirmations; };
+    uint32_t Stake_MinAmount() const { return nStakeMinAmount; };
+    uint32_t Stake_MinAge() const { return nStakeMinAge; };
+
 protected:
     CChainParams() {}
 
@@ -193,6 +198,10 @@ protected:
     int nBlockZerocoinV2;
 
     std::string strDevBlockRewardAddress;
+
+    uint32_t nStakeMinConfirmations;
+    uint32_t nStakeMinAmount;
+    uint32_t nStakeMinAge;
 };
 
 /**
