@@ -44,9 +44,6 @@ CActiveMasternode activeMasternode;
 
 void CObfuscationPool::ProcessMessageObfuscation(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 {
-    // disable
-    return;
-
     if (fLiteMode) return; //disable all Obfuscation/Masternode related functionality
     if (!masternodeSync.IsBlockchainSynced()) return;
 
@@ -2285,9 +2282,6 @@ void CObfuscationPool::RelayCompletedTransaction(const int sessionID, const bool
 //TODO: Rename/move to core
 void ThreadCheckObfuScationPool()
 {
-    // disable
-    return;
-
     if (fLiteMode) return; //disable all Obfuscation/Masternode related functionality
 
     // Make this thread recognisable as the wallet flushing thread
