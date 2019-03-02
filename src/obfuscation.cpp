@@ -2312,12 +2312,13 @@ void ThreadCheckObfuScationPool()
 
             //if(c % MASTERNODES_DUMP_SECONDS == 0) DumpMasternodes();
 
-            obfuScationPool.CheckTimeout();
-            obfuScationPool.CheckForCompleteQueue();
+//            obfuScationPool.CheckTimeout();
+//            obfuScationPool.CheckForCompleteQueue();
+//
+//            if (obfuScationPool.GetState() == POOL_STATUS_IDLE && c % 15 == 0) {
+//                obfuScationPool.DoAutomaticDenominating();
+//            }
 
-            if (obfuScationPool.GetState() == POOL_STATUS_IDLE && c % 15 == 0) {
-                obfuScationPool.DoAutomaticDenominating();
-            }
         }
     }
 }
