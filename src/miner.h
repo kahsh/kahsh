@@ -7,6 +7,8 @@
 #ifndef BITCOIN_MINER_H
 #define BITCOIN_MINER_H
 
+#include "main.h"
+
 #include <stdint.h>
 
 class CBlock;
@@ -30,6 +32,7 @@ void UpdateTime(CBlockHeader* block, const CBlockIndex* pindexPrev);
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake);
 
+extern std::pair<int, std::pair<uint256, uint256> > pCheckpointCache;
 extern double dHashesPerSec;
 extern int64_t nHPSTimerStart;
 

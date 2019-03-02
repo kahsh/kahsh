@@ -157,17 +157,17 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 400;
         nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 8637870;
-        nZerocoinStartTime = 1808214600;
-        nBlockEnforceSerialRange = 895400; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 908000; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 891737; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 891730; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 902850; //Start enforcing the invalid UTXO's
-        nInvalidAmountFiltered = 268200*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 8637870; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
-        nEnforceNewSporkKey = 1542193313; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
-        nRejectOldSporkKey = 1542193313; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
+        nZerocoinStartHeight = 30;
+        nZerocoinStartTime = 1542193313;
+        nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = INT_MAX - 1; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = INT_MAX - 1; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = INT_MAX - 1; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
+        nInvalidAmountFiltered = 0 * COIN;
+        nBlockZerocoinV2 = nZerocoinStartHeight;
+        nEnforceNewSporkKey = 1542193313;
+        nRejectOldSporkKey = nEnforceNewSporkKey;
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -228,12 +228,16 @@ public:
         nStartMasternodePayments = 1542193313;
 
         /** Zerocoin */
-        zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
-            "4069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618963750149718246911"
-            "6507761337985909570009733045974880842840179742910064245869181719511874612151517265463228221686998754918242243363"
-            "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
-            "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
-            "31438167899885040445364023527381951378636564391212010397122822120720357";
+        zerocoinModulus = "43576052031536534974087126771477540874776068735756049793442594061574276669938457998755994398476021"
+                "795030564757324158256540965678312098953769574013581560766234774267661608068134114816266094160272604326733173"
+                "479800555359291397176614410393075621316487512261671229102009732039578451373511087272512069861142667778062039"
+                "649038233698043690728967120188434234386930578115299235860171468178079299084777967372105651716413259080023925"
+                "707043193802211315999861250720041971107415418755470665968645227271317543707570402065871857295511143774933748"
+                "937503955077547233512155343603579412119043043204866747475333130841452645261835055390175197387724700033960061"
+                "441923178337150173575121284567645477194266064764723867886217312416487694858985085679583430617376020463127172"
+                "059877016414734206869424304098152299880227982394705203618939716964998376892168035051851195013776034254709958"
+                "23525108825797724241022595983834447217912092980344779688031823708494921";
+
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
         nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
@@ -249,7 +253,7 @@ public:
 
         /** Staking Requirements (spork activated) */
         nStakeMinConfirmations = 720; // Required number of confirmations
-        nStakeMinAmount = 100 * COIN; // Minimum required staking amount
+        nStakeMinAmount = 20 * COIN; // Minimum required staking amount
         nStakeMinAge = 60 * 60 * 12; // 12 hours
     }
 
@@ -282,22 +286,24 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Dilithium: 1 day
         nTargetSpacing = 1 * 60;  // Dilithium: 1 minute
-        nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
-        nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
-        nZerocoinStartHeight = 8637870;
-        nZerocoinStartTime = 1808214600;
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 9902850; //Start enforcing the invalid UTXO's
-        nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 8637870; //!> The block that zerocoin v2 becomes active
-        nEnforceNewSporkKey = 1521604800; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
-        nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
+
+        /** Height or Time Based Activations **/
+        nLastPOWBlock = 200;
+        nModifierUpdateBlock = 0;
+        nZerocoinStartHeight = 30;
+        nZerocoinStartTime = 1543057352;
+        nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = INT_MAX - 1; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = INT_MAX - 1; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = INT_MAX - 1; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
+        nInvalidAmountFiltered = 0 * COIN;
+        nBlockZerocoinV2 = nZerocoinStartHeight;
+        nEnforceNewSporkKey = 1543057352;
+        nRejectOldSporkKey = nEnforceNewSporkKey;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1543057352;

@@ -287,18 +287,13 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
     }
 
     // if there were no new mints found, the accumulator checkpoint will be the same as the last checkpoint
-    if (nTotalMintsFound == 0)
+    if (nTotalMintsFound == 0 && nHeight != Params().Zerocoin_Block_V2_Start())
         nCheckpoint = chainActive[nHeight - 1]->nAccumulatorCheckpoint;
     else
         nCheckpoint = mapAccumulators.GetCheckpoint();
 
     LogPrint("zero", "%s checkpoint=%s\n", __func__, nCheckpoint.GetHex());
     return true;
-}
-
-bool InvalidCheckpointRange(int nHeight)
-{
-    return nHeight > Params().Zerocoin_Block_LastGoodCheckpoint() && nHeight < Params().Zerocoin_Block_RecalculateAccumulators();
 }
 
 bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, AccumulatorMap& mapAccumulators)
@@ -483,7 +478,7 @@ std::list<CBlockIndex*> calculateAccumulatedBlocksFor(
 
     std::list<CBlockIndex*> blocksToInclude;
     int amountOfScannedBlocks = 0;
-    bool fDoubleCounted = false;
+
     while (pindex) {
         if (pindex->nHeight != startHeight && pindex->pprev->nAccumulatorCheckpoint != pindex->nAccumulatorCheckpoint)
             ++nCheckpointsAdded;
@@ -491,10 +486,6 @@ std::list<CBlockIndex*> calculateAccumulatedBlocksFor(
         //If the security level is satisfied, or the stop height is reached, then initialize the accumulator from here
         bool fSecurityLevelSatisfied = (nSecurityLevel != 100 && nCheckpointsAdded >= nSecurityLevel);
         if (pindex->nHeight >= nHeightStop || fSecurityLevelSatisfied) {
-            //If this height is within the invalid range (when fraudulent coins were being minted), then continue past this range
-            if(InvalidCheckpointRange(pindex->nHeight))
-                continue;
-
             bnAccValue = 0;
             uint256 nCheckpointSpend = chainActive[pindex->nHeight + 10]->nAccumulatorCheckpoint;
             if (!GetAccumulatorValueFromDB(nCheckpointSpend, den, bnAccValue) || bnAccValue == 0) {
@@ -507,13 +498,6 @@ std::list<CBlockIndex*> calculateAccumulatedBlocksFor(
 
         // Add it
         blocksToInclude.push_back(pindex);
-
-        // 10 blocks were accumulated twice when zXDH v2 was activated
-        if (pindex->nHeight == 1050010 && !fDoubleCounted) {
-            pindex = chainActive[1050000];
-            fDoubleCounted = true;
-            continue;
-        }
 
         amountOfScannedBlocks++;
         pindex = chainActive.Next(pindex);
