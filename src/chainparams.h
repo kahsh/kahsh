@@ -130,8 +130,8 @@ public:
     std::string DevBlockRewardAddress() const { return strDevBlockRewardAddress; }
 
     /** Staking Requirements */
-    uint32_t Stake_MinConfirmations() const { return nStakeMinConfirmations; };
-    uint32_t Stake_MinAmount() const { return nStakeMinAmount; };
+    int32_t Stake_MinConfirmations() const { return nStakeMinConfirmations; };
+    CAmount Stake_MinAmount() const { return nStakeMinAmount; };
     uint32_t Stake_MinAge() const { return nStakeMinAge; };
 
 protected:
@@ -199,8 +199,8 @@ protected:
 
     std::string strDevBlockRewardAddress;
 
-    uint32_t nStakeMinConfirmations;
-    uint32_t nStakeMinAmount;
+    int32_t nStakeMinConfirmations;
+    CAmount nStakeMinAmount;
     uint32_t nStakeMinAge;
 };
 

@@ -3981,7 +3981,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 return state.DoS(100, error("CheckBlock() : stake under min stake age"));
 
             // Check that the prev. stake block has required confirmations by height
-            if (chainActive.Height() - pindex->nHeight < Params().Stake_MinConfirmations())
+            if (chainActive.Height() - pindex->nHeight + 1 < Params().Stake_MinConfirmations())
                 return state.DoS(100, error("CheckBlock() : stake under min required confirmations"));
         }
     }

@@ -2138,7 +2138,8 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
                  continue;
 
             //check that it is matured
-            if (out.nDepth < (out.tx->IsCoinStake() ? nMinStakeDepth : 10))
+            assert (out.nDepth == out.tx->GetDepthInMainChain(false));
+            if (out.tx->GetDepthInMainChain(false) < (out.tx->IsCoinStake() ? nMinStakeDepth : 10))
                 continue;
 
             //if zerocoinspend, then use the block time
@@ -2230,7 +2231,7 @@ bool CWallet::MintableCoins()
             }
 
             // Make sure minimum depth has been matched.
-            if (out.tx->GetDepthInMainChain(false) <= nMinDepth)
+            if (out.tx->GetDepthInMainChain(false) < nMinDepth)
                 continue;
 
             // Make sure minimum amount is met for staking.
