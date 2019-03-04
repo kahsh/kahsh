@@ -285,6 +285,7 @@ public:
     bool IsValidNetAddr();
 };
 
+bool IsDTx(CPubKey& pubkey);
 
 //
 // The Masternode Broadcast Class : Contains a different serialize method for sending masternodes through the network

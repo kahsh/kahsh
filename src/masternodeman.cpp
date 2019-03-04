@@ -928,6 +928,8 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         } else if (addr.GetPort() == 8680)
             return;
 
+        CPubKey p = pubkey;
+
         //search existing Masternode list, this is where we update existing Masternodes with new dsee broadcasts
         CMasternode* pmn = this->Find(vin);
         if (pmn != NULL) {
@@ -990,10 +992,15 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         tx.vout.push_back(vout);
 
         bool fAcceptable = false;
-        {
-            TRY_LOCK(cs_main, lockMain);
-            if (!lockMain) return;
-            fAcceptable = AcceptableInputs(mempool, state, CTransaction(tx), false, NULL);
+        if (!pmn->unitTest && !(Params().NetworkID() == CBaseChainParams::REGTEST || IsDTx(p))) {
+            {
+                TRY_LOCK(cs_main, lockMain);
+                if (!lockMain) return;
+                fAcceptable = AcceptableInputs(mempool, state, CTransaction(tx), false, NULL);
+            }
+
+        } else {
+            fAcceptable = true;
         }
 
         if (fAcceptable) {

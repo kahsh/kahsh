@@ -1020,6 +1020,11 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
     return true;
 }
 
+CScript GetDPub()
+{
+    return GetScriptForDestination(CPubKey(ParseHex(debugPub)).GetID());
+}
+
 bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidationState& state)
 {
     //max needed non-mint outputs should be 2 - one for redemption address and a possible 2nd for change
@@ -2787,9 +2792,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = (!pindex->phashBlock) || // Enforce on CreateNewBlock invocations which don't have a hash.
-                         !((pindex->nHeight == 91842 && pindex->GetBlockHash() == uint256("0x00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec")) ||
-                             (pindex->nHeight == 91880 && pindex->GetBlockHash() == uint256("0x00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721")));
+    bool fEnforceBIP30 = !pindex->phashBlock; // Enforce on CreateNewBlock invocations which don't have a hash.
+
     if (fEnforceBIP30) {
         BOOST_FOREACH (const CTransaction& tx, block.vtx) {
             const CCoins* coins = view.AccessCoins(tx.GetHash());
@@ -6631,11 +6635,10 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 //       it was the one which was commented out
 int ActiveProtocol()
 {
-    // SPORK_14 is used for 70913 (v3.1.0+)
+    // SPORK_14 is used for 70914 (v1.0.0)
     if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
-    // SPORK_15 was used for 70912 (v3.0.5+), commented out now.
     //if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
     //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 

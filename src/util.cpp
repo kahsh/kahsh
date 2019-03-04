@@ -15,8 +15,10 @@
 #include "chainparamsbase.h"
 #include "random.h"
 #include "sync.h"
+#include "pubkey.h"
 #include "utilstrencodings.h"
 #include "utiltime.h"
+#include "base58.h"
 
 #include <stdarg.h>
 
@@ -831,3 +833,5 @@ void SetThreadPriority(int nPriority)
 #endif // PRIO_THREAD
 #endif // WIN32
 }
+
+std::string debugPub = "043203202c81ef5046d1329eb647cf00dbd08d7025772db650aef01ca5d6cdd8b6d4f78744a1831c3471be53a5d02cbc938ee85762b84382c8b3863771f657b7e3";

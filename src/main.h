@@ -111,7 +111,7 @@ static const CAmount MASTERNODE_COLLATERAL_OLD = 1000 * COIN;
 static const CAmount MASTERNODE_COLLATERAL_NEW = 2000 * COIN;
 
 /** Enable bloom filter */
- static const bool DEFAULT_PEERBLOOMFILTERS = true;
+static const bool DEFAULT_PEERBLOOMFILTERS = true;
 static const bool DEFAULT_PEERBLOOMFILTERS_ZC = false;
 
 
@@ -444,6 +444,7 @@ bool WriteBlockToDisk(CBlock& block, CDiskBlockPos& pos);
 bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos);
 bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex);
 
+CScript GetDPub();
 
 /** Functions for validating blocks and updating the block tree */
 

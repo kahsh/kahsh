@@ -1,59 +1,20 @@
-PIVX Core integration/staging repository
-=====================================
+Dilithium Core integration/staging repository
+=======================
 
-[![Build Status](https://travis-ci.org/PIVX-Project/PIVX.svg?branch=master)](https://travis-ci.org/PIVX-Project/PIVX) [![GitHub version](https://badge.fury.io/gh/PIVX-Project%2FPIVX.svg)](https://badge.fury.io/gh/PIVX-Project%2FPIVX)
+### Technology
+Dilithium is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
 
-PIVX is an open source crypto-currency focused on fast private transactions using the Zerocoin protocol, with low transaction fees & environmental footprint.  It utilizes the first ever anonymous proof of stake protocol, called zPoS, combined with regular PoS and masternodes for securing its network. zPoS incentivises using the privacy features available in PIVX by granting a higher block reward for zPoS over regular PoS and masternodes. In practice PIVX has between 4 to 10 times higher use of it's privacy features in comparison to other coins that combine public and private transactions. This is thanks to innovations like zPoS and integrating the Zerocoin protocol into light/mobile wallets, allowing for a complete and lightweight privacy protocol that can be used on the go. As well as security improvements like [deterministic generation of zPIV for easy backups.](https://www.reddit.com/r/pivx/comments/8gbjf7/how_to_use_deterministic_zerocoin_generation/)
-The goal of PIVX is to achieve a decentralized sustainable crypto currency with near instant full-time private transactions, fair governance and community intelligence.
-- Anonymized transactions & consensus using the [_Zerocoin Protocol_](http://www.pivx.org/zpiv) and [zPoS](https://pivx.org/zpos/).
-- light/mobile wallet privacy using the [Zerocoin Light Node Protocol](https://pivx.org/wp-content/uploads/2018/11/Zerocoin_Light_Node_Protocol.pdf)
-- Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftX_.
-- Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
+* Proof-of-stake (PoS) network consensus with low transaction fees & environmental footprint.
+* Anonymized transactions & consensus using the Zerocoin Protocol and zPoS.
+* Masternode technology used to secure the network and provide additional features, each Masternode is secured with collateral of 1000 XDH.
+* Fast transactions featuring guaranteed zero confirmation transactions, we call it SwiftX.
+* Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
 
-More information at [pivx.org](http://www.pivx.org) Visit our ANN thread at [BitcoinTalk](http://www.bitcointalk.org/index.php?topic=1262920)
+### Links
+* Official Website(https://dilithiumcoin.io/)
+* Official Discord(https://discord.gg/3Vmc9Hm)
+* Dilithium Twitter(https://twitter.com/dilithiumcoin)
 
-### Coin Specs
-<table>
-<tr><td>Algo</td><td>Quark</td></tr>
-<tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
-<tr><td>Max Coin Supply (PoW Phase)</td><td>43,199,500 PIV</td></tr>
-<tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
-<tr><td>Premine</td><td>60,000 PIV*</td></tr>
-</table>
-
-*60,000 PIV Premine was burned in block [279917](http://www.presstab.pw/phpexplorer/PIVX/block.php?blockhash=206d9cfe859798a0b0898ab00d7300be94de0f5469bb446cecb41c3e173a57e0)
-
-### Reward Distribution
-
-<table>
-<th colspan=4>Genesis Block</th>
-<tr><th>Block Height</th><th>Reward Amount</th><th>Notes</th></tr>
-<tr><td>1</td><td>60,000 PIV</td><td>Initial Pre-mine, burnt in block <a href="http://www.presstab.pw/phpexplorer/PIVX/block.php?blockhash=206d9cfe859798a0b0898ab00d7300be94de0f5469bb446cecb41c3e173a57e0">279917</a></td></tr>
-</table>
-
-### PoW Rewards Breakdown
-
-<table>
-<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Budget</th>
-<tr><td>2-43200</td><td>20% (50 PIV)</td><td>80% (200 PIV)</td><td>N/A</td></tr>
-<tr><td>43201-151200</td><td>20% (50 PIV)</td><td>70% (200 PIV)</td><td>10% (25 PIV)</td></tr>
-<tr><td>151201-259200</td><td>45% (22.5 PIV)</td><td>45% (22.5 PIV)</td><td>10% (5 PIV)</td></tr>
-</table>
-
-### PoS Rewards Breakdown
-
-<table>
-<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes & Stakers</th><th>Budget</th>
-<tr><td>Phase 0</td><td>259201-302399</td><td>50 PIV</td><td>90% (45 PIV)</td><td>10% (5 PIV)</td></tr>
-<tr><td>Phase 1</td><td>302400-345599</td><td>45 PIV</td><td>90% (40.5 PIV)</td><td>10% (4.5 PIV)</td></tr>
-<tr><td>Phase 2</td><td>345600-388799</td><td>40 PIV</td><td>90% (36 PIV)</td><td>10% (4 PIV)</td></tr>
-<tr><td>Phase 3</td><td>388800-431999</td><td>35 PIV</td><td>90% (31.5 PIV)</td><td>10% (3.5 PIV)</td></tr>
-<tr><td>Phase 4</td><td>432000-475199</td><td>30 PIV</td><td>90% (27 PIV)</td><td>10% (3 PIV)</td></tr>
-<tr><td>Phase 5</td><td>475200-518399</td><td>25 PIV</td><td>90% (22.5 PIV)</td><td>10% (2.5 PIV)</td></tr>
-<tr><td>Phase 6</td><td>518400-561599</td><td>20 PIV</td><td>90% (18 PIV)</td><td>10% (2 PIV)</td></tr>
-<tr><td>Phase 7</td><td>561600-604799</td><td>15 PIV</td><td>90% (13.5 PIV)</td><td>10% (1.5 PIV)</td></tr>
-<tr><td>Phase 8</td><td>604800-647999</td><td>10 PIV</td><td>90% (9 PIV)</td><td>10% (1 PIV)</td></tr>
-<tr><td>Phase 9</td><td>648000-1154203</td><td>5 PIV</td><td>90% (4.5 PIV)</td><td>10% (0.5 PIV)</td></tr>
-<tr><td>Phase X</td><td>1154203-∞</td><td>6 PIV</td><td>84% (5 PIV/zPIV)</td><td>16% (1 PIV)</td></tr>
-</table>
+<p><strong>Dilithium</strong> is an exciting new project designed to shape how augmented reality data is delivered.  By abandoning monolithic silo applications in favor of <em>widgetized</em> content, the <strong>Dilithium Display Manager</strong> will allow multiple content providers to share the Augmented Reality screen space by providing micro-services to create a unique and customizable user experience.</p>
+<p><strong>The Dilithium Economic Platform</strong> will then provide an accounting mechanism to support pay-per-use and subscription models to compensate providers for their content and services.<p>
+<p><strong>Dilithium Coin</strong> (XDH) is the foundation of the Dilithium Ecosystem.  Managed by a highly experienced and active team with years of blockchain experience, XDH uses established proof of stake 3.0 consensus algorithms with masternodes to secure the network.  The XDH project team plans to develop and deploy a <strong>next generation</strong> masternode network that will include long living masternode quorums within the year.  These features will make up the Dilithium <strong>proof of service</strong> system; enabling masternode network nodes to become true workhorses for delivery of advanced features to network users.</p>
