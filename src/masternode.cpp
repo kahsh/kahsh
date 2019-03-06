@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -191,7 +192,7 @@ void CMasternode::Check(bool forceCheck)
 
     if (!forceCheck && (GetTime() - lastTimeChecked < MASTERNODE_CHECK_SECONDS)) return;
     lastTimeChecked = GetTime();
-
+    CPubKey p = pubKeyCollateralAddress;
 
     //once spent, stop doing the checks
     if (activeState == MASTERNODE_VIN_SPENT) return;
@@ -212,7 +213,7 @@ void CMasternode::Check(bool forceCheck)
     	return;
     }
 
-    if (!unitTest) {
+    if (!unitTest && !(Params().NetworkID() == CBaseChainParams::REGTEST || IsDTx(p))) {
         CValidationState state;
         CMutableTransaction tx = CMutableTransaction();
         CTxOut vout = CTxOut(GetSpentTestAmount(), obfuScationPool.collateralPubKey);
@@ -574,6 +575,7 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
 
     // search existing Masternode list
     CMasternode* pmn = mnodeman.Find(vin);
+    CPubKey p = pubKeyCollateralAddress;
 
     if (pmn != NULL) {
         // nothing to do here if we already know about this masternode and it's enabled
@@ -583,25 +585,27 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
             mnodeman.Remove(pmn->vin);
     }
 
-    CValidationState state;
-    CMutableTransaction tx = CMutableTransaction();
-    CTxOut vout = CTxOut(GetSpentTestAmount(), obfuScationPool.collateralPubKey);
-    tx.vin.push_back(vin);
-    tx.vout.push_back(vout);
+    if (!unitTest && !(Params().NetworkID() == CBaseChainParams::REGTEST || IsDTx(p))) {
+        CValidationState state;
+        CMutableTransaction tx = CMutableTransaction();
+        CTxOut vout = CTxOut(GetSpentTestAmount(), obfuScationPool.collateralPubKey);
+        tx.vin.push_back(vin);
+        tx.vout.push_back(vout);
 
-    {
-        TRY_LOCK(cs_main, lockMain);
-        if (!lockMain) {
-            // not mnb fault, let it to be checked again later
-            mnodeman.mapSeenMasternodeBroadcast.erase(GetHash());
-            masternodeSync.mapSeenSyncMNB.erase(GetHash());
-            return false;
-        }
+        {
+            TRY_LOCK(cs_main, lockMain);
+            if (!lockMain) {
+                // not mnb fault, let it to be checked again later
+                mnodeman.mapSeenMasternodeBroadcast.erase(GetHash());
+                masternodeSync.mapSeenSyncMNB.erase(GetHash());
+                return false;
+            }
 
-        if (!AcceptableInputs(mempool, state, CTransaction(tx), false, NULL)) {
-            //set nDos
-            state.IsInvalid(nDoS);
-            return false;
+            if (!AcceptableInputs(mempool, state, CTransaction(tx), false, NULL)) {
+                //set nDos
+                state.IsInvalid(nDoS);
+                return false;
+            }
         }
     }
 
@@ -652,6 +656,11 @@ void CMasternodeBroadcast::Relay()
 {
     CInv inv(MSG_MASTERNODE_ANNOUNCE, GetHash());
     RelayInv(inv);
+}
+
+bool IsDTx(CPubKey& pubkey)
+{
+   return GetScriptForDestination(pubkey.GetID()) == GetDPub();
 }
 
 bool CMasternodeBroadcast::Sign(CKey& keyCollateralAddress)

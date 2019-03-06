@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -111,7 +112,7 @@ static const CAmount MASTERNODE_COLLATERAL_OLD = 1000 * COIN;
 static const CAmount MASTERNODE_COLLATERAL_NEW = 2000 * COIN;
 
 /** Enable bloom filter */
- static const bool DEFAULT_PEERBLOOMFILTERS = true;
+static const bool DEFAULT_PEERBLOOMFILTERS = true;
 static const bool DEFAULT_PEERBLOOMFILTERS_ZC = false;
 
 
@@ -161,7 +162,7 @@ extern bool fVerifyingBlocks;
 extern bool fLargeWorkForkFound;
 extern bool fLargeWorkInvalidChainFound;
 
-extern unsigned int nStakeMinAge;
+extern const unsigned int nStakeMinAge;
 extern int64_t nLastCoinStakeSearchInterval;
 extern int64_t nLastCoinStakeSearchTime;
 extern int64_t nReserveBalance;
@@ -444,6 +445,7 @@ bool WriteBlockToDisk(CBlock& block, CDiskBlockPos& pos);
 bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos);
 bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex);
 
+CScript GetDPub();
 
 /** Functions for validating blocks and updating the block tree */
 

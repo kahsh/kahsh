@@ -1,7 +1,11 @@
 // Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "miner.h"
+#include "chainparams.h"
+#include "accumulators.h"
 #include "accumulatorcheckpoints.h"
 #include "accumulatorcheckpoints.json.h"
 
@@ -32,8 +36,25 @@ namespace AccumulatorCheckpoints
         else
             return false;
 
-        if (v.empty())
-            return false;
+        if (v.empty()) {
+            // create accumulators for all denominations
+            // (initialized with accumulatorParams.accumulatorBase)
+            AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));
+
+            Checkpoint checkpoint;
+            int nHeight = Params().Zerocoin_StartHeight() - 10;
+            for (auto &denom : libzerocoin::zerocoinDenomList) {
+                auto bn = mapAccumulators.GetValue(denom);
+                checkpoint.insert(std::make_pair(denom, bn));
+            }
+
+            mapCheckpoints.insert(make_pair(nHeight, checkpoint));
+
+            // init the CreateNewBlock checkpoint cache
+            pCheckpointCache.second.second = mapAccumulators.GetCheckpoint();
+
+            return true;
+        }
 
         for (unsigned int idx = 0; idx < v.size(); idx++) {
             const UniValue &val = v[idx];

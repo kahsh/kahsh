@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -241,6 +242,7 @@ void Notificator::notifyMacUserNotificationCenter(Class cls, const QString& titl
 
 void Notificator::notify(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout)
 {
+    /*
     switch (mode) {
 #ifdef USE_DBUS
     case Freedesktop:
@@ -262,4 +264,5 @@ void Notificator::notify(Class cls, const QString& title, const QString& text, c
         }
         break;
     }
+    */
 }

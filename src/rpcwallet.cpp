@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -2226,6 +2227,11 @@ UniValue setstakesplitthreshold(const UniValue& params, bool fHelp)
 
     if (nStakeSplitThreshold > 999999)
         throw runtime_error("Value out of range, max allowed is 999999");
+
+    if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT)) {
+        if (nStakeSplitThreshold < Params().Stake_MinAmount())
+            throw runtime_error("Value out of range, below min stake value");
+    }
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     LOCK(pwalletMain->cs_wallet);

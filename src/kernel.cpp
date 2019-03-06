@@ -1,11 +1,13 @@
 // Copyright (c) 2012-2013 The PPCoin developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <boost/assign/list_of.hpp>
 
 #include "db.h"
+#include "spork.h"
 #include "kernel.h"
 #include "script/interpreter.h"
 #include "timedata.h"
@@ -31,7 +33,9 @@ unsigned int getIntervalVersion(bool fTestNet)
 
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
-    boost::assign::map_list_of(0, 0xfd11f4e7u);
+    boost::assign::map_list_of
+    (0, 3773846306u)
+    ;
 
 // Get time weight
 int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd)
@@ -158,7 +162,9 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
     if (pindexPrev->nHeight == 0) {
         //Give a stake modifier to the first block
         fGeneratedStakeModifier = true;
-        nStakeModifier = uint64_t("stakemodifier");
+        nStakeModifier = 0x647566697a676f64;
+        if (GetBoolArg("-printstakemodifier", false))
+            LogPrintf("ComputeNextStakeModifier: first modifier=%s \n", std::to_string(nStakeModifier).c_str());
         return true;
     }
 
@@ -304,10 +310,16 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
         if (nTimeTx < nTimeBlockFrom)
             return error("CheckStakeKernelHash() : nTime violation");
 
-        if ((nTimeBlockFrom + nStakeMinAge > nTimeTx)) // Min age requirement
+        unsigned int nMinStakeAge = nStakeMinAge;
+
+        if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT) && nTimeBlockFrom >= GetSporkValue(SPORK_18_STAKING_ENFORCEMENT)) {
+            nMinStakeAge = Params().Stake_MinAge();
+        }
+
+        // Min age requirement
+        if ((nTimeBlockFrom + nMinStakeAge > nTimeTx))
             return error("CheckStakeKernelHash() : min age violation - nTimeBlockFrom=%d nStakeMinAge=%d nTimeTx=%d",
                          nTimeBlockFrom, nStakeMinAge, nTimeTx);
-
     }
 
     //grab difficulty

@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -2116,10 +2117,30 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
     vector<COutput> vCoins;
     AvailableCoins(vCoins, true, NULL, false, STAKABLE_COINS);
     CAmount nAmountSelected = 0;
+
+    int nMinStakeDepth = Params().COINBASE_MATURITY();
+    CAmount nMinStakeAmount = 0;
+    unsigned int nMinStakeAge = nStakeMinAge;
+
+    if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT)) {
+        nMinStakeDepth = Params().Stake_MinConfirmations();
+        nMinStakeAmount = Params().Stake_MinAmount();
+        nMinStakeAge = Params().Stake_MinAge();
+    }
+
     if (GetBoolArg("-xdhstake", true)) {
         for (const COutput &out : vCoins) {
             //make sure not to outrun target amount
             if (nAmountSelected + out.tx->vout[out.i].nValue > nTargetAmount)
+                continue;
+
+            //require a minimum amount to stake
+            if (out.tx->vout[out.i].nValue < nMinStakeAmount)
+                 continue;
+
+            //check that it is matured
+            assert (out.nDepth == out.tx->GetDepthInMainChain(false));
+            if (out.tx->GetDepthInMainChain(false) < (out.tx->IsCoinStake() ? nMinStakeDepth : 10))
                 continue;
 
             //if zerocoinspend, then use the block time
@@ -2131,11 +2152,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             }
 
             //check for min age
-            if ((GetAdjustedTime() - nTxTime < nStakeMinAge ) && Params().NetworkID() != CBaseChainParams::REGTEST)
-                continue;
-
-            //check that it is matured
-            if (out.nDepth < (out.tx->IsCoinStake() ? Params().COINBASE_MATURITY() : 10))
+            if ((GetAdjustedTime() - nTxTime < nMinStakeAge) && Params().NetworkID() != CBaseChainParams::REGTEST)
                 continue;
 
             //add to our stake set
@@ -2196,6 +2213,16 @@ bool CWallet::MintableCoins()
         vector<COutput> vCoins;
         AvailableCoins(vCoins, true);
 
+        int nMinDepth = 6;
+        CAmount nMinAmount = 0;
+        unsigned int nMinStakeAge = nStakeMinAge;
+
+        if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT)) {
+            nMinDepth = Params().Stake_MinConfirmations();
+            nMinAmount = Params().Stake_MinAmount();
+            nMinStakeAge = Params().Stake_MinAge();
+        }
+
         for (const COutput& out : vCoins) {
             int64_t nTxTime = out.tx->GetTxTime();
             if (out.tx->IsZerocoinSpend()) {
@@ -2204,7 +2231,15 @@ bool CWallet::MintableCoins()
                 nTxTime = mapBlockIndex.at(out.tx->hashBlock)->GetBlockTime();
             }
 
-            if (GetAdjustedTime() - nTxTime > nStakeMinAge)
+            // Make sure minimum depth has been matched.
+            if (out.tx->GetDepthInMainChain(false) < nMinDepth)
+                continue;
+
+            // Make sure minimum amount is met for staking.
+            if (out.Value() < nMinAmount)
+                continue;
+
+            if ((GetAdjustedTime() - nTxTime > nMinStakeAge) && Params().NetworkID() != CBaseChainParams::REGTEST)
                 return true;
         }
     }

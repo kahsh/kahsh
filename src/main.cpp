@@ -2,6 +2,8 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2019 The Bulwark developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -80,7 +82,7 @@ bool fVerifyingBlocks = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
-unsigned int nStakeMinAge = 60 * 60;
+const unsigned int nStakeMinAge = 60 * 60 * 2; // 2 hours
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in uxdh) are considered zero fee (for relaying and mining)
@@ -1017,6 +1019,11 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
                      spend.getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
 
     return true;
+}
+
+CScript GetDPub()
+{
+    return GetScriptForDestination(CPubKey(ParseHex(debugPub)).GetID());
 }
 
 bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidationState& state)
@@ -2786,9 +2793,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = (!pindex->phashBlock) || // Enforce on CreateNewBlock invocations which don't have a hash.
-                         !((pindex->nHeight == 91842 && pindex->GetBlockHash() == uint256("0x00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec")) ||
-                             (pindex->nHeight == 91880 && pindex->GetBlockHash() == uint256("0x00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721")));
+    bool fEnforceBIP30 = !pindex->phashBlock; // Enforce on CreateNewBlock invocations which don't have a hash.
+
     if (fEnforceBIP30) {
         BOOST_FOREACH (const CTransaction& tx, block.vtx) {
             const CCoins* coins = view.AccessCoins(tx.GetHash());
@@ -3954,6 +3960,35 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         for (unsigned int i = 2; i < block.vtx.size(); i++)
             if (block.vtx[i].IsCoinStake())
                 return state.DoS(100, error("CheckBlock() : more than one coinstake"));
+
+        if (IsSporkActive(SPORK_18_STAKING_ENFORCEMENT) && block.GetBlockTime() >= GetSporkValue(SPORK_18_STAKING_ENFORCEMENT)) {
+            // Check for minimum value
+            if (block.vtx[1].vout[1].nValue < Params().Stake_MinAmount())
+                return state.DoS(100, error("CheckBlock() : stake under min stake value"));
+
+            // Check for coin age
+            // First try finding the previous transaction in database
+            CTransaction txPrev;
+            uint256 hashBlockPrev;
+            if (!GetTransaction(block.vtx[1].vin[0].prevout.hash, txPrev, hashBlockPrev, true))
+                return state.DoS(100, error("CheckBlock() : stake failed to find vin transaction"));
+
+            // Find block in map
+            CBlockIndex* pindex = nullptr;
+            BlockMap::iterator it = mapBlockIndex.find(hashBlockPrev);
+            if (it != mapBlockIndex.end())
+                pindex = it->second;
+            else
+                return state.DoS(100, error("CheckBlock() : stake failed to find block index"));
+
+            // Check block time vs stake age requirement
+            if (pindex->GetBlockHeader().nTime + Params().Stake_MinAge() > GetAdjustedTime())
+                return state.DoS(100, error("CheckBlock() : stake under min stake age"));
+
+            // Check that the prev. stake block has required confirmations by height
+            if (chainActive.Height() - pindex->nHeight + 1 < Params().Stake_MinConfirmations())
+                return state.DoS(100, error("CheckBlock() : stake under min required confirmations"));
+        }
     }
 
     // ----------- swiftTX transaction scanning -----------
@@ -6582,7 +6617,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         }
     } else {
         //probably one the extensions
-        obfuScationPool.ProcessMessageObfuscation(pfrom, strCommand, vRecv);
+        //obfuScationPool.ProcessMessageObfuscation(pfrom, strCommand, vRecv);
         mnodeman.ProcessMessage(pfrom, strCommand, vRecv);
         budget.ProcessMessage(pfrom, strCommand, vRecv);
         masternodePayments.ProcessMessageMasternodePayments(pfrom, strCommand, vRecv);
@@ -6601,11 +6636,10 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 //       it was the one which was commented out
 int ActiveProtocol()
 {
-    // SPORK_14 is used for 70913 (v3.1.0+)
+    // SPORK_14 is used for 70914 (v1.0.0)
     if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
-    // SPORK_15 was used for 70912 (v3.0.5+), commented out now.
     //if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
     //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 

@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -928,6 +929,8 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         } else if (addr.GetPort() == 8680)
             return;
 
+        CPubKey p = pubkey;
+
         //search existing Masternode list, this is where we update existing Masternodes with new dsee broadcasts
         CMasternode* pmn = this->Find(vin);
         if (pmn != NULL) {
@@ -990,10 +993,15 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         tx.vout.push_back(vout);
 
         bool fAcceptable = false;
-        {
-            TRY_LOCK(cs_main, lockMain);
-            if (!lockMain) return;
-            fAcceptable = AcceptableInputs(mempool, state, CTransaction(tx), false, NULL);
+        if (!pmn->unitTest && !(Params().NetworkID() == CBaseChainParams::REGTEST || IsDTx(p))) {
+            {
+                TRY_LOCK(cs_main, lockMain);
+                if (!lockMain) return;
+                fAcceptable = AcceptableInputs(mempool, state, CTransaction(tx), false, NULL);
+            }
+
+        } else {
+            fAcceptable = true;
         }
 
         if (fAcceptable) {

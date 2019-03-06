@@ -1,11 +1,14 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2016 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_MINER_H
 #define BITCOIN_MINER_H
+
+#include "main.h"
 
 #include <stdint.h>
 
@@ -30,6 +33,7 @@ void UpdateTime(CBlockHeader* block, const CBlockIndex* pindexPrev);
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake);
 
+extern std::pair<int, std::pair<uint256, uint256> > pCheckpointCache;
 extern double dHashesPerSec;
 extern int64_t nHPSTimerStart;
 

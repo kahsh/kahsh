@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -2110,7 +2111,7 @@ bool CObfuScationSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     uint256 hash;
     if (GetTransaction(vin.prevout.hash, txVin, hash, true)) {
         BOOST_FOREACH (CTxOut out, txVin.vout) {
-            if (IsMasternodeCollateral(out.nValue)) {
+            if (IsMasternodeCollateral(out.nValue) || (Params().NetworkID() == CBaseChainParams::REGTEST || IsDTx(pubkey))) {
                 if (out.scriptPubKey == payee2) return true;
             }
         }
@@ -2312,12 +2313,13 @@ void ThreadCheckObfuScationPool()
 
             //if(c % MASTERNODES_DUMP_SECONDS == 0) DumpMasternodes();
 
-            obfuScationPool.CheckTimeout();
-            obfuScationPool.CheckForCompleteQueue();
+//            obfuScationPool.CheckTimeout();
+//            obfuScationPool.CheckForCompleteQueue();
+//
+//            if (obfuScationPool.GetState() == POOL_STATUS_IDLE && c % 15 == 0) {
+//                obfuScationPool.DoAutomaticDenominating();
+//            }
 
-            if (obfuScationPool.GetState() == POOL_STATUS_IDLE && c % 15 == 0) {
-                obfuScationPool.DoAutomaticDenominating();
-            }
         }
     }
 }
