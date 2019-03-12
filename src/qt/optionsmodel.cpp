@@ -61,6 +61,10 @@ void OptionsModel::Init()
         settings.setValue("fMinimizeOnClose", false);
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
 
+    if (!settings.contains("fDisplaySystemNotifications"))
+        settings.setValue("fDisplaySystemNotifications", false);
+    fDisplaySystemNotifications = settings.value("fDisplaySystemNotifications").toBool();
+
     // Display
     if (!settings.contains("nDisplayUnit"))
         settings.setValue("nDisplayUnit", BitcoinUnits::XDH);
@@ -275,6 +279,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nPreferredDenom);
         case AnonymizeDilithiumAmount:
             return QVariant(nAnonymizeDilithiumAmount);
+        case DisplaySystemNotifications:
+            return settings.value("fDisplaySystemNotifications");
         case Listen:
             return settings.value("fListen");
         default:
@@ -415,6 +421,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             nAnonymizeDilithiumAmount = value.toInt();
             settings.setValue("nAnonymizeDilithiumAmount", nAnonymizeDilithiumAmount);
             emit anonymizeDilithiumAmountChanged(nAnonymizeDilithiumAmount);
+            break;
+        case DisplaySystemNotifications:
+            fDisplaySystemNotifications = value.toBool();
+            settings.setValue("fDisplaySystemNotifications", fDisplaySystemNotifications);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

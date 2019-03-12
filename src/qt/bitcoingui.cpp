@@ -1102,8 +1102,11 @@ void BitcoinGUI::message(const QString& title, const QString& message, unsigned 
         int r = mBox.exec();
         if (ret != NULL)
             *ret = r == QMessageBox::Ok;
-    } else
-        notificator->notify((Notificator::Class)nNotifyIcon, strTitle, message);
+    } else {
+        if (clientModel && clientModel->getOptionsModel() && clientModel->getOptionsModel()->getDisplaySystemNotifications()) {
+            notificator->notify((Notificator::Class)nNotifyIcon, strTitle, message);
+        }
+    }
 }
 
 void BitcoinGUI::changeEvent(QEvent* e)

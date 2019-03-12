@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>576</width>
-    <height>442</height>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>4</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -461,6 +461,16 @@
          </property>
          <property name="text">
           <string>M&amp;inimize on close</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="displaySystemNotifications">
+         <property name="toolTip">
+          <string>Display information about sent or received transactions as desktop notification</string>
+         </property>
+         <property name="text">
+          <string>&amp;Display system notifications</string>
          </property>
         </widget>
        </item>

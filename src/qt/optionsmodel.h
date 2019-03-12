@@ -52,6 +52,7 @@ public:
         HideZeroBalances,    // bool
         HideOrphans,    // bool
         AnonymizeDilithiumAmount, //int
+        DisplaySystemNotifications, // bool
         ShowMasternodesTab,  // bool
         Listen,              // bool
         StakeSplitThreshold, // int
@@ -72,6 +73,7 @@ public:
     /* Explicit getters */
     bool getMinimizeToTray() { return fMinimizeToTray; }
     bool getMinimizeOnClose() { return fMinimizeOnClose; }
+    bool getDisplaySystemNotifications() { return fDisplaySystemNotifications; }
     int getDisplayUnit() { return nDisplayUnit; }
     QString getThirdPartyTxUrls() { return strThirdPartyTxUrls; }
     bool getProxySettings(QNetworkProxy& proxy) const;
@@ -87,6 +89,7 @@ private:
     /* Qt-only settings */
     bool fMinimizeToTray;
     bool fMinimizeOnClose;
+    bool fDisplaySystemNotifications;
     QString language;
     int nDisplayUnit;
     QString strThirdPartyTxUrls;

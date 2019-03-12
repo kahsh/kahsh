@@ -229,6 +229,7 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->minimizeToTray, OptionsModel::MinimizeToTray);
     mapper->addMapping(ui->minimizeOnClose, OptionsModel::MinimizeOnClose);
 #endif
+    mapper->addMapping(ui->displaySystemNotifications, OptionsModel::DisplaySystemNotifications);
 
     /* Display */
     mapper->addMapping(ui->digits, OptionsModel::Digits);
