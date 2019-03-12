@@ -258,8 +258,9 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
 
     while (pindex->nHeight < nHeight - 10) {
         // checking whether we should stop this process due to a shutdown request
-        if (ShutdownRequested())
-            return false;
+        // Note: this can cause db and chain state corruption as it markes the block as invalid
+        // if (ShutdownRequested())
+        //     return false;
 
         //make sure this block is eligible for accumulation
         if (pindex->nHeight < Params().Zerocoin_StartHeight()) {
