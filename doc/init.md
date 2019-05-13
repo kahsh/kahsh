@@ -1,60 +1,60 @@
-Sample init scripts and service configuration for dilithiumd
+Sample init scripts and service configuration for kahshd
 ==========================================================
 
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/dilithiumd.service:    systemd service unit configuration
-    contrib/init/dilithiumd.openrc:     OpenRC compatible SysV style init script
-    contrib/init/dilithiumd.openrcconf: OpenRC conf.d file
-    contrib/init/dilithiumd.conf:       Upstart service configuration file
-    contrib/init/dilithiumd.init:       CentOS compatible SysV style init script
+    contrib/init/kahshd.service:    systemd service unit configuration
+    contrib/init/kahshd.openrc:     OpenRC compatible SysV style init script
+    contrib/init/kahshd.openrcconf: OpenRC conf.d file
+    contrib/init/kahshd.conf:       Upstart service configuration file
+    contrib/init/kahshd.init:       CentOS compatible SysV style init script
 
 1. Service User
 ---------------------------------
 
-All three startup configurations assume the existence of a "dilithium" user
+All three startup configurations assume the existence of a "kahsh" user
 and group.  They must be created before attempting to use these scripts.
 
 2. Configuration
 ---------------------------------
 
-At a bare minimum, dilithiumd requires that the rpcpassword setting be set
+At a bare minimum, kahshd requires that the rpcpassword setting be set
 when running as a daemon.  If the configuration file does not exist or this
-setting is not set, dilithiumd will shutdown promptly after startup.
+setting is not set, kahshd will shutdown promptly after startup.
 
 This password does not have to be remembered or typed as it is mostly used
-as a fixed token that dilithiumd and client programs read from the configuration
+as a fixed token that kahshd and client programs read from the configuration
 file, however it is recommended that a strong and secure password be used
 as this password is security critical to securing the wallet should the
 wallet be enabled.
 
-If dilithiumd is run with "-daemon" flag, and no rpcpassword is set, it will
+If kahshd is run with "-daemon" flag, and no rpcpassword is set, it will
 print a randomly generated suitable password to stderr.  You can also
 generate one from the shell yourself like this:
 
 bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'
 
-Once you have a password in hand, set rpcpassword= in /etc/dilithium/dilithium.conf
+Once you have a password in hand, set rpcpassword= in /etc/kahsh/kahsh.conf
 
 For an example configuration file that describes the configuration settings,
-see contrib/debian/examples/dilithium.conf.
+see contrib/debian/examples/kahsh.conf.
 
 3. Paths
 ---------------------------------
 
 All three configurations assume several paths that might need to be adjusted.
 
-Binary:              /usr/bin/dilithiumd
-Configuration file:  /etc/dilithium/dilithium.conf
-Data directory:      /var/lib/dilithiumd
-PID file:            /var/run/dilithiumd/dilithiumd.pid (OpenRC and Upstart)
-                     /var/lib/dilithiumd/dilithiumd.pid (systemd)
+Binary:              /usr/bin/kahshd
+Configuration file:  /etc/kahsh/kahsh.conf
+Data directory:      /var/lib/kahshd
+PID file:            /var/run/kahshd/kahshd.pid (OpenRC and Upstart)
+                     /var/lib/kahshd/kahshd.pid (systemd)
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the dilithium user and group.  It is advised for security
+should all be owned by the kahsh user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-dilithium user and group.  Access to dilithium-cli and other dilithiumd rpc clients
+kahsh user and group.  Access to kahsh-cli and other kahshd rpc clients
 can then be controlled by group membership.
 
 4. Installing Service Configuration
@@ -66,19 +66,19 @@ Installing this .service file consists on just copying it to
 /usr/lib/systemd/system directory, followed by the command
 "systemctl daemon-reload" in order to update running systemd configuration.
 
-To test, run "systemctl start dilithiumd" and to enable for system startup run
-"systemctl enable dilithiumd"
+To test, run "systemctl start kahshd" and to enable for system startup run
+"systemctl enable kahshd"
 
 4b) OpenRC
 
-Rename dilithiumd.openrc to dilithiumd and drop it in /etc/init.d.  Double
+Rename kahshd.openrc to kahshd and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
-"/etc/init.d/dilithiumd start" and configure it to run on startup with
-"rc-update add dilithiumd"
+"/etc/init.d/kahshd start" and configure it to run on startup with
+"rc-update add kahshd"
 
 4c) Upstart (for Debian/Ubuntu based distributions)
 
-Drop dilithiumd.conf in /etc/init.  Test by running "service dilithiumd start"
+Drop kahshd.conf in /etc/init.  Test by running "service kahshd start"
 it will automatically start on reboot.
 
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
@@ -86,11 +86,11 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 
 4d) CentOS
 
-Copy dilithiumd.init to /etc/init.d/dilithiumd. Test by running "service dilithiumd start".
+Copy kahshd.init to /etc/init.d/kahshd. Test by running "service kahshd start".
 
-Using this script, you can adjust the path and flags to the dilithiumd program by
+Using this script, you can adjust the path and flags to the kahshd program by
 setting the DILITHIUMD and FLAGS environment variables in the file
-/etc/sysconfig/dilithiumd. You can also use the DAEMONOPTS environment variable here.
+/etc/sysconfig/kahshd. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn
 -----------------------------------

@@ -14,7 +14,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.dilithium.Dilithium-Qt";
+        return @"io.kahsh.Kahsh-Qt";
     } else {
         return [self __bundleIdentifier];
     }

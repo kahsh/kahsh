@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -146,15 +146,15 @@ public:
         pchMessageStart[3] = 0xcd;
         vAlertPubKey = ParseHex("04c98b168e9a0dd4c0f4a63c14c9622c78c3d7566a9945447230c54bab09ec3d05a18534edc08b6d16c972e7afed5f395d75b46ac85076426b7569edd1203ace10");
         nDefaultPort = 8680;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // Dilithium starting difficulty is 1 / 2^12
+        bnProofOfWorkLimit = ~uint256(0) >> 20; // Kahsh starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 8100; // 75%
         nRejectBlockOutdatedMajority = 10260; // 95%
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Dilithium: 1 day
-        nTargetSpacing = 1 * 60;  // Dilithium: 1 minute
+        nTargetTimespan = 1 * 60; // Kahsh: 1 day
+        nTargetSpacing = 1 * 60;  // Kahsh: 1 minute
         nMaturity = 174;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
@@ -204,8 +204,8 @@ public:
         assert(hashGenesisBlock == uint256("0x00000f65ac83727b5cfff86eae9ae3c8cddfc85851ae7cb83890fab5c2ffa652"));
         assert(genesis.hashMerkleRoot == uint256("0xce976251adc488e3dae3679d6121d335e918f0408fafa6ecf04234c66b91d852"));
 
-        vSeeds.push_back(CDNSSeedData("dilithiumcoin.io", "xdhseed.cryptertech.io"));
-        vSeeds.push_back(CDNSSeedData("dilithiumcoin.io", "xdhseed2.cryptertech.io"));
+        vSeeds.push_back(CDNSSeedData("kahsh.io", "xdhseed.cryptertech.io"));
+        vSeeds.push_back(CDNSSeedData("kahsh.io", "xdhseed2.cryptertech.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 90);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 17);
@@ -289,8 +289,8 @@ public:
         nRejectBlockOutdatedMajority = 5472; // 95%
         nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Dilithium: 1 day
-        nTargetSpacing = 1 * 60;  // Dilithium: 1 minute
+        nTargetTimespan = 1 * 60; // Kahsh: 1 day
+        nTargetSpacing = 1 * 60;  // Kahsh: 1 minute
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nMaxMoneyOut = 43199500 * COIN;
@@ -321,14 +321,14 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet dilithium addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet dilithium script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet kahsh addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet kahsh script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet dilithium BIP32 pubkeys start with 'DRKV'
+        // Testnet kahsh BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-        // Testnet dilithium BIP32 prvkeys start with 'DRKP'
+        // Testnet kahsh BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
-        // Testnet dilithium BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet kahsh BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -383,8 +383,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Dilithium: 1 day
-        nTargetSpacing = 1 * 60;        // Dilithium: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // Kahsh: 1 day
+        nTargetSpacing = 1 * 60;        // Kahsh: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 100;

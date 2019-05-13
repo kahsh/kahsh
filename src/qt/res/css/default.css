@@ -885,12 +885,12 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Dilithium Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Dilithium Contents */
+/* About Kahsh Dialog */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Kahsh Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Dilithium text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About Kahsh text */
 margin-right:10px;
 }
 
@@ -917,11 +917,11 @@ background-color:#ffffff;
 
 QLabel#labelOverviewHeaderRight {
 qproperty-alignment: 'AlignVCenter | AlignRight';
-background-image: url(':/images/dilithium_logo_horizontal');
+background-image: url(':/images/kahsh_logo_horizontal');
 background-repeat: no-repeat;
 }
 
-QWidget .QFrame#frame_Header { /* Header with Page-Title and Dilithium-image */
+QWidget .QFrame#frame_Header { /* Header with Page-Title and Kahsh-image */
 min-width:400px;
 background-color:#ffffff;
 }

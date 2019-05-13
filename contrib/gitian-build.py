@@ -23,13 +23,13 @@ def setup():
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/dilithium-coin/gitian.sigs.git'])
-    if not os.path.isdir('dilithium-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/dilithium-coin/dilithium-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/kahsh/gitian.sigs.git'])
+    if not os.path.isdir('kahsh-detached-sigs'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/kahsh/kahsh-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
-    if not os.path.isdir('dilithium'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/dilithium-coin/dilithium.git'])
+    if not os.path.isdir('kahsh'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/kahsh/kahsh.git'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
     if args.docker:
@@ -46,34 +46,34 @@ def setup():
 def build():
     global args, workdir
 
-    os.makedirs('dilithium-binaries/' + args.version, exist_ok=True)
+    os.makedirs('kahsh-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
 
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz'])
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
-    subprocess.check_call(['make', '-C', '../dilithium/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
+    subprocess.check_call(['make', '-C', '../kahsh/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'dilithium='+args.commit, '--url', 'dilithium='+args.url, '../dilithium/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../dilithium/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/dilithium-*.tar.gz build/out/src/dilithium-*.tar.gz ../dilithium-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kahsh='+args.commit, '--url', 'kahsh='+args.url, '../kahsh/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../kahsh/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call('mv build/out/kahsh-*.tar.gz build/out/src/kahsh-*.tar.gz ../kahsh-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'dilithium='+args.commit, '--url', 'dilithium='+args.url, '../dilithium/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../dilithium/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/dilithium-*-win-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/dilithium-*.zip build/out/dilithium-*.exe ../dilithium-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kahsh='+args.commit, '--url', 'kahsh='+args.url, '../kahsh/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../kahsh/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call('mv build/out/kahsh-*-win-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/kahsh-*.zip build/out/kahsh-*.exe ../kahsh-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'dilithium='+args.commit, '--url', 'dilithium='+args.url, '../dilithium/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../dilithium/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/dilithium-*-osx-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/dilithium-*.tar.gz build/out/dilithium-*.dmg ../dilithium-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kahsh='+args.commit, '--url', 'kahsh='+args.url, '../kahsh/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../kahsh/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call('mv build/out/kahsh-*-osx-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/kahsh-*.tar.gz build/out/kahsh-*.dmg ../kahsh-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -92,18 +92,18 @@ def sign():
 
     if args.windows:
         print('\nSigning ' + args.version + ' Windows')
-        subprocess.check_call('cp inputs/dilithium-' + args.version + '-win-unsigned.tar.gz inputs/dilithium-win-unsigned.tar.gz', shell=True)
-        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../dilithium/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../dilithium/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/dilithium-*win64-setup.exe ../dilithium-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/dilithium-*win32-setup.exe ../dilithium-binaries/'+args.version, shell=True)
+        subprocess.check_call('cp inputs/kahsh-' + args.version + '-win-unsigned.tar.gz inputs/kahsh-win-unsigned.tar.gz', shell=True)
+        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../kahsh/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../kahsh/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call('mv build/out/kahsh-*win64-setup.exe ../kahsh-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/kahsh-*win32-setup.exe ../kahsh-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
-        subprocess.check_call('cp inputs/dilithium-' + args.version + '-osx-unsigned.tar.gz inputs/dilithium-osx-unsigned.tar.gz', shell=True)
-        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../dilithium/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../dilithium/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/dilithium-osx-signed.dmg ../dilithium-binaries/'+args.version+'/dilithium-'+args.version+'-osx.dmg', shell=True)
+        subprocess.check_call('cp inputs/kahsh-' + args.version + '-osx-unsigned.tar.gz inputs/kahsh-osx-unsigned.tar.gz', shell=True)
+        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../kahsh/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../kahsh/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call('mv build/out/kahsh-osx-signed.dmg ../kahsh-binaries/'+args.version+'/kahsh-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
@@ -120,15 +120,15 @@ def verify():
     os.chdir('gitian-builder')
 
     print('\nVerifying v'+args.version+' Linux\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../dilithium/contrib/gitian-descriptors/gitian-linux.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../kahsh/contrib/gitian-descriptors/gitian-linux.yml'])
     print('\nVerifying v'+args.version+' Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../dilithium/contrib/gitian-descriptors/gitian-win.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../kahsh/contrib/gitian-descriptors/gitian-win.yml'])
     print('\nVerifying v'+args.version+' MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../dilithium/contrib/gitian-descriptors/gitian-osx.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../kahsh/contrib/gitian-descriptors/gitian-osx.yml'])
     print('\nVerifying v'+args.version+' Signed Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../dilithium/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../kahsh/contrib/gitian-descriptors/gitian-win-signer.yml'])
     print('\nVerifying v'+args.version+' Signed MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../dilithium/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../kahsh/contrib/gitian-descriptors/gitian-osx-signer.yml'])
 
     os.chdir(workdir)
 
@@ -138,7 +138,7 @@ def main():
     parser = argparse.ArgumentParser(usage='%(prog)s [options] signer version')
     parser.add_argument('-c', '--commit', action='store_true', dest='commit', help='Indicate that the version argument is for a commit or branch')
     parser.add_argument('-p', '--pull', action='store_true', dest='pull', help='Indicate that the version argument is the number of a github repository pull request')
-    parser.add_argument('-u', '--url', dest='url', default='https://github.com/dilithium-coin/dilithium', help='Specify the URL of the repository. Default is %(default)s')
+    parser.add_argument('-u', '--url', dest='url', default='https://github.com/kahsh/kahsh', help='Specify the URL of the repository. Default is %(default)s')
     parser.add_argument('-v', '--verify', action='store_true', dest='verify', help='Verify the Gitian build')
     parser.add_argument('-b', '--build', action='store_true', dest='build', help='Do a Gitian build')
     parser.add_argument('-s', '--sign', action='store_true', dest='sign', help='Make signed binaries for Windows and MacOS')
@@ -207,10 +207,10 @@ def main():
     if args.setup:
         setup()
 
-    os.chdir('dilithium')
+    os.chdir('kahsh')
     if args.pull:
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])
-        os.chdir('../gitian-builder/inputs/dilithium')
+        os.chdir('../gitian-builder/inputs/kahsh')
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])
         args.commit = subprocess.check_output(['git', 'show', '-s', '--format=%H', 'FETCH_HEAD'], universal_newlines=True, encoding='utf8').strip()
         args.version = 'pull-' + args.version

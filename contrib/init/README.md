@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: dilithiumd.service
-Upstart: dilithiumd.conf
-OpenRC:  dilithiumd.openrc
-         dilithiumd.openrcconf
-CentOS:  dilithiumd.init
-macOS:    org.dilithium.dilithiumd.plist
+SystemD: kahshd.service
+Upstart: kahshd.conf
+OpenRC:  kahshd.openrc
+         kahshd.openrcconf
+CentOS:  kahshd.init
+macOS:    org.kahsh.kahshd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

@@ -2,12 +2,12 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/dilithium-config.h"
+#include "config/kahsh-config.h"
 #endif
 
 #include "util.h"
@@ -106,7 +106,7 @@ std::string to_internal(const std::string&);
 
 using namespace std;
 
-// Dilithium only features
+// Kahsh only features
 // Masternode
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";
@@ -122,7 +122,7 @@ int nZeromintPercentage = 10;
 int nPreferredDenom = 0;
 const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
 
-int nAnonymizeDilithiumAmount = 1000;
+int nAnonymizeKahshAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
@@ -239,8 +239,8 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "dilithium" is a composite category enabling all Dilithium-related debug output
-            if (ptrCategory->count(string("dilithium"))) {
+            // "kahsh" is a composite category enabling all Kahsh-related debug output
+            if (ptrCategory->count(string("kahsh"))) {
                 ptrCategory->insert(string("obfuscation"));
                 ptrCategory->insert(string("swiftx"));
                 ptrCategory->insert(string("masternode"));
@@ -405,7 +405,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "dilithium";
+    const char* pszModule = "kahsh";
 #endif
     if (pex)
         return strprintf(
@@ -426,13 +426,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\Dilithium
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\Dilithium
-// Mac: ~/Library/Application Support/Dilithium
-// Unix: ~/.dilithium
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\Kahsh
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\Kahsh
+// Mac: ~/Library/Application Support/Kahsh
+// Unix: ~/.kahsh
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Dilithium";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Kahsh";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -444,10 +444,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Dilithium";
+    return pathRet / "Kahsh";
 #else
     // Unix
-    return pathRet / ".dilithium";
+    return pathRet / ".kahsh";
 #endif
 #endif
 }
@@ -494,7 +494,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "dilithium.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "kahsh.conf"));
     if (!pathConfigFile.is_complete())
         pathConfigFile = GetDataDir(false) / pathConfigFile;
 
@@ -513,7 +513,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
-        // Create empty dilithium.conf if it does not exist
+        // Create empty kahsh.conf if it does not exist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -524,7 +524,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
-        // Don't overwrite existing settings so command line settings override dilithium.conf
+        // Don't overwrite existing settings so command line settings override kahsh.conf
         string strKey = string("-") + it->string_key;
         string strValue = it->value[0];
         InterpretNegativeSetting(strKey, strValue);
@@ -539,7 +539,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 #ifndef WIN32
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "dilithiumd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "kahshd.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

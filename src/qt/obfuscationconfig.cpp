@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2016 The Dash Developers
 // Copyright (c) 2016-2017 The PIVX developers
-// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -47,7 +47,7 @@ void ObfuscationConfig::clickBasic()
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Obfuscation Configuration"),
         tr(
-            "Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Dilithium's configuration screen.")
+            "Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Kahsh's configuration screen.")
             .arg(strAmount));
 
     close();
@@ -61,7 +61,7 @@ void ObfuscationConfig::clickHigh()
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Obfuscation Configuration"),
         tr(
-            "Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Dilithium's configuration screen.")
+            "Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Kahsh's configuration screen.")
             .arg(strAmount));
 
     close();
@@ -75,7 +75,7 @@ void ObfuscationConfig::clickMax()
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Obfuscation Configuration"),
         tr(
-            "Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Dilithium's configuration screen.")
+            "Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Kahsh's configuration screen.")
             .arg(strAmount));
 
     close();
@@ -86,8 +86,8 @@ void ObfuscationConfig::configure(bool enabled, int coins, int rounds)
     QSettings settings;
 
     settings.setValue("nObfuscationRounds", rounds);
-    settings.setValue("nAnonymizeDilithiumAmount", coins);
+    settings.setValue("nAnonymizeKahshAmount", coins);
 
     nZeromintPercentage = rounds;
-    nAnonymizeDilithiumAmount = coins;
+    nAnonymizeKahshAmount = coins;
 }

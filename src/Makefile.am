@@ -66,15 +66,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += dilithiumd
+  bin_PROGRAMS += kahshd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += dilithium-cli dilithium-tx
+  bin_PROGRAMS += kahsh-cli kahsh-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# dilithium core #
+# kahsh core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -198,7 +198,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between dilithiumd and dilithium-qt
+# server: shared between kahshd and kahsh-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -246,7 +246,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between dilithiumd and dilithium-qt, but only linked
+# wallet: shared between kahshd and kahsh-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -343,7 +343,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
-# common: shared between dilithiumd, and dilithium-qt and non-server tools
+# common: shared between kahshd, and kahsh-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -408,7 +408,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between dilithium-cli and dilithium-qt
+# cli: shared between kahsh-cli and kahsh-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -418,16 +418,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# dilithiumd binary #
-dilithiumd_SOURCES = dilithiumd.cpp
-dilithiumd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dilithiumd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dilithiumd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# kahshd binary #
+kahshd_SOURCES = kahshd.cpp
+kahshd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+kahshd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+kahshd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dilithiumd_SOURCES += dilithiumd-res.rc
+kahshd_SOURCES += kahshd-res.rc
 endif
-dilithiumd_LDADD = \
+kahshd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -441,38 +441,38 @@ dilithiumd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-dilithiumd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+kahshd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# dilithium-cli binary #
-dilithium_cli_SOURCES = dilithium-cli.cpp
-dilithium_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-dilithium_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dilithium_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# kahsh-cli binary #
+kahsh_cli_SOURCES = kahsh-cli.cpp
+kahsh_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+kahsh_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+kahsh_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dilithium_cli_SOURCES += dilithium-cli-res.rc
+kahsh_cli_SOURCES += kahsh-cli-res.rc
 endif
 
-dilithium_cli_LDADD = \
+kahsh_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-dilithium_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+kahsh_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# dilithium-tx binary #
-dilithium_tx_SOURCES = dilithium-tx.cpp
-dilithium_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dilithium_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dilithium_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# kahsh-tx binary #
+kahsh_tx_SOURCES = kahsh-tx.cpp
+kahsh_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+kahsh_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+kahsh_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dilithium_tx_SOURCES += dilithium-tx-res.rc
+kahsh_tx_SOURCES += kahsh-tx-res.rc
 endif
 
-dilithium_tx_LDADD = \
+kahsh_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -480,7 +480,7 @@ dilithium_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-dilithium_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+kahsh_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #
@@ -529,12 +529,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST =
 
 
-config/dilithium-config.h: config/stamp-h1
+config/kahsh-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/dilithium-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/kahsh-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/dilithium-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/dilithium-config.h.in
+$(top_srcdir)/$(subdir)/config/kahsh-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/kahsh-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

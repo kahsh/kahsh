@@ -1,6 +1,6 @@
 // Copyright (c) 2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
-// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between dilithium-cli and dilithiumd)
- * of a given instance of the Dilithium system.
+ * CBaseChainParams defines the base parameters (shared between kahsh-cli and kahshd)
+ * of a given instance of the Kahsh system.
  */
 class CBaseChainParams
 {

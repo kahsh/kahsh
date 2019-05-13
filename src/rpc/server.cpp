@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -269,11 +269,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Dilithium server.");
+            "\nStop Kahsh server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Dilithium server stopping";
+    return "Kahsh server stopping";
 }
 
 
@@ -364,37 +364,37 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblock",           &waitforblock,           true,  true,  false  },
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
-        /* Dilithium features */
-        {"dilithium", "masternode", &masternode, true, true, false},
-        {"dilithium", "listmasternodes", &listmasternodes, true, true, false},
-        {"dilithium", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"dilithium", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"dilithium", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"dilithium", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"dilithium", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"dilithium", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"dilithium", "masternodedebug", &masternodedebug, true, true, false},
-        {"dilithium", "startmasternode", &startmasternode, true, true, false},
-        {"dilithium", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"dilithium", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"dilithium", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"dilithium", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"dilithium", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"dilithium", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"dilithium", "mnbudget", &mnbudget, true, true, false},
-        {"dilithium", "preparebudget", &preparebudget, true, true, false},
-        {"dilithium", "submitbudget", &submitbudget, true, true, false},
-        {"dilithium", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"dilithium", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"dilithium", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"dilithium", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"dilithium", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"dilithium", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"dilithium", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"dilithium", "checkbudgets", &checkbudgets, true, true, false},
-        {"dilithium", "mnsync", &mnsync, true, true, false},
-        {"dilithium", "spork", &spork, true, true, false},
-        {"dilithium", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* Kahsh features */
+        {"kahsh", "masternode", &masternode, true, true, false},
+        {"kahsh", "listmasternodes", &listmasternodes, true, true, false},
+        {"kahsh", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"kahsh", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"kahsh", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"kahsh", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"kahsh", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"kahsh", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"kahsh", "masternodedebug", &masternodedebug, true, true, false},
+        {"kahsh", "startmasternode", &startmasternode, true, true, false},
+        {"kahsh", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"kahsh", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"kahsh", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"kahsh", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"kahsh", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"kahsh", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"kahsh", "mnbudget", &mnbudget, true, true, false},
+        {"kahsh", "preparebudget", &preparebudget, true, true, false},
+        {"kahsh", "submitbudget", &submitbudget, true, true, false},
+        {"kahsh", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"kahsh", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"kahsh", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"kahsh", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"kahsh", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"kahsh", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"kahsh", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"kahsh", "checkbudgets", &checkbudgets, true, true, false},
+        {"kahsh", "mnsync", &mnsync, true, true, false},
+        {"kahsh", "spork", &spork, true, true, false},
+        {"kahsh", "getpoolinfo", &getpoolinfo, true, true, false},
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -631,7 +631,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> dilithium-cli " + methodname + " " + args + "\n";
+    return "> kahsh-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

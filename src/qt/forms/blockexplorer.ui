@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../dilithium.qrc"/>
+  <include location="../kahsh.qrc"/>
  </resources>
  <connections/>
 </ui>

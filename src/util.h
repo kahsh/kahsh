@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/dilithium-config.h"
+#include "config/kahsh-config.h"
 #endif
 
 #include "compat.h"
@@ -31,7 +31,7 @@
 #include <boost/thread/exceptions.hpp>
 #include <boost/thread/condition_variable.hpp> // for boost::thread_interrupted
 
-//Dilithium only features
+//Kahsh only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -40,7 +40,7 @@ extern int nSwiftTXDepth;
 extern int nZeromintPercentage;
 extern const int64_t AUTOMINT_DELAY;
 extern int nPreferredDenom;
-extern int nAnonymizeDilithiumAmount;
+extern int nAnonymizeKahshAmount;
 extern int nLiquidityProvider;
 extern bool fEnableZeromint;
 extern bool fEnableAutoConvert;
@@ -216,7 +216,7 @@ void RenameThread(const char* name);
 template <typename Callable>
 void TraceThread(const char* name, Callable func)
 {
-    std::string s = strprintf("dilithium-%s", name);
+    std::string s = strprintf("kahsh-%s", name);
     RenameThread(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

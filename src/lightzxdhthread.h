@@ -1,5 +1,5 @@
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
@@ -43,7 +43,7 @@ public:
 
     bool addWitWork(CGenWit wit) {
         if (!isWorkerRunning) {
-            LogPrintf("%s not running trying to add wit work \n", "dilithium-light-thread");
+            LogPrintf("%s not running trying to add wit work \n", "kahsh-light-thread");
             return false;
         }
         requestsQueue.push(wit);
@@ -51,13 +51,13 @@ public:
     }
 
     void StartLightZxdhThread(boost::thread_group& threadGroup) {
-        LogPrintf("%s thread start\n", "dilithium-light-thread");
+        LogPrintf("%s thread start\n", "kahsh-light-thread");
         threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZXDHSimplified, this));
     }
 
     void StopLightZxdhThread() {
         threadIns.interrupt();
-        LogPrintf("%s thread interrupted\n", "dilithium-light-thread");
+        LogPrintf("%s thread interrupted\n", "kahsh-light-thread");
     }
 
 private:

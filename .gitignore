@@ -7,12 +7,12 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/dilithium
-src/dilithiumd
-src/dilithium-cli
-src/dilithium-tx
-src/test/test_dilithium
-src/qt/test/test_dilithium-qt
+src/kahsh
+src/kahshd
+src/kahsh-cli
+src/kahsh-tx
+src/test/test_kahsh
+src/qt/test/test_kahsh-qt
 
 # autoreconf
 Makefile.in
@@ -38,8 +38,8 @@ confdefs.h
 conftest.cpp
 conftest.err
 libtool
-src/config/dilithium-config.h
-src/config/dilithium-config.h.in
+src/config/kahsh-config.h
+src/config/kahsh-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -65,7 +65,7 @@ src/qt/test/moc*.cpp
 *.o
 *.o-*
 *.patch
-.dilithium
+.kahsh
 *.a
 *.pb.cc
 *.pb.h
@@ -84,13 +84,13 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dilithium-qt
-Dilithium-Qt.app
+kahsh-qt
+Kahsh-Qt.app
 background.tiff*
 
 # Unit-tests
 Makefile.test
-dilithium-qt_test
+kahsh-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -106,7 +106,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_dilithium.coverage/
+test_kahsh.coverage/
 total.coverage/
 coverage_percent.txt
 
