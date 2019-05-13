@@ -3728,8 +3728,8 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Você deve especificar uma masternodeprivkey na configuração. Favor verificar o manual para obter ajuda.</translation>
     </message>
     <message>
-        <source>(8680 could be used only on mainnet)</source>
-        <translation>(8680 could be used only on mainnet)</translation>
+        <source>(52210 could be used only on mainnet)</source>
+        <translation>(52210 could be used only on mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -3740,8 +3740,8 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>(padrão: 1)</translation>
     </message>
     <message>
-        <source>(must be 8680 for mainnet)</source>
-        <translation>(deve ser 8680 para mainnet)</translation>
+        <source>(must be 52210 for mainnet)</source>
+        <translation>(deve ser 52210 para mainnet)</translation>
     </message>
     <message>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>

@@ -925,8 +925,8 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         }
 
         if (Params().NetworkID() == CBaseChainParams::MAIN) {
-            if (addr.GetPort() != 8680) return;
-        } else if (addr.GetPort() == 8680)
+            if (addr.GetPort() != 52210) return;
+        } else if (addr.GetPort() == 52210)
             return;
 
         CPubKey p = pubkey;

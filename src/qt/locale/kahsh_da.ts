@@ -5146,8 +5146,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Der skal angives en masternodeprivkey i konfigurationen. For mere information, se i dokumentationen.</translation>
     </message>
     <message>
-        <source>(8680 could be used only on mainnet)</source>
-        <translation>(8680 kunne kun bruges på hovednettet)</translation>
+        <source>(52210 could be used only on mainnet)</source>
+        <translation>(52210 kunne kun bruges på hovednettet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5158,8 +5158,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 8680 for mainnet)</source>
-        <translation>(skal være 8680 for hovednettet)</translation>
+        <source>(must be 52210 for mainnet)</source>
+        <translation>(skal være 52210 for hovednettet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>

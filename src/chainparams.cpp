@@ -145,7 +145,7 @@ public:
         pchMessageStart[2] = 0x34;
         pchMessageStart[3] = 0xcd;
         vAlertPubKey = ParseHex("04c98b168e9a0dd4c0f4a63c14c9622c78c3d7566a9945447230c54bab09ec3d05a18534edc08b6d16c972e7afed5f395d75b46ac85076426b7569edd1203ace10");
-        nDefaultPort = 8680;
+        nDefaultPort = 52210;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Kahsh starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
@@ -284,7 +284,7 @@ public:
         pchMessageStart[2] = 0xb6;
         pchMessageStart[3] = 0x94;
         vAlertPubKey = ParseHex("0497bba3291dea906749782ef127f7b245eb3d7d136aeccd6956a13ce95e47831d0a2692132c511b4ff72a73677d8b5331888ec041bc0382b52440d473976a596e");
-        nDefaultPort = 18680;
+        nDefaultPort = 52220;
         nEnforceBlockUpgradeMajority = 4320; // 75%
         nRejectBlockOutdatedMajority = 5472; // 95%
         nToCheckBlockUpgradeMajority = 5760; // 4 days
