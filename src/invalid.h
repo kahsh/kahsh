@@ -3,10 +3,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_INVALID_H
-#define DILITHIUM_INVALID_H
+#ifndef KAHSH_INVALID_H
+#define KAHSH_INVALID_H
 
-#endif //DILITHIUM_INVALID_H
+#endif //KAHSH_INVALID_H
 
 #include <libzerocoin/bignum.h>
 #include <univalue/include/univalue.h>

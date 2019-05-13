@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_DETERMINISTICMINT_H
-#define DILITHIUM_DETERMINISTICMINT_H
+#ifndef KAHSH_DETERMINISTICMINT_H
+#define KAHSH_DETERMINISTICMINT_H
 
 #include <libzerocoin/Denominations.h>
 #include <uint256.h>
@@ -65,4 +65,4 @@ public:
     };
 };
 
-#endif //DILITHIUM_DETERMINISTICMINT_H
+#endif //KAHSH_DETERMINISTICMINT_H

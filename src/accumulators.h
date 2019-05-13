@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_ACCUMULATORS_H
-#define DILITHIUM_ACCUMULATORS_H
+#ifndef KAHSH_ACCUMULATORS_H
+#define KAHSH_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -90,4 +90,4 @@ public:
     searchMintHeightException(const string &message) : message(message) {}
 };
 
-#endif //DILITHIUM_ACCUMULATORS_H
+#endif //KAHSH_ACCUMULATORS_H

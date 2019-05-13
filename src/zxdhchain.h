@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_ZXDHCHAIN_H
-#define DILITHIUM_ZXDHCHAIN_H
+#ifndef KAHSH_ZXDHCHAIN_H
+#define KAHSH_ZXDHCHAIN_H
 
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/Denominations.h"
@@ -40,4 +40,4 @@ bool TxOutToPublicCoin(const CTxOut& txout, libzerocoin::PublicCoin& pubCoin, CV
 std::list<libzerocoin::CoinDenomination> ZerocoinSpendListFromBlock(const CBlock& block, bool fFilterInvalid);
 
 
-#endif //DILITHIUM_ZXDHCHAIN_H
+#endif //KAHSH_ZXDHCHAIN_H

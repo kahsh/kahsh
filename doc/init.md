@@ -89,7 +89,7 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 Copy kahshd.init to /etc/init.d/kahshd. Test by running "service kahshd start".
 
 Using this script, you can adjust the path and flags to the kahshd program by
-setting the DILITHIUMD and FLAGS environment variables in the file
+setting the KAHSHD and FLAGS environment variables in the file
 /etc/sysconfig/kahshd. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn

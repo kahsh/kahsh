@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_PUBKEY_H
-#define DILITHIUM_PUBKEY_H
+#ifndef KAHSH_PUBKEY_H
+#define KAHSH_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -264,4 +264,4 @@ public:
     ~ECCVerifyHandle();
 };
 
-#endif // DILITHIUM_PUBKEY_H
+#endif // KAHSH_PUBKEY_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_ZXDHWALLET_H
-#define DILITHIUM_ZXDHWALLET_H
+#ifndef KAHSH_ZXDHWALLET_H
+#define KAHSH_ZXDHWALLET_H
 
 #include <map>
 #include "libzerocoin/Coin.h"
@@ -47,4 +47,4 @@ private:
     uint512 GetZerocoinSeed(uint32_t n);
 };
 
-#endif //DILITHIUM_ZXDHWALLET_H
+#endif //KAHSH_ZXDHWALLET_H

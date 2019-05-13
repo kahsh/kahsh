@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_SERIALIZE_H
-#define DILITHIUM_SERIALIZE_H
+#ifndef KAHSH_SERIALIZE_H
+#define KAHSH_SERIALIZE_H
 
 #include <algorithm>
 #include <assert.h>
@@ -937,4 +937,4 @@ public:
     }
 };
 
-#endif // DILITHIUM_SERIALIZE_H
+#endif // KAHSH_SERIALIZE_H

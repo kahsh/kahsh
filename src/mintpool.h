@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_MINTPOOL_H
-#define DILITHIUM_MINTPOOL_H
+#ifndef KAHSH_MINTPOOL_H
+#define KAHSH_MINTPOOL_H
 
 #include <map>
 #include <list>
@@ -51,4 +51,4 @@ public:
 };
 
 
-#endif //DILITHIUM_MINTPOOL_H
+#endif //KAHSH_MINTPOOL_H

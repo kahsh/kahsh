@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_GENWIT_H
-#define DILITHIUM_GENWIT_H
+#ifndef KAHSH_GENWIT_H
+#define KAHSH_GENWIT_H
 
 
 #include <iostream>
@@ -59,4 +59,4 @@ private:
 };
 
 
-#endif //DILITHIUM_GENWIT_H
+#endif //KAHSH_GENWIT_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_ZEROCOIN_H
-#define DILITHIUM_ZEROCOIN_H
+#ifndef KAHSH_ZEROCOIN_H
+#define KAHSH_ZEROCOIN_H
 
 #include <amount.h>
 #include <limits.h>
@@ -249,4 +249,4 @@ public:
     int GetNeededSpends();
 };
 
-#endif //DILITHIUM_ZEROCOIN_H
+#endif //KAHSH_ZEROCOIN_H

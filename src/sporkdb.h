@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_CSPORKDB_H
-#define DILITHIUM_CSPORKDB_H
+#ifndef KAHSH_CSPORKDB_H
+#define KAHSH_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //DILITHIUM_CSPORKDB_H
+#endif //KAHSH_CSPORKDB_H

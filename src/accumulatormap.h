@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_ACCUMULATORMAP_H
-#define DILITHIUM_ACCUMULATORMAP_H
+#ifndef KAHSH_ACCUMULATORMAP_H
+#define KAHSH_ACCUMULATORMAP_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -26,4 +26,4 @@ public:
     void Reset();
     void Reset(libzerocoin::ZerocoinParams* params2);
 };
-#endif //DILITHIUM_ACCUMULATORMAP_H
+#endif //KAHSH_ACCUMULATORMAP_H

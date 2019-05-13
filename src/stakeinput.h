@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_STAKEINPUT_H
-#define DILITHIUM_STAKEINPUT_H
+#ifndef KAHSH_STAKEINPUT_H
+#define KAHSH_STAKEINPUT_H
 
 class CKeyStore;
 class CWallet;
@@ -88,4 +88,4 @@ public:
 };
 
 
-#endif //DILITHIUM_STAKEINPUT_H
+#endif //KAHSH_STAKEINPUT_H

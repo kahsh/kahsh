@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_UINT512_H
-#define DILITHIUM_UINT512_H
+#ifndef KAHSH_UINT512_H
+#define KAHSH_UINT512_H
 
 #include "arith_uint256.h"
 #include "uint256.h"
@@ -43,4 +43,4 @@ inline uint512 uint512S(const char* str)
     return rv;
 }
 
-#endif // DILITHIUM_UINT512_H
+#endif // KAHSH_UINT512_H

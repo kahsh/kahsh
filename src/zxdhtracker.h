@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_ZXDHTRACKER_H
-#define DILITHIUM_ZXDHTRACKER_H
+#ifndef KAHSH_ZXDHTRACKER_H
+#define KAHSH_ZXDHTRACKER_H
 
 #include "primitives/zerocoin.h"
 #include <list>
@@ -50,4 +50,4 @@ public:
     void Clear();
 };
 
-#endif //DILITHIUM_ZXDHTRACKER_H
+#endif //KAHSH_ZXDHTRACKER_H

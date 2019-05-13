@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_SPENDTYPE_H
-#define DILITHIUM_SPENDTYPE_H
+#ifndef KAHSH_SPENDTYPE_H
+#define KAHSH_SPENDTYPE_H
 
 #include <cstdint>
 
@@ -17,4 +17,4 @@ namespace libzerocoin {
     };
 }
 
-#endif //DILITHIUM_SPENDTYPE_H
+#endif //KAHSH_SPENDTYPE_H

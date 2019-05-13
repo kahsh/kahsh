@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DILITHIUM_QT_MULTISENDDIALOG_H
-#define DILITHIUM_QT_MULTISENDDIALOG_H
+#ifndef KAHSH_QT_MULTISENDDIALOG_H
+#define KAHSH_QT_MULTISENDDIALOG_H
 
 #include <QDialog>
 
@@ -39,4 +39,4 @@ private:
     WalletModel* model;
 };
 
-#endif // DILITHIUM_QT_MULTISENDDIALOG_H
+#endif // KAHSH_QT_MULTISENDDIALOG_H

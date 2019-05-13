@@ -4,8 +4,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
 
-#ifndef DILITHIUM_LIGHTZXDHTHREAD_H
-#define DILITHIUM_LIGHTZXDHTHREAD_H
+#ifndef KAHSH_LIGHTZXDHTHREAD_H
+#define KAHSH_LIGHTZXDHTHREAD_H
 
 #include <atomic>
 #include "genwit.h"
@@ -68,4 +68,4 @@ private:
 
 };
 
-#endif //DILITHIUM_LIGHTZXDHTHREAD_H
+#endif //KAHSH_LIGHTZXDHTHREAD_H
