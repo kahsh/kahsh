@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kahsh
+Comment=Kahsh P2P Cryptocurrency
+Comment[fr]=Kahsh, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Kahsh, eşten eşe kriptografik sanal para birimi
+Exec=kahsh-qt %u
+Terminal=false
+Type=Application
+Icon=kahsh128
+MimeType=x-scheme-handler/kahsh;
+Categories=Office;Finance;
