@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    ( 0, uint256("0x0000029cc047301e5ab123edee66c8dc68abb9a299d23adb329ba992785b7f41"));
+    ( 0, uint256("0x000004fac39621b6b0a0abb110ad82ae384ac4a7fac2b1b5a79aa8521e771a4f"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1557431124, // * UNIX timestamp of last checkpoint block
@@ -64,7 +64,7 @@ static const Checkpoints::CCheckpointData data = {
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x000008326556299048c07289990ff239119bf237c8456a34496a91a26e4fae01"));
+    boost::assign::map_list_of(0, uint256("0x000002f01a6a392d77b52ee5d0bdd2e9f605cd5f4cdf6ce8f6594743a65fde00"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1557434098,
@@ -72,7 +72,7 @@ static const Checkpoints::CCheckpointData dataTestnet = {
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x6c12b1e75989f5a1f969518753088f765ac24a596e7fc321b6cb750fcf872982"));
+    boost::assign::map_list_of(0, uint256("0x2b6d7f1011d27fd665d86d6e905053c4ed8cbcd1df10e33aac1fe1885ddd41d3"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1557434250,
@@ -154,7 +154,7 @@ public:
         nLastPOWBlock = 400;
         nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 30;
-        nZerocoinStartTime = 1542193313;
+        nZerocoinStartTime = 1652659200;
         nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = INT_MAX - 1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = INT_MAX - 1; //First block that bad serials emerged
@@ -188,11 +188,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1557431124;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 199952;
+        genesis.nNonce = 11555;
 
         hashGenesisBlock = genesis.GetHash();
-        FindGenesisBlock(genesis);
-        assert(hashGenesisBlock == uint256("0x0000095faa930aecbd40031d768a550b0f84a2d000757b8bad22c998ca43d51d"));
+        // FindGenesisBlock(genesis);
+        assert(hashGenesisBlock == uint256("0x000004fac39621b6b0a0abb110ad82ae384ac4a7fac2b1b5a79aa8521e771a4f"));
         assert(genesis.hashMerkleRoot == uint256("0x2419010ffd3d2c65d091afbaff796197ea7b1321f7690be5a1c943c0113dfa8c"));
 
         // vSeeds.push_back(CDNSSeedData("kahsh.io", "xdhseed.cryptertech.io"));
@@ -290,7 +290,7 @@ public:
         nLastPOWBlock = 200;
         nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 30;
-        nZerocoinStartTime = 1501776000;
+        nZerocoinStartTime = 1652659200;
         nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = INT_MAX - 1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = INT_MAX - 1; //First block that bad serials emerged
@@ -303,11 +303,11 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1557434098;
-        genesis.nNonce = 24924;
+        genesis.nNonce = 2404222;
 
         hashGenesisBlock = genesis.GetHash();
-        FindGenesisBlock(genesis);
-        assert(hashGenesisBlock == uint256("0x000008326556299048c07289990ff239119bf237c8456a34496a91a26e4fae01"));
+        //FindGenesisBlock(genesis);
+        assert(hashGenesisBlock == uint256("0x000002f01a6a392d77b52ee5d0bdd2e9f605cd5f4cdf6ce8f6594743a65fde00"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -384,7 +384,7 @@ public:
         nMaxMoneyOut = 43199500 * COIN;
         nZerocoinStartHeight = 300;
         nBlockZerocoinV2 = 300;
-        nZerocoinStartTime = 1501776000;
+        nZerocoinStartTime = 1652659200;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
@@ -393,11 +393,11 @@ public:
         //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1557434250;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 0;
+        genesis.nNonce = 1;
 
         hashGenesisBlock = genesis.GetHash();
-        FindGenesisBlock(genesis);
-        assert(hashGenesisBlock == uint256("0x72c8ea0c8e5d6b746bcce872eb790cf44bfde4b65ff2343bdaca67aa065795b2"));
+        // FindGenesisBlock(genesis);
+        assert(hashGenesisBlock == uint256("0x2b6d7f1011d27fd665d86d6e905053c4ed8cbcd1df10e33aac1fe1885ddd41d3"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
