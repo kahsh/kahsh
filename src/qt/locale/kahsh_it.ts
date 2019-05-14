@@ -176,16 +176,16 @@
         <translation>Conferma cifratura portafoglio</translation>
     </message>
     <message>
-        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XDHs from being stolen by malware infecting your computer.</source>
-        <translation>Kahsh verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi XDH dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
+        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KSHs from being stolen by malware infecting your computer.</source>
+        <translation>Kahsh verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi KSH dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Confermi di voler crittografare il portafoglio?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XDH&lt;/b&gt;!</source>
-        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI XDH&lt;7b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR KSH&lt;/b&gt;!</source>
+        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI KSH&lt;7b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -433,8 +433,8 @@
         <translation>Espora la cronologia delle transazioni</translation>
     </message>
     <message>
-        <source>Privacy Actions for zXDH</source>
-        <translation>Operazioni di privacy per zXDH</translation>
+        <source>Privacy Actions for zKSH</source>
+        <translation>Operazioni di privacy per zKSH</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -738,7 +738,7 @@
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Kahsh network</source>
-        <translation><numerusform>%n connessione attiva alla rete XDHIX</numerusform><numerusform>%n connessioni attive alla rete XDHIX</numerusform></translation>
+        <translation><numerusform>%n connessione attiva alla rete KSHIX</numerusform><numerusform>%n connessioni attive alla rete KSHIX</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1127,7 +1127,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Can vary +/- %1 uxdh per input.</source>
-        <translation>Può variare di +/- %1 uXDH per input.</translation>
+        <translation>Può variare di +/- %1 uKSH per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1275,7 +1275,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Welcome to Kahsh Core.</source>
-        <translation>Benvenuto in XDHIX Core.</translation>
+        <translation>Benvenuto in KSHIX Core.</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Kahsh Core will store its data.</source>
@@ -1671,12 +1671,12 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Configura Offuscamento</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Usa 2 masternodi diversi per mescolare fino a 10000 XDH</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Usa 2 masternodi diversi per mescolare fino a 10000 KSH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Usa 8 masternodi diversi per mixare fino a 10000 XDH</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Usa 8 masternodi diversi per mixare fino a 10000 KSH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
@@ -1713,24 +1713,24 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Mappa la porta utilizzando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XDH units to zXDH</source>
-        <translation>Attiva il conio automatico di unità XDH in zXDH</translation>
+        <source>Enable automatic minting of KSH units to zKSH</source>
+        <translation>Attiva il conio automatico di unità KSH in zKSH</translation>
     </message>
     <message>
-        <source>Enable zXDH Automint</source>
-        <translation>Attiva Conio automatico zXDH</translation>
+        <source>Enable zKSH Automint</source>
+        <translation>Attiva Conio automatico zKSH</translation>
     </message>
     <message>
-        <source>Percentage of incoming XDH which get automatically converted to zXDH via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentuale di XDH in entrata che viene automaticamente convertita in zXDH attraverso il protocollo Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming KSH which get automatically converted to zKSH via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentuale di KSH in entrata che viene automaticamente convertita in zKSH attraverso il protocollo Zerocoin (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zXDH</source>
-        <translation>Percentuale di zXDH Percentuale di zXDH da coniare automaticamente</translation>
+        <source>Percentage of autominted zKSH</source>
+        <translation>Percentuale di zKSH Percentuale di zKSH da coniare automaticamente</translation>
     </message>
     <message>
-        <source>Preferred Automint zXDH Denomination</source>
-        <translation>Denominazione preferita conio automatico zXDH</translation>
+        <source>Preferred Automint zKSH Denomination</source>
+        <translation>Denominazione preferita conio automatico zKSH</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1792,8 +1792,8 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Saldo totale, inclusi tutte le monete non disponibili.</translation>
     </message>
     <message>
-        <source>XDH Balance</source>
-        <translation>Bilancio XDH</translation>
+        <source>KSH Balance</source>
+        <translation>Bilancio KSH</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -1808,14 +1808,14 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Il tuo saldo Kahsh corrente, incluse le transazioni non confermate e non mature</translation>
     </message>
     <message>
-        <source>zXDH Balance</source>
-        <translation>Bilancio zXDH</translation>
+        <source>zKSH Balance</source>
+        <translation>Bilancio zKSH</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zXDH are spendable.</source>
+These zKSH are spendable.</source>
         <translation>Maturi: più di 20 conferme e più di 1 conio della stessa denominazione dopo il conio.
-Questi zXDH sono spendibili.</translation>
+Questi zKSH sono spendibili.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -1846,8 +1846,8 @@ Questi zXDH sono spendibili.</translation>
         <translation>Spendibili:</translation>
     </message>
     <message>
-        <source>Locked XDH or Masternode collaterals. These are excluded from zXDH minting.</source>
-        <translation>XDH bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zXDH.</translation>
+        <source>Locked KSH or Masternode collaterals. These are excluded from zKSH minting.</source>
+        <translation>KSH bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zKSH.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -1858,18 +1858,18 @@ Questi zXDH sono spendibili.</translation>
         <translation>Non confermati:</translation>
     </message>
     <message>
-        <source>Your current zXDH balance, unconfirmed and immature zXDH included.</source>
-        <translation>Il tuo saldo zXDH corrente, inclusi zXDH non confermati e non maturi</translation>
+        <source>Your current zKSH balance, unconfirmed and immature zKSH included.</source>
+        <translation>Il tuo saldo zKSH corrente, inclusi zKSH non confermati e non maturi</translation>
     </message>
     <message>
         <source>Recent transactions</source>
         <translation>Transazioni recenti</translation>
     </message>
     <message>
-        <source>Current percentage of zXDH.
+        <source>Current percentage of zKSH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Percentuale corrente di zXDH.
+        <translation>Percentuale corrente di zKSH.
 Se il conio automatico è attivato questa percentuale si stabilizzerà all'incirca sulla percentuale stabilita per il conio automatico (percentuale prestabilita = 10%).
 </translation>
     </message>
@@ -1933,12 +1933,12 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     <message>
-        <source>0.000 000 00 XDH</source>
-        <translation>0.000 000 00 XDH</translation>
+        <source>0.000 000 00 KSH</source>
+        <translation>0.000 000 00 KSH</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -1961,16 +1961,16 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of Xdh to convert to zXDH</source>
-        <translation>Immetti un importo di XDH da convertire in zXDH</translation>
+        <source>Enter an amount of Xdh to convert to zKSH</source>
+        <translation>Immetti un importo di KSH da convertire in zKSH</translation>
     </message>
     <message>
-        <source>zXDH Control</source>
-        <translation>Controllo zXDH</translation>
+        <source>zKSH Control</source>
+        <translation>Controllo zKSH</translation>
     </message>
     <message>
-        <source>zXDH Selected:</source>
-        <translation>zXDH selezionati:</translation>
+        <source>zKSH Selected:</source>
+        <translation>zKSH selezionati:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -1981,23 +1981,23 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>Spendi Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending</source>
-        <translation>zXDH disponibili disponibili per essere spesi (maturi e spendibili)</translation>
+        <source>Available (mature and spendable) zKSH for spending</source>
+        <translation>zKSH disponibili disponibili per essere spesi (maturi e spendibili)</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Bilancio Disponibile:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending
+        <source>Available (mature and spendable) zKSH for spending
 
-zXDH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>zXDH disponibili disponibili per essere spesi (maturi e spendibili)
-Gli zXDH sono maturi quando hanno più di 20 conferme E più di 2 conii della stessa denominazione dopo che sono stati coniati</translation>
+zKSH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>zKSH disponibili disponibili per essere spesi (maturi e spendibili)
+Gli zKSH sono maturi quando hanno più di 20 conferme E più di 2 conii della stessa denominazione dopo che sono stati coniati</translation>
     </message>
     <message>
-        <source>0 zXDH</source>
-        <translation>0 zXDH</translation>
+        <source>0 zKSH</source>
+        <translation>0 zKSH</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2040,31 +2040,31 @@ Gli zXDH sono maturi quando hanno più di 20 conferme E più di 2 conii della st
         <translation>Statistiche Zerocoin:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zXDH</source>
-        <translation>Saldo totale inclusi zXDH non confermati e non maturi</translation>
+        <source>Total Balance including unconfirmed and immature zKSH</source>
+        <translation>Saldo totale inclusi zKSH non confermati e non maturi</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
         <translation>Saldo totale Zerocoin:</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zXDH minting.
+        <source>Show the current status of automatic zKSH minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to kahsh.conf
 - disable: add 'enablezeromint=0' to kahsh.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zXDH
+- menu Settings-&gt;Options-&gt;Percentage of autominted zKSH
 
 </source>
-        <translation>Mostra lo stato corrente del conio automatico zXDH.
+        <translation>Mostra lo stato corrente del conio automatico zKSH.
 Per cambiare lo stato (riavvio necessario):
 - attivato: aggiungi 'enablezeromint=1' a kahsh.conf
 - disattivato: aggiungi 'enablezeromint=0' a kahsh.conf
 
 Per cambiare la percentuale (riavvio non necessario):
-- menu Impostazioni-&gt;Opzioni-&gt;Percentuale di zXDH da coniare automaticamente
+- menu Impostazioni-&gt;Opzioni-&gt;Percentuale di zKSH da coniare automaticamente
 
 </translation>
     </message>
@@ -2209,8 +2209,8 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Copia ammontare</translation>
     </message>
     <message>
-        <source>zXDH Mint</source>
-        <translation>Conio zXDH</translation>
+        <source>zKSH Mint</source>
+        <translation>Conio zKSH</translation>
     </message>
     <message>
         <source>AutoMint Status:</source>
@@ -2672,8 +2672,8 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     </context>
 <context>

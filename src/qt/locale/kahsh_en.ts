@@ -221,7 +221,7 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XDHs from being stolen by malware infecting your computer.</source>
+        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KSHs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -231,7 +231,7 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XDH&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR KSH&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2232,7 +2232,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Add destinations to send XDH to</source>
+        <source>Add destinations to send KSH to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2355,12 +2355,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XDH</source>
+        <source>Use 2 separate masternodes to mix funds up to 10000 KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XDH</source>
+        <source>Use 8 separate masternodes to mix funds up to 10000 KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2370,12 +2370,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 XDH to anonymize 10000 XDH</source>
+        <source>This option is the quickest and will cost about ~0.025 KSH to anonymize 10000 KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 XDH to anonymize 10000 XDH</source>
+        <source>This option is moderately fast and will cost about 0.05 KSH to anonymize 10000 KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2385,7 +2385,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>0.1 XDH per 10000 XDH you anonymize.</source>
+        <source>0.1 KSH per 10000 KSH you anonymize.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2564,17 +2564,17 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</source>
     </message>
     <message>
         <location line="-184"/>
-        <source>Enable automatic minting of XDH units to zXDH</source>
+        <source>Enable automatic minting of KSH units to zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Enable zXDH Automint</source>
+        <source>Enable zKSH Automint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Enable automatic zXDH minting from specific addresses</source>
+        <source>Enable automatic zKSH minting from specific addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2584,23 +2584,23 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</source>
     </message>
     <message>
         <location line="+11"/>
-        <source>Percentage of incoming XDH which get automatically converted to zXDH via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming KSH which get automatically converted to zKSH via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Percentage of autominted zXDH</source>
+        <source>Percentage of autominted zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+30"/>
         <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough XDH for this denomination is available</source>
+        <source>Wait with automatic conversion to Zerocoin until enough KSH for this denomination is available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-13"/>
-        <source>Preferred Automint zXDH Denomination</source>
+        <source>Preferred Automint zKSH Denomination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2819,7 +2819,7 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</source>
     </message>
     <message>
         <location line="+71"/>
-        <source>XDH Balance</source>
+        <source>KSH Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2856,14 +2856,14 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</source>
     </message>
     <message>
         <location line="+96"/>
-        <source>zXDH Balance</source>
+        <source>zKSH Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+53"/>
         <location line="+17"/>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zXDH are spendable.</source>
+These zKSH are spendable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2936,7 +2936,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+191"/>
         <location line="+19"/>
-        <source>Locked XDH or Masternode collaterals. These are excluded from zXDH minting.</source>
+        <source>Locked KSH or Masternode collaterals. These are excluded from zKSH minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2952,7 +2952,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+58"/>
         <location line="+19"/>
-        <source>Your current zXDH balance, unconfirmed and immature zXDH included.</source>
+        <source>Your current zKSH balance, unconfirmed and immature zKSH included.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2968,7 +2968,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <location line="+111"/>
-        <source>Current percentage of zXDH.
+        <source>Current percentage of zKSH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
         <translation type="unfinished"></translation>
@@ -3159,7 +3159,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="-371"/>
         <location line="+651"/>
-        <source>zXDH</source>
+        <source>zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3174,7 +3174,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+19"/>
-        <source>0.000 000 00 XDH</source>
+        <source>0.000 000 00 KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3225,17 +3225,17 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+308"/>
         <location line="+52"/>
-        <source>Enter an amount of Xdh to convert to zXDH</source>
+        <source>Enter an amount of Xdh to convert to zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+301"/>
-        <source>zXDH Control</source>
+        <source>zKSH Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zXDH Selected:</source>
+        <source>zKSH Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3263,7 +3263,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+7"/>
-        <source>Available (mature and spendable) zXDH for spending</source>
+        <source>Available (mature and spendable) zKSH for spending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3273,9 +3273,9 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+16"/>
-        <source>Available (mature and spendable) zXDH for spending
+        <source>Available (mature and spendable) zKSH for spending
 
-zXDH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+zKSH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3292,7 +3292,7 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+31"/>
         <location line="+31"/>
         <location line="+31"/>
-        <source>0 zXDH</source>
+        <source>0 zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3385,7 +3385,7 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+25"/>
         <location line="+936"/>
         <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zXDH</source>
+        <source>Total Balance including unconfirmed and immature zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3419,14 +3419,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <location line="+40"/>
-        <source>Show the current status of automatic zXDH minting.
+        <source>Show the current status of automatic zKSH minting.
 
 To change the status (restart required):
 - enable: add &apos;enablezeromint=1&apos; to kahsh.conf
 - disable: add &apos;enablezeromint=0&apos; to kahsh.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zXDH
+- menu Settings-&gt;Options-&gt;Percentage of autominted zKSH
 
 </source>
         <translation type="unfinished"></translation>
@@ -3496,7 +3496,7 @@ To change the percentage (no restart required):
     </message>
     <message>
         <location line="-1324"/>
-        <source>Show zXDH denominations list</source>
+        <source>Show zKSH denominations list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3695,12 +3695,12 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+34"/>
-        <source>zXDH Spend #: </source>
+        <source>zKSH Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>zXDH Mint</source>
+        <source>zKSH Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3721,13 +3721,13 @@ Maximum allowed: </source>
     <message>
         <location line="+12"/>
         <location line="+4"/>
-        <source>zXDH is currently disabled due to maintenance.</source>
+        <source>zKSH is currently disabled due to maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-666"/>
         <location line="+112"/>
-        <source>zXDH is currently undergoing maintenance.</source>
+        <source>zKSH is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3838,7 +3838,7 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+0"/>
-        <source> zXDH in </source>
+        <source> zKSH in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3915,13 +3915,13 @@ Maximum allowed: </source>
     <message>
         <location line="+24"/>
         <location line="+32"/>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-31"/>
         <location line="+32"/>
-        <source>Failed to spend zXDH</source>
+        <source>Failed to spend zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3949,7 +3949,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message numerus="yes">
         <location line="+362"/>
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XDH to convert to zXDH</comment>
+        <comment>Enter an amount of KSH to convert to zKSH</comment>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -4502,7 +4502,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+29"/>
-        <source>Custom zXDH Backup Path:</source>
+        <source>Custom zKSH Backup Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5095,12 +5095,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>0 XDH</source>
+        <source>0 KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+167"/>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 XDH applies</source>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 KSH applies</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5170,12 +5170,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1062"/>
-        <source>If the custom fee is set to 1000 uXDHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uXDHs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uXDHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uKSHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uKSHs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uKSHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uXDHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uXDHs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uXDHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uKSHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uKSHs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uKSHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5241,7 +5241,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+35"/>
-        <source>Anonymized XDH</source>
+        <source>Anonymized KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6121,12 +6121,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>XDH Stake</source>
+        <source>KSH Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>zXDH Stake</source>
+        <source>zKSH Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6151,37 +6151,37 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+4"/>
-        <source>Converted XDH to zXDH</source>
+        <source>Converted KSH to zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zXDH</source>
+        <source>Spent zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received XDH from zXDH</source>
+        <source>Received KSH from zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zXDH from zXDH Spend</source>
+        <source>Minted Change as zKSH from zKSH Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zXDH to XDH</source>
+        <source>Converted zKSH to KSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+56"/>
-        <source>Anonymous (zXDH Transaction)</source>
+        <source>Anonymous (zKSH Transaction)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Anonymous (zXDH Stake)</source>
+        <source>Anonymous (zKSH Stake)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6450,12 +6450,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-310"/>
-        <source>Received XDH from zXDH</source>
+        <source>Received KSH from zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Zerocoin Spend, Change in zXDH</source>
+        <source>Zerocoin Spend, Change in zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6502,7 +6502,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 XDH.</source>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 KSH.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6543,7 +6543,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>ZXdhControlDialog</name>
     <message>
         <location filename="../forms/zxdhcontroldialog.ui" line="+20"/>
-        <source>Select zXDH to Spend</source>
+        <source>Select zKSH to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6559,7 +6559,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-7"/>
-        <source>zXDH</source>
+        <source>zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6642,17 +6642,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>Enable automatic wallet backups triggered after each zXDH minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zKSH minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable or disable staking functionality for XDH inputs (0-1, default: %u)</source>
+        <source>Enable or disable staking functionality for KSH inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable or disable staking functionality for zXDH inputs (0-1, default: %u)</source>
+        <source>Enable or disable staking functionality for zKSH inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6697,12 +6697,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+8"/>
-        <source>Fees (in XDH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in KSH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in XDH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in KSH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6837,12 +6837,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XDH.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KSH.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XDH.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 KSH.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7237,7 +7237,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+4"/>
-        <source>Fee (in XDH/kB) to add to transactions you send (default: %s)</source>
+        <source>Fee (in KSH/kB) to add to transactions you send (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7402,7 +7402,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+9"/>
-        <source>Reindex the XDH and zXDH money supply statistics</source>
+        <source>Reindex the KSH and zKSH money supply statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7494,7 +7494,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify custom backup path to add a copy of any automatic zXDH backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <source>Specify custom backup path to add a copy of any automatic zKSH backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8164,7 +8164,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Syncing zXDH wallet...</source>
+        <source>Syncing zKSH wallet...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8359,7 +8359,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Value is below the smallest available denomination (= 1) of zXDH</source>
+        <source>Value is below the smallest available denomination (= 1) of zKSH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8379,7 +8379,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -176,16 +176,16 @@
         <translation>Confirmer le cryptage du portefeuille</translation>
     </message>
     <message>
-        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XDHs from being stolen by malware infecting your computer.</source>
-        <translation>Kahsh va maintenant se fermer pour finir le processus de cryptage. Notez que le cryptage de votre portefeuille ne peut pas complètement protéger vos XDHs d'un vol par un malware ayant infecté votre ordinateur. </translation>
+        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KSHs from being stolen by malware infecting your computer.</source>
+        <translation>Kahsh va maintenant se fermer pour finir le processus de cryptage. Notez que le cryptage de votre portefeuille ne peut pas complètement protéger vos KSHs d'un vol par un malware ayant infecté votre ordinateur. </translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Êtes-vous sûr de vouloir crypter votre portefeuille?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XDH&lt;/b&gt;!</source>
-        <translation>Attention : si vous cryptez votre portefeuille et perdez votre phrase secrète, vous &lt;b&gt;PERDREZ TOUS VOS XDH&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR KSH&lt;/b&gt;!</source>
+        <translation>Attention : si vous cryptez votre portefeuille et perdez votre phrase secrète, vous &lt;b&gt;PERDREZ TOUS VOS KSH&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -433,8 +433,8 @@
         <translation>Afficher l'historique de transaction</translation>
     </message>
     <message>
-        <source>Privacy Actions for zXDH</source>
-        <translation>Actions confidentielles pour zXDH</translation>
+        <source>Privacy Actions for zKSH</source>
+        <translation>Actions confidentielles pour zKSH</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -1640,8 +1640,8 @@ S'il vous plaît soyez patient après avoir cliqué sur l'importation.</translat
         <translation>Adresse / Montant:</translation>
     </message>
     <message>
-        <source>Add destinations to send XDH to</source>
-        <translation>Ajouter des destinations pour envoyer XDH</translation>
+        <source>Add destinations to send KSH to</source>
+        <translation>Ajouter des destinations pour envoyer KSH</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1727,32 +1727,32 @@ S'il vous plaît soyez patient après avoir cliqué sur l'importation.</translat
         <translation>Veuillez sélectionner un niveau de confidentialité.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Utiliser 2 masternodes différentes pour mélanger les fonds jusqu'a 10000 XDH</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Utiliser 2 masternodes différentes pour mélanger les fonds jusqu'a 10000 KSH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Utiliser 8 masternodes différentes pour mélanger les fonds jusqu'a 10000 XDH</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Utiliser 8 masternodes différentes pour mélanger les fonds jusqu'a 10000 KSH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Utiliser 16 masternodes différents</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XDH to anonymize 10000 XDH</source>
-        <translation>Cette option est la plus rapide, et coutera ~0.025 XDH pour anonymiser 10000 XDH</translation>
+        <source>This option is the quickest and will cost about ~0.025 KSH to anonymize 10000 KSH</source>
+        <translation>Cette option est la plus rapide, et coutera ~0.025 KSH pour anonymiser 10000 KSH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XDH to anonymize 10000 XDH</source>
-        <translation>Cette option est moyennement rapide, et coutera 0.05 XDH pour anonymiser 10000 XDH</translation>
+        <source>This option is moderately fast and will cost about 0.05 KSH to anonymize 10000 KSH</source>
+        <translation>Cette option est moyennement rapide, et coutera 0.05 KSH pour anonymiser 10000 KSH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Il s'agit de l'option la plus lente est la plus sécurisé. Utiliser l'anonymat maximum coutera</translation>
     </message>
     <message>
-        <source>0.1 XDH per 10000 XDH you anonymize.</source>
-        <translation>0.1 XDH par 10000 XDH vous anonymisez.</translation>
+        <source>0.1 KSH per 10000 KSH you anonymize.</source>
+        <translation>0.1 KSH par 10000 KSH vous anonymisez.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1887,24 +1887,24 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Répertorier les port utilisant UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XDH units to zXDH</source>
-        <translation>Activé l'auto-monnayage de XDH unités en zXDH</translation>
+        <source>Enable automatic minting of KSH units to zKSH</source>
+        <translation>Activé l'auto-monnayage de KSH unités en zKSH</translation>
     </message>
     <message>
-        <source>Enable zXDH Automint</source>
-        <translation>Activé ZXDH Auto-monnayage</translation>
+        <source>Enable zKSH Automint</source>
+        <translation>Activé ZKSH Auto-monnayage</translation>
     </message>
     <message>
-        <source>Percentage of incoming XDH which get automatically converted to zXDH via Zerocoin Protocol (min: 10%)</source>
-        <translation>Pourcentage des XDH entrants qui seront automatiquement convertis en zXDH via le protocole Zerocoin (min. 10%)</translation>
+        <source>Percentage of incoming KSH which get automatically converted to zKSH via Zerocoin Protocol (min: 10%)</source>
+        <translation>Pourcentage des KSH entrants qui seront automatiquement convertis en zKSH via le protocole Zerocoin (min. 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zXDH</source>
-        <translation>Pourcentage de zXDH auto-monnayé</translation>
+        <source>Percentage of autominted zKSH</source>
+        <translation>Pourcentage de zKSH auto-monnayé</translation>
     </message>
     <message>
-        <source>Preferred Automint zXDH Denomination</source>
-        <translation>Dénomination préférée d'auto-monnayage zXDH</translation>
+        <source>Preferred Automint zKSH Denomination</source>
+        <translation>Dénomination préférée d'auto-monnayage zKSH</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -2066,8 +2066,8 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Solde total, incluant les pièces indisponibles.</translation>
     </message>
     <message>
-        <source>XDH Balance</source>
-        <translation>Solde de XDH</translation>
+        <source>KSH Balance</source>
+        <translation>Solde de KSH</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2094,14 +2094,14 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Votre solde Kahsh actuel, incluant les transactions non confirmées et immatures</translation>
     </message>
     <message>
-        <source>zXDH Balance</source>
-        <translation>Solde de zXDH</translation>
+        <source>zKSH Balance</source>
+        <translation>Solde de zKSH</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zXDH are spendable.</source>
+These zKSH are spendable.</source>
         <translation>Maturité: plus de 20 confirmations et plus de 1 monnayer de la même dénomination après sa frappe.
-Ces zXDH sont dépensables.</translation>
+Ces zKSH sont dépensables.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2154,8 +2154,8 @@ Immature: confirmé, mais moins de 1 monnayer de la même dénomination après s
         <translation>Dépensable:</translation>
     </message>
     <message>
-        <source>Locked XDH or Masternode collaterals. These are excluded from zXDH minting.</source>
-        <translation>XDH Verrouillé ou Masternode collatéraux. Ceux-ci sont exclus de la monnayage zXDH.</translation>
+        <source>Locked KSH or Masternode collaterals. These are excluded from zKSH minting.</source>
+        <translation>KSH Verrouillé ou Masternode collatéraux. Ceux-ci sont exclus de la monnayage zKSH.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2166,8 +2166,8 @@ Immature: confirmé, mais moins de 1 monnayer de la même dénomination après s
         <translation>Non confirmé:</translation>
     </message>
     <message>
-        <source>Your current zXDH balance, unconfirmed and immature zXDH included.</source>
-        <translation>Votre solde courant zXDH, incluant les zXDH non confirmés et immatures.</translation>
+        <source>Your current zKSH balance, unconfirmed and immature zKSH included.</source>
+        <translation>Votre solde courant zKSH, incluant les zKSH non confirmés et immatures.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2178,10 +2178,10 @@ Immature: confirmé, mais moins de 1 monnayer de la même dénomination après s
         <translation>désynchronisé</translation>
     </message>
     <message>
-        <source>Current percentage of zXDH.
+        <source>Current percentage of zKSH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Le pourcentage actuel de zXDH.
+        <translation>Le pourcentage actuel de zKSH.
 Si Auto-monnayage est activé, ce pourcentage sera réglé autour du pourcentage Auto-monnayage configuré (par défaut = 10%).</translation>
     </message>
     <message>
@@ -2324,8 +2324,8 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2336,8 +2336,8 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>Disponible pour Monnayage:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XDH</source>
-        <translation>0.000 000 00 XDH</translation>
+        <source>0.000 000 00 KSH</source>
+        <translation>0.000 000 00 KSH</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2376,16 +2376,16 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>CONFIDENTIALITÉ</translation>
     </message>
     <message>
-        <source>Enter an amount of Xdh to convert to zXDH</source>
-        <translation>Entrez un montant de XDH à convertir en zXDH</translation>
+        <source>Enter an amount of Xdh to convert to zKSH</source>
+        <translation>Entrez un montant de KSH à convertir en zKSH</translation>
     </message>
     <message>
-        <source>zXDH Control</source>
-        <translation>Contrôle zXDH</translation>
+        <source>zKSH Control</source>
+        <translation>Contrôle zKSH</translation>
     </message>
     <message>
-        <source>zXDH Selected:</source>
-        <translation>zXDH sélectionné:</translation>
+        <source>zKSH Selected:</source>
+        <translation>zKSH sélectionné:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2400,24 +2400,24 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>Dépenser Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending</source>
-        <translation>zXDH disponibles (matures et dépensables) pour dépenser</translation>
+        <source>Available (mature and spendable) zKSH for spending</source>
+        <translation>zKSH disponibles (matures et dépensables) pour dépenser</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Solde disponible:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending
+        <source>Available (mature and spendable) zKSH for spending
 
-zXDH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>ZXDH disponible (mature et utilisable) pour les dépenses
+zKSH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>ZKSH disponible (mature et utilisable) pour les dépenses
 
-Les zXDH sont matures lorsqu'elles ont plus de 20 confirmations ET plus de 2 monnayent de même dénomination après ils était monnayer</translation>
+Les zKSH sont matures lorsqu'elles ont plus de 20 confirmations ET plus de 2 monnayent de même dénomination après ils était monnayer</translation>
     </message>
     <message>
-        <source>0 zXDH</source>
-        <translation>0 zXDH</translation>
+        <source>0 zKSH</source>
+        <translation>0 zKSH</translation>
     </message>
     <message>
         <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
@@ -2488,8 +2488,8 @@ Les zXDH sont matures lorsqu'elles ont plus de 20 confirmations ET plus de 2 mon
         <translation>Statistiques Zerocoin:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zXDH</source>
-        <translation>Solde total incluant les zXDH non confirmés et immatures</translation>
+        <source>Total Balance including unconfirmed and immature zKSH</source>
+        <translation>Solde total incluant les zKSH non confirmés et immatures</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2510,24 +2510,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Immature: confirmé, mais moins de 1 monnayer de la même dénomination après sa frappe</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zXDH minting.
+        <source>Show the current status of automatic zKSH minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to kahsh.conf
 - disable: add 'enablezeromint=0' to kahsh.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zXDH
+- menu Settings-&gt;Options-&gt;Percentage of autominted zKSH
 
 </source>
-        <translation>Afficher l'état actuel de monnayage automatique zXDH.
+        <translation>Afficher l'état actuel de monnayage automatique zKSH.
 
 Pour changer le statut (redémarrage requis):
 - enable: ajoute 'enablezeromint = 1' au fichier kahsh.conf
 - disable: ajoute 'enablezeromint = 0' au fichier kahsh.conf
 
 Pour changer le pourcentage (pas de redémarrage requis):
-- menu Paramètres-&gt; Options-&gt; Pourcentage de zXDH auto-monnayé
+- menu Paramètres-&gt; Options-&gt; Pourcentage de zKSH auto-monnayé
 
 </translation>
     </message>
@@ -2724,12 +2724,12 @@ Maximum allowed: </source>
 Maximum autorisé:</translation>
     </message>
     <message>
-        <source>zXDH Spend #: </source>
-        <translation>Dépense zXDH #:</translation>
+        <source>zKSH Spend #: </source>
+        <translation>Dépense zKSH #:</translation>
     </message>
     <message>
-        <source>zXDH Mint</source>
-        <translation>Monnayer zXDH</translation>
+        <source>zKSH Mint</source>
+        <translation>Monnayer zKSH</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2744,12 +2744,12 @@ Maximum autorisé:</translation>
         <translation>Pourcentage cible configuré: &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zXDH is currently disabled due to maintenance.</source>
-        <translation>zXDH est actuellement désactivé pour cause de maintenance.</translation>
+        <source>zKSH is currently disabled due to maintenance.</source>
+        <translation>zKSH est actuellement désactivé pour cause de maintenance.</translation>
     </message>
     <message>
-        <source>zXDH is currently undergoing maintenance.</source>
-        <translation>zXDH est actuellement en cours de maintenance.</translation>
+        <source>zKSH is currently undergoing maintenance.</source>
+        <translation>zKSH est actuellement en cours de maintenance.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2836,8 +2836,8 @@ Maximum autorisé:</translation>
         <translation>Monnayez réussi</translation>
     </message>
     <message>
-        <source> zXDH in </source>
-        <translation>zXDH dans</translation>
+        <source> zKSH in </source>
+        <translation>zKSH dans</translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2892,13 +2892,13 @@ Maximum autorisé:</translation>
         <translation>Confirmer l'envoi des pièces</translation>
     </message>
     <message>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
-        <translation>La version 1 de zXDH requiert un niveau de sécurité de 100 pour les dépenser.
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
+        <translation>La version 1 de zKSH requiert un niveau de sécurité de 100 pour les dépenser.
 </translation>
     </message>
     <message>
-        <source>Failed to spend zXDH</source>
-        <translation>Échec de la dépense de zXDH</translation>
+        <source>Failed to spend zKSH</source>
+        <translation>Échec de la dépense de zKSH</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -3232,8 +3232,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Chemin du répertoire de sauvegarde personnalisé:</translation>
     </message>
     <message>
-        <source>Custom zXDH Backup Path:</source>
-        <translation>Chemin du répertoire de sauvegarde zXDH personnalisé:</translation>
+        <source>Custom zKSH Backup Path:</source>
+        <translation>Chemin du répertoire de sauvegarde zKSH personnalisé:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3676,8 +3676,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Taille UTXO:</translation>
     </message>
     <message>
-        <source>0 XDH</source>
-        <translation>0 XDH</translation>
+        <source>0 KSH</source>
+        <translation>0 KSH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3776,8 +3776,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Ajouter un destinataire</translation>
     </message>
     <message>
-        <source>Anonymized XDH</source>
-        <translation>XDH anonymisé</translation>
+        <source>Anonymized KSH</source>
+        <translation>KSH anonymisé</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4152,40 +4152,40 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Reçu via Obfuscation</translation>
     </message>
     <message>
-        <source>XDH Stake</source>
-        <translation>XDH Stake</translation>
+        <source>KSH Stake</source>
+        <translation>KSH Stake</translation>
     </message>
     <message>
-        <source>zXDH Stake</source>
-        <translation>zXDH Stake</translation>
+        <source>zKSH Stake</source>
+        <translation>zKSH Stake</translation>
     </message>
     <message>
-        <source>Converted XDH to zXDH</source>
-        <translation>XDH converti en zXDH</translation>
+        <source>Converted KSH to zKSH</source>
+        <translation>KSH converti en zKSH</translation>
     </message>
     <message>
-        <source>Spent zXDH</source>
-        <translation>zXDH dépensés</translation>
+        <source>Spent zKSH</source>
+        <translation>zKSH dépensés</translation>
     </message>
     <message>
-        <source>Received XDH from zXDH</source>
-        <translation>XDH reçu depuis zXDH</translation>
+        <source>Received KSH from zKSH</source>
+        <translation>KSH reçu depuis zKSH</translation>
     </message>
     <message>
-        <source>Minted Change as zXDH from zXDH Spend</source>
-        <translation>Monnaie rendue à partir d'une dépense zXDH frappée comme zXDH </translation>
+        <source>Minted Change as zKSH from zKSH Spend</source>
+        <translation>Monnaie rendue à partir d'une dépense zKSH frappée comme zKSH </translation>
     </message>
     <message>
-        <source>Converted zXDH to XDH</source>
-        <translation>zXDH converti en XDH</translation>
+        <source>Converted zKSH to KSH</source>
+        <translation>zKSH converti en KSH</translation>
     </message>
     <message>
-        <source>Anonymous (zXDH Transaction)</source>
-        <translation>Anonyme (transaction zXDH)</translation>
+        <source>Anonymous (zKSH Transaction)</source>
+        <translation>Anonyme (transaction zKSH)</translation>
     </message>
     <message>
-        <source>Anonymous (zXDH Stake)</source>
-        <translation>Anonyme (zXDH Stake)</translation>
+        <source>Anonymous (zKSH Stake)</source>
+        <translation>Anonyme (zKSH Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4343,12 +4343,12 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Une erreur est survenue lors de la tentative de sauvegarde de l'historique de transaction vers %1.</translation>
     </message>
     <message>
-        <source>Received XDH from zXDH</source>
-        <translation>XDH reçu depuis zXDH</translation>
+        <source>Received KSH from zKSH</source>
+        <translation>KSH reçu depuis zKSH</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zXDH</source>
-        <translation>Dépense Zerocoin, monnaie rendue en zXDH</translation>
+        <source>Zerocoin Spend, Change in zKSH</source>
+        <translation>Dépense Zerocoin, monnaie rendue en zKSH</translation>
     </message>
     </context>
 <context>
@@ -4398,19 +4398,19 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     </context>
 <context>
     <name>kahsh-core</name>
     <message>
-        <source>Enable or disable staking functionality for XDH inputs (0-1, default: %u)</source>
-        <translation>Active ou désactive la fonctionnalité de staking pour les entrées XDH (0-1, par défaut: %u)</translation>
+        <source>Enable or disable staking functionality for KSH inputs (0-1, default: %u)</source>
+        <translation>Active ou désactive la fonctionnalité de staking pour les entrées KSH (0-1, par défaut: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zXDH inputs (0-1, default: %u)</source>
-        <translation>Active ou désactive la fonctionnalité de staking pour les entrées zXDH (0-1, par défaut: %u)</translation>
+        <source>Enable or disable staking functionality for zKSH inputs (0-1, default: %u)</source>
+        <translation>Active ou désactive la fonctionnalité de staking pour les entrées zKSH (0-1, par défaut: %u)</translation>
     </message>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
@@ -4880,8 +4880,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Synchronisation des sporks ...</translation>
     </message>
     <message>
-        <source>Syncing zXDH wallet...</source>
-        <translation>Synchronisation du portefeuille zXDH ...</translation>
+        <source>Syncing zKSH wallet...</source>
+        <translation>Synchronisation du portefeuille zKSH ...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -5028,8 +5028,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Nom d'utilisateur pour les connections JSON-RPC</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zXDH</source>
-        <translation>La valeur est inférieure à la plus petite dénomination disponible (= 1) de zXDH</translation>
+        <source>Value is below the smallest available denomination (= 1) of zKSH</source>
+        <translation>La valeur est inférieure à la plus petite dénomination disponible (= 1) de zKSH</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -5044,8 +5044,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Vérification du portefeuille...</translation>
     </message>
     <message>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
-        <translation>La version 1 de zXDH requiert un niveau de sécurité de 100 pour les dépenser.
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
+        <translation>La version 1 de zKSH requiert un niveau de sécurité de 100 pour les dépenser.
 </translation>
     </message>
     <message>

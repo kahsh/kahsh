@@ -4,8 +4,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
 
-#ifndef KAHSH_LIGHTZXDHTHREAD_H
-#define KAHSH_LIGHTZXDHTHREAD_H
+#ifndef KAHSH_LIGHTZKSHTHREAD_H
+#define KAHSH_LIGHTZKSHTHREAD_H
 
 #include <atomic>
 #include "genwit.h"
@@ -52,7 +52,7 @@ public:
 
     void StartLightZxdhThread(boost::thread_group& threadGroup) {
         LogPrintf("%s thread start\n", "kahsh-light-thread");
-        threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZXDHSimplified, this));
+        threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZKSHSimplified, this));
     }
 
     void StopLightZxdhThread() {
@@ -62,10 +62,10 @@ public:
 
 private:
 
-    void ThreadLightZXDHSimplified();
+    void ThreadLightZKSHSimplified();
 
     void rejectWork(CGenWit& wit, int blockHeight, uint32_t errorNumber);
 
 };
 
-#endif //KAHSH_LIGHTZXDHTHREAD_H
+#endif //KAHSH_LIGHTZKSHTHREAD_H

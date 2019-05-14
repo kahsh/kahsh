@@ -3,16 +3,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef KAHSH_ZXDHTRACKER_H
-#define KAHSH_ZXDHTRACKER_H
+#ifndef KAHSH_ZKSHTRACKER_H
+#define KAHSH_ZKSHTRACKER_H
 
 #include "primitives/zerocoin.h"
 #include <list>
 
 class CDeterministicMint;
-class CzXDHWallet;
+class CzKSHWallet;
 
-class CzXDHTracker
+class CzKSHTracker
 {
 private:
     bool fInitialized;
@@ -21,9 +21,9 @@ private:
     std::map<uint256, uint256> mapPendingSpends; //serialhash, txid of spend
     bool UpdateStatusInternal(const std::set<uint256>& setMempool, CMintMeta& mint);
 public:
-    CzXDHTracker(std::string strWalletFile);
-    ~CzXDHTracker();
-    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzXDHWallet* zXDHWallet = NULL);
+    CzKSHTracker(std::string strWalletFile);
+    ~CzKSHTracker();
+    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzKSHWallet* zKSHWallet = NULL);
     void Add(const CZerocoinMint& mint, bool isNew = false, bool isArchived = false);
     bool Archive(CMintMeta& meta);
     bool HasPubcoin(const CBigNum& bnValue) const;
@@ -50,4 +50,4 @@ public:
     void Clear();
 };
 
-#endif //KAHSH_ZXDHTRACKER_H
+#endif //KAHSH_ZKSHTRACKER_H

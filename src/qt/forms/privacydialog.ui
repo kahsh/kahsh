@@ -172,7 +172,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_3">
                         <item>
-                         <widget class="QLabel" name="labelzXDHActions">
+                         <widget class="QLabel" name="labelzKSHActions">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -189,7 +189,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzXDHSyncStatus">
+                         <widget class="QLabel" name="labelzKSHSyncStatus">
                           <property name="toolTip">
                            <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Kahsh network after a connection is established, but this process has not completed yet.</string>
                           </property>
@@ -258,7 +258,7 @@
                               </font>
                              </property>
                              <property name="toolTip">
-                              <string>Total Balance including unconfirmed and immature zXDH</string>
+                              <string>Total Balance including unconfirmed and immature zKSH</string>
                              </property>
                              <property name="text">
                               <string>Total Zerocoin  Balance:</string>
@@ -283,10 +283,10 @@
                               </font>
                              </property>
                              <property name="toolTip">
-                              <string>Total Balance including unconfirmed and immature zXDH</string>
+                              <string>Total Balance including unconfirmed and immature zKSH</string>
                              </property>
                              <property name="text">
-                              <string>0 zXDH</string>
+                              <string>0 zKSH</string>
                              </property>
                              <property name="alignment">
                               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -335,7 +335,7 @@
                               </font>
                              </property>
                              <property name="text">
-                              <string>0 zXDH</string>
+                              <string>0 zKSH</string>
                              </property>
                             </widget>
                            </item>
@@ -357,7 +357,7 @@
                          <item>
                           <widget class="QPushButton" name="pushButtonShowDenoms">
                            <property name="toolTip">
-                            <string>Show zXDH denominations list</string>
+                            <string>Show zKSH denominations list</string>
                            </property>
                            <property name="text">
                             <string>Show Denominations</string>
@@ -370,7 +370,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_4">
                         <item>
-                         <widget class="QPushButton" name="pushButtonMintzXDH">
+                         <widget class="QPushButton" name="pushButtonMintzKSH">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -378,7 +378,7 @@
                            </size>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Xdh to convert to zXDH</string>
+                           <string>Enter an amount of Xdh to convert to zKSH</string>
                           </property>
                           <property name="text">
                            <string>Mint Zerocoin</string>
@@ -402,14 +402,14 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzXDH_2">
+                         <widget class="QLabel" name="labelzKSH_2">
                           <property name="text">
-                           <string>zXDH</string>
+                           <string>zKSH</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzXDHAmountText">
+                         <widget class="QLabel" name="labelzKSHAmountText">
                           <property name="toolTip">
                            <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
                           </property>
@@ -422,7 +422,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzXDHAmountValue">
+                         <widget class="QLabel" name="labelzKSHAmountValue">
                           <property name="font">
                            <font>
                             <weight>75</weight>
@@ -430,10 +430,10 @@
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Xdh to convert to zXDH</string>
+                           <string>Enter an amount of Xdh to convert to zKSH</string>
                           </property>
                           <property name="text">
-                           <string>0.000 000 00 XDH</string>
+                           <string>0.000 000 00 KSH</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -609,7 +609,7 @@
                              <enum>Qt::ActionsContextMenu</enum>
                             </property>
                             <property name="text">
-                             <string notr="true">0.00 XDH</string>
+                             <string notr="true">0.00 KSH</string>
                             </property>
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -731,14 +731,14 @@
                         <item>
                          <widget class="QPushButton" name="pushButtonZXdhControl">
                           <property name="text">
-                           <string>zXDH Control</string>
+                           <string>zKSH Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
                          <widget class="QLabel" name="labelzXdhSelected">
                           <property name="text">
-                           <string>zXDH Selected:</string>
+                           <string>zKSH Selected:</string>
                           </property>
                          </widget>
                         </item>
@@ -797,7 +797,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_6">
                         <item>
-                         <widget class="QPushButton" name="pushButtonSpendzXDH">
+                         <widget class="QPushButton" name="pushButtonSpendzKSH">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -813,9 +813,9 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzXDHBalanceText">
+                         <widget class="QLabel" name="labelzKSHBalanceText">
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zXDH for spending</string>
+                           <string>Available (mature and spendable) zKSH for spending</string>
                           </property>
                           <property name="text">
                            <string>Available Balance:</string>
@@ -834,12 +834,12 @@
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zXDH for spending
+                           <string>Available (mature and spendable) zKSH for spending
 
-zXDH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
+zKSH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
                           </property>
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1034,7 +1034,7 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                           </property>
                           <property name="buddy">
-                           <cstring>zXDHpayAmount</cstring>
+                           <cstring>zKSHpayAmount</cstring>
                           </property>
                          </widget>
                         </item>
@@ -1044,10 +1044,10 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLineEdit" name="zXDHpayAmount"/>
+                           <widget class="QLineEdit" name="zKSHpayAmount"/>
                           </item>
                           <item>
-                           <widget class="QLabel" name="labelzXDH">
+                           <widget class="QLabel" name="labelzKSH">
                             <property name="minimumSize">
                              <size>
                               <width>55</width>
@@ -1055,7 +1055,7 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
                              </size>
                             </property>
                             <property name="text">
-                             <string>zXDH</string>
+                             <string>zKSH</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1139,7 +1139,7 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_21">
                         <item>
-                         <widget class="QLabel" name="labelzXDHStats">
+                         <widget class="QLabel" name="labelzKSHStats">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -1219,7 +1219,7 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zXDH</string>
+                           <string>Total Balance including unconfirmed and immature zKSH</string>
                           </property>
                           <property name="text">
                            <string>Total Zerocoin  Balance:</string>
@@ -1257,10 +1257,10 @@ zXDH are mature when they have more than 20 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zXDH</string>
+                           <string>Total Balance including unconfirmed and immature zKSH</string>
                           </property>
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1717,14 +1717,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
                         <item>
                          <widget class="QLabel" name="label_AutoMintStatus">
                           <property name="toolTip">
-                           <string>Show the current status of automatic zXDH minting.
+                           <string>Show the current status of automatic zKSH minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to kahsh.conf
 - disable: add 'enablezeromint=0' to kahsh.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zXDH
+- menu Settings-&gt;Options-&gt;Percentage of autominted zKSH
 
 </string>
                           </property>
@@ -1804,7 +1804,7 @@ To change the percentage (no restart required):
                            </font>
                           </property>
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -1835,7 +1835,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -1866,7 +1866,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount5">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -1897,7 +1897,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount10">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -1928,7 +1928,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount50">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -1959,7 +1959,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount100">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -1990,7 +1990,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount500">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -2021,7 +2021,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1000">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -2052,7 +2052,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount5000">
                           <property name="text">
-                           <string>0 zXDH</string>
+                           <string>0 zKSH</string>
                           </property>
                          </widget>
                         </item>
@@ -2219,7 +2219,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 XDH</string>
+         <string notr="true">0.000 000 00 KSH</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2301,7 +2301,7 @@ To change the percentage (no restart required):
            <enum>Qt::ActionsContextMenu</enum>
           </property>
           <property name="text">
-           <string notr="true">0.00 XDH</string>
+           <string notr="true">0.00 KSH</string>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2523,7 +2523,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 XDH</string>
+         <string notr="true">0.000 000 00 KSH</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>

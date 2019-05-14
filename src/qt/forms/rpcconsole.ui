@@ -1328,7 +1328,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="wallet_customzxdhbackuppath_label">
          <property name="text">
-          <string>Custom zXDH Backup Path:</string>
+          <string>Custom zKSH Backup Path:</string>
          </property>
          <property name="visible">
           <bool>false</bool>

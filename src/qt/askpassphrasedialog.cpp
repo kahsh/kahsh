@@ -76,15 +76,15 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     }
 
     // Set checkbox "For anonymization, automint, and staking only" depending on from where we were called
-    if (context == Context::Unlock_Menu || context == Context::Mint_zXDH || context == Context::BIP_38 || context == Context::UI_Vote) {
+    if (context == Context::Unlock_Menu || context == Context::Mint_zKSH || context == Context::BIP_38 || context == Context::UI_Vote) {
         ui->anonymizationCheckBox->setChecked(true);
     }
     else {
         ui->anonymizationCheckBox->setChecked(false);
     }
 
-    // It doesn't make sense to show the checkbox for sending XDH because you wouldn't check it anyway.
-    if (context == Context::Send_XDH || context == Context::Send_zXDH) {
+    // It doesn't make sense to show the checkbox for sending KSH because you wouldn't check it anyway.
+    if (context == Context::Send_KSH || context == Context::Send_zKSH) {
         ui->anonymizationCheckBox->hide();
     }
 
@@ -124,7 +124,7 @@ void AskPassphraseDialog::accept()
             break;
         }
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm wallet encryption"),
-            tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR XDH</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
+            tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR KSH</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
             QMessageBox::Yes | QMessageBox::Cancel,
             QMessageBox::Cancel);
         if (retval == QMessageBox::Yes) {
@@ -134,7 +134,7 @@ void AskPassphraseDialog::accept()
                         "<qt>" +
                             tr("Kahsh will close now to finish the encryption process. "
                                "Remember that encrypting your wallet cannot fully protect "
-                               "your XDHs from being stolen by malware infecting your computer.") +
+                               "your KSHs from being stolen by malware infecting your computer.") +
                             "<br><br><b>" +
                             tr("IMPORTANT: Any previous backups you have made of your wallet file "
                                "should be replaced with the newly generated, encrypted wallet file. "

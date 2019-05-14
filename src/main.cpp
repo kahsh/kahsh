@@ -989,7 +989,7 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend
     //Reject serial's that are already in the blockchain
     int nHeightTx = 0;
     if (IsSerialInBlockchain(spend.getCoinSerialNumber(), nHeightTx))
-        return error("%s : zXDH spend with serial %s is already in block %d\n", __func__,
+        return error("%s : zKSH spend with serial %s is already in block %d\n", __func__,
                      spend.getCoinSerialNumber().GetHex(), nHeightTx);
 
     return true;
@@ -997,16 +997,16 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend
 
 bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const CoinSpend& spend, CBlockIndex* pindex, const uint256& hashBlock)
 {
-    //Check to see if the zXDH is properly signed
+    //Check to see if the zKSH is properly signed
     if (pindex->nHeight >= Params().Zerocoin_Block_V2_Start()) {
         if (!spend.HasValidSignature())
-            return error("%s: V2 zXDH spend does not have a valid signature", __func__);
+            return error("%s: V2 zKSH spend does not have a valid signature", __func__);
 
         libzerocoin::SpendType expectedType = libzerocoin::SpendType::SPEND;
         if (tx.IsCoinStake())
             expectedType = libzerocoin::SpendType::STAKE;
         if (spend.getSpendType() != expectedType) {
-            return error("%s: trying to spend zXDH without the correct spend type. txid=%s", __func__,
+            return error("%s: trying to spend zKSH without the correct spend type. txid=%s", __func__,
                          tx.GetHash().GetHex());
         }
     }
@@ -1015,7 +1015,7 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
     bool fUseV1Params = spend.getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION;
     if (pindex->nHeight > Params().Zerocoin_Block_EnforceSerialRange() &&
         !spend.HasValidSerial(Params().Zerocoin_Params(fUseV1Params)))
-        return error("%s : zXDH spend with serial %s from tx %s is not in valid range\n", __func__,
+        return error("%s : zKSH spend with serial %s from tx %s is not in valid range\n", __func__,
                      spend.getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
 
     return true;
@@ -1334,7 +1334,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
             //Check that txid is not already in the chain
             int nHeightTx = 0;
             if (IsTransactionInChain(tx.GetHash(), nHeightTx))
-                return state.Invalid(error("AcceptToMemoryPool : zXDH spend tx %s already in block %d",
+                return state.Invalid(error("AcceptToMemoryPool : zKSH spend tx %s already in block %d",
                                            tx.GetHash().GetHex(), nHeightTx), REJECT_DUPLICATE, "bad-txns-inputs-spent");
 
             //Check for double spending of serial #'s
@@ -1372,7 +1372,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 }
             }
 
-            // Check that zXDH mints are not already known
+            // Check that zKSH mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -1923,7 +1923,7 @@ int64_t GetBlockValue(int nHeight)
     return nSubsidy;
 }
 
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZXDHStake)
+int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZKSHStake)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight < 200)
@@ -1943,7 +1943,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     return ret;
 }
 
-int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZXDHStake)
+int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZKSHStake)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight < 200)
@@ -2494,7 +2494,7 @@ void ThreadScriptCheck()
     scriptcheckqueue.Thread();
 }
 
-void RecalculateZXDHMinted()
+void RecalculateZKSHMinted()
 {
     CBlockIndex *pindex = chainActive[Params().Zerocoin_StartHeight()];
     int nHeightEnd = chainActive.Height();
@@ -2521,14 +2521,14 @@ void RecalculateZXDHMinted()
     }
 }
 
-void RecalculateZXDHSpent()
+void RecalculateZKSHSpent()
 {
     CBlockIndex* pindex = chainActive[Params().Zerocoin_StartHeight()];
     while (true) {
         if (pindex->nHeight % 1000 == 0)
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
 
-        //Rewrite zXDH supply
+        //Rewrite zKSH supply
         CBlock block;
         assert(ReadBlockFromDisk(block, pindex));
 
@@ -2537,13 +2537,13 @@ void RecalculateZXDHSpent()
         //Reset the supply to previous block
         pindex->mapZerocoinSupply = pindex->pprev->mapZerocoinSupply;
 
-        //Add mints to zXDH supply
+        //Add mints to zKSH supply
         for (auto denom : libzerocoin::zerocoinDenomList) {
             long nDenomAdded = count(pindex->vMintDenominationsInBlock.begin(), pindex->vMintDenominationsInBlock.end(), denom);
             pindex->mapZerocoinSupply.at(denom) += nDenomAdded;
         }
 
-        //Remove spends from zXDH supply
+        //Remove spends from zKSH supply
         for (auto denom : listDenomsSpent)
             pindex->mapZerocoinSupply.at(denom)--;
 
@@ -2557,7 +2557,7 @@ void RecalculateZXDHSpent()
     }
 }
 
-bool RecalculateXDHSupply(int nHeightStart)
+bool RecalculateKSHSupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -2677,7 +2677,7 @@ bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError
     return true;
 }
 
-bool UpdateZXDHSupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
+bool UpdateZKSHSupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
 {
     std::list<CZerocoinMint> listMints;
     bool fFilterInvalid = pindex->nHeight >= Params().Zerocoin_Block_RecalculateAccumulators();
@@ -2861,7 +2861,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                     return state.DoS(100, error("%s: failed to add block %s with invalid zerocoinspend", __func__, tx.GetHash().GetHex()), REJECT_INVALID);
             }
 
-            // Check that zXDH mints are not already known
+            // Check that zKSH mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -2890,7 +2890,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 }
             }
 
-            // Check that zXDH mints are not already known
+            // Check that zKSH mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -2941,14 +2941,14 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     //A one-time event where money supply counts were off and recalculated on a certain block.
     if (pindex->nHeight == Params().Zerocoin_Block_RecalculateAccumulators() + 1) {
-        RecalculateZXDHMinted();
-        RecalculateZXDHSpent();
-        RecalculateXDHSupply(Params().Zerocoin_StartHeight());
+        RecalculateZKSHMinted();
+        RecalculateZKSHSpent();
+        RecalculateKSHSupply(Params().Zerocoin_StartHeight());
     }
 
-    //Track zXDH money supply in the block index
-    if (!UpdateZXDHSupply(block, pindex, fJustCheck))
-        return state.DoS(100, error("%s: Failed to calculate new zXDH supply for block=%s height=%d", __func__,
+    //Track zKSH money supply in the block index
+    if (!UpdateZKSHSupply(block, pindex, fJustCheck))
+        return state.DoS(100, error("%s: Failed to calculate new zKSH supply for block=%s height=%d", __func__,
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID);
 
     // track money supply and mint amount info
@@ -3010,7 +3010,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         setDirtyBlockIndex.insert(pindex);
     }
 
-    //Record zXDH serials
+    //Record zKSH serials
     if (pwalletMain) {
         std::set<uint256> setAddedTx;
         for (std::pair<CoinSpend, uint256> pSpend : vSpends) {
@@ -3154,7 +3154,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert XDH to zXDH
+    // If turned on AutoZeromint will automatically convert KSH to zKSH
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 
@@ -4049,13 +4049,13 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         if (!CheckTransaction(tx, fZerocoinActive, chainActive.Height() + 1 >= Params().Zerocoin_Block_EnforceSerialRange(), state))
             return error("CheckBlock() : CheckTransaction failed");
 
-        // double check that there are no double spent zXDH spends in this block
+        // double check that there are no double spent zKSH spends in this block
         if (tx.IsZerocoinSpend()) {
             for (const CTxIn& txIn : tx.vin) {
                 if (txIn.scriptSig.IsZerocoinSpend()) {
                     libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txIn);
                     if (count(vBlockSerials.begin(), vBlockSerials.end(), spend.getCoinSerialNumber()))
-                        return state.DoS(100, error("%s : Double spending of zXDH serial %s in block\n Block: %s",
+                        return state.DoS(100, error("%s : Double spending of zKSH serial %s in block\n Block: %s",
                                                     __func__, spend.getCoinSerialNumber().GetHex(), block.ToString()));
                     vBlockSerials.emplace_back(spend.getCoinSerialNumber());
                 }
@@ -4273,21 +4273,21 @@ bool AcceptBlockHeader(const CBlock& block, CValidationState& state, CBlockIndex
 bool ContextualCheckZerocoinStake(int nHeight, CStakeInput* stake)
 {
     if (nHeight < Params().Zerocoin_Block_V2_Start())
-        return error("%s: zXDH stake block is less than allowed start height", __func__);
+        return error("%s: zKSH stake block is less than allowed start height", __func__);
 
-    if (CZXdhStake* zXDH = dynamic_cast<CZXdhStake*>(stake)) {
-        CBlockIndex* pindexFrom = zXDH->GetIndexFrom();
+    if (CZXdhStake* zKSH = dynamic_cast<CZXdhStake*>(stake)) {
+        CBlockIndex* pindexFrom = zKSH->GetIndexFrom();
         if (!pindexFrom)
-            return error("%s: failed to get index associated with zXDH stake checksum", __func__);
+            return error("%s: failed to get index associated with zKSH stake checksum", __func__);
 
         if (chainActive.Height() - pindexFrom->nHeight < Params().Zerocoin_RequiredStakeDepth())
-            return error("%s: zXDH stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, chainActive.Height(), pindexFrom->nHeight);
+            return error("%s: zKSH stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, chainActive.Height(), pindexFrom->nHeight);
 
         //The checksum needs to be the exact checksum from 200 blocks ago
         uint256 nCheckpoint200 = chainActive[nHeight - Params().Zerocoin_RequiredStakeDepth()]->nAccumulatorCheckpoint;
-        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zXDH->GetValue()));
-        if (nChecksum200 != zXDH->GetChecksum())
-            return error("%s: accumulator checksum is different than the block 200 blocks previous. stake=%d block200=%d", __func__, zXDH->GetChecksum(), nChecksum200);
+        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zKSH->GetValue()));
+        if (nChecksum200 != zKSH->GetChecksum())
+            return error("%s: accumulator checksum is different than the block 200 blocks previous. stake=%d block200=%d", __func__, zKSH->GetChecksum(), nChecksum200);
     } else {
         return error("%s: dynamic_cast of stake ptr failed", __func__);
     }
@@ -4339,8 +4339,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         if (!stake)
             return error("%s: null stake ptr", __func__);
 
-        if (stake->IsZXDH() && !ContextualCheckZerocoinStake(pindexPrev->nHeight, stake.get()))
-            return state.DoS(100, error("%s: staked zXDH fails context checks", __func__));
+        if (stake->IsZKSH() && !ContextualCheckZerocoinStake(pindexPrev->nHeight, stake.get()))
+            return state.DoS(100, error("%s: staked zKSH fails context checks", __func__));
 
         uint256 hash = block.GetHash();
         if(!mapProofOfStake.count(hash)) // add to mapProofOfStake
@@ -4380,17 +4380,17 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
         // Inputs
         std::vector<CTxIn> xdhInputs;
-        std::vector<CTxIn> zXDHInputs;
+        std::vector<CTxIn> zKSHInputs;
 
         for (const CTxIn& stakeIn : stakeTxIn.vin) {
             if(stakeIn.scriptSig.IsZerocoinSpend()){
-                zXDHInputs.push_back(stakeIn);
+                zKSHInputs.push_back(stakeIn);
             }else{
                 xdhInputs.push_back(stakeIn);
             }
         }
-        const bool hasXDHInputs = !xdhInputs.empty();
-        const bool hasZXDHInputs = !zXDHInputs.empty();
+        const bool hasKSHInputs = !xdhInputs.empty();
+        const bool hasZKSHInputs = !zKSHInputs.empty();
 
         // ZC started after PoS.
         // Check for serial double spent on the same block, TODO: Move this to the proper method..
@@ -4410,7 +4410,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                     }
                 }
                 if(tx.IsCoinStake()) continue;
-                if(hasXDHInputs)
+                if(hasKSHInputs)
                     // Check if coinstake input is double spent inside the same block
                     for (const CTxIn& xdhIn : xdhInputs){
                         if(xdhIn.prevout == in.prevout){
@@ -4453,7 +4453,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                             // if it's already spent
 
                             // First regular staking check
-                            if(hasXDHInputs) {
+                            if(hasKSHInputs) {
                                 if (stakeIn.prevout == in.prevout) {
                                     return state.DoS(100, error("%s: input already spent on a previous block", __func__));
                                 }
@@ -4474,9 +4474,9 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             // Split height
             splitHeight = prev->nHeight;
 
-            // Now that this loop if completed. Check if we have zXDH inputs.
-            if(hasZXDHInputs){
-                for (const CTxIn& zXdhInput : zXDHInputs) {
+            // Now that this loop if completed. Check if we have zKSH inputs.
+            if(hasZKSHInputs){
+                for (const CTxIn& zXdhInput : zKSHInputs) {
                     CoinSpend spend = TxInToZerocoinSpend(zXdhInput);
 
                     // First check if the serials were not already spent on the forked blocks.
@@ -4540,7 +4540,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             }
         } else {
             if(!isBlockFromFork)
-                for (const CTxIn& zXdhInput : zXDHInputs) {
+                for (const CTxIn& zXdhInput : zKSHInputs) {
                         CoinSpend spend = TxInToZerocoinSpend(zXdhInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, spend, pindex, 0))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
@@ -4653,7 +4653,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
         }
     }
     if (nMints || nSpends)
-        LogPrintf("%s : block contains %d zXDH mints and %d zXDH spends\n", __func__, nMints, nSpends);
+        LogPrintf("%s : block contains %d zKSH mints and %d zKSH spends\n", __func__, nMints, nSpends);
 
     if (!CheckBlockSignature(*pblock))
         return error("ProcessNewBlock() : bad proof-of-stake block signature");

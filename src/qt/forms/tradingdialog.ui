@@ -181,7 +181,7 @@
       <string>Asks</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XDHSupply">
+    <widget class="QLabel" name="KSHSupply">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -197,7 +197,7 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="XDHDemand">
+    <widget class="QLabel" name="KSHDemand">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -432,7 +432,7 @@
     <attribute name="title">
      <string>Buy</string>
     </attribute>
-    <widget class="QPushButton" name="BuyXDH">
+    <widget class="QPushButton" name="BuyKSH">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -442,7 +442,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Buy XDH</string>
+      <string>Buy KSH</string>
      </property>
      <property name="icon">
       <iconset resource="../kahsh.qrc">
@@ -512,7 +512,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>XDH</string>
+      <string>KSH</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -1704,10 +1704,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>XDH</string>
+      <string>KSH</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="UnitsInputXDH">
+    <widget class="QLineEdit" name="UnitsInputKSH">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -1741,7 +1741,7 @@
       </font>
      </property>
     </widget>
-    <widget class="QPushButton" name="SellXDHBTN">
+    <widget class="QPushButton" name="SellKSHBTN">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -1751,7 +1751,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Sell XDH</string>
+      <string>Sell KSH</string>
      </property>
      <property name="icon">
       <iconset resource="../kahsh">
@@ -1777,12 +1777,12 @@
          </font>
         </property>
         <property name="text">
-         <string>XDH Available:</string>
+         <string>KSH Available:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="XDHAvailableLabel">
+       <widget class="QLabel" name="KSHAvailableLabel">
         <property name="palette">
          <palette>
           <active>
@@ -2213,7 +2213,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="labelXDH">
+       <widget class="QLabel" name="labelKSH">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -2221,7 +2221,7 @@
          </font>
         </property>
         <property name="text">
-         <string>XDH</string>
+         <string>KSH</string>
         </property>
        </widget>
       </item>
@@ -2733,7 +2733,7 @@
       <string>TextLabel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XDHBalanceLabel">
+    <widget class="QLabel" name="KSHBalanceLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2762,7 +2762,7 @@
       </font>
      </property>
      <property name="text">
-      <string>XDH Balance:</string>
+      <string>KSH Balance:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_12">
@@ -2784,7 +2784,7 @@
       <string>BTC Balance:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XDHAvailableLabel_2">
+    <widget class="QLabel" name="KSHAvailableLabel_2">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2813,7 +2813,7 @@
       </font>
      </property>
      <property name="text">
-      <string>XDH Available:</string>
+      <string>KSH Available:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_14">
@@ -2832,10 +2832,10 @@
       </font>
      </property>
      <property name="text">
-      <string>XDH Pending:</string>
+      <string>KSH Pending:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XDHPendingLabel">
+    <widget class="QLabel" name="KSHPendingLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2928,7 +2928,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Bittrex XDH Deposit Address:</string>
+      <string>Bittrex KSH Deposit Address:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="GenDepositBTN">

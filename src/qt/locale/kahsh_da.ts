@@ -176,7 +176,7 @@
         <translation>Bekræft, og tegnebogen krypteres.</translation>
     </message>
     <message>
-        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XDHs from being stolen by malware infecting your computer.</source>
+        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KSHs from being stolen by malware infecting your computer.</source>
         <translation>Kahsh vil lukke ned for at færdiggøre kryptograferingsprocesserne. Husk at kryptering alene ikke sikrer mod tyveri af mønterne fra malware eller virus på computeren.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@
         <translation>Er du sikker på, at du vil kryptere din tegnebog?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XDH&lt;/b&gt;!</source>
-        <translation>Advarsel! Hvis du krypterer din tegnebog og mister dit password vil du &lt;b&gt;MISTE ALLE DINE XDH&lt;/b&gt;. Passworded kan ikke genskabes.</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR KSH&lt;/b&gt;!</source>
+        <translation>Advarsel! Hvis du krypterer din tegnebog og mister dit password vil du &lt;b&gt;MISTE ALLE DINE KSH&lt;/b&gt;. Passworded kan ikke genskabes.</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -433,8 +433,8 @@
         <translation>Vis transaktionshistorik</translation>
     </message>
     <message>
-        <source>Privacy Actions for zXDH</source>
-        <translation>Beskyttelse af personlige oplysninger for zXDH</translation>
+        <source>Privacy Actions for zKSH</source>
+        <translation>Beskyttelse af personlige oplysninger for zKSH</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -1681,8 +1681,8 @@ Vær tålmodig efter at du har klikket på import.</translation>
         <translation>Adresse / Beløb:</translation>
     </message>
     <message>
-        <source>Add destinations to send XDH to</source>
-        <translation>Tilføj destinationer for at sende XDH til</translation>
+        <source>Add destinations to send KSH to</source>
+        <translation>Tilføj destinationer for at sende KSH til</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1780,32 +1780,32 @@ Vær tålmodig efter at du har klikket på import.</translation>
         <translation>Vælg tilsløringsniveau</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Brug 2 separate masternoder for at tilsløre beløb op til 10000 XDH</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Brug 2 separate masternoder for at tilsløre beløb op til 10000 KSH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Brug 8 separate masternoder for at tilsløre op til 10000 XDH</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Brug 8 separate masternoder for at tilsløre op til 10000 KSH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Brug 16 separate masternoder</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XDH to anonymize 10000 XDH</source>
-        <translation>Dette valg er det hurtigste og vil koste i omegnen af 0.025 XDH for at anonymiser 10000 XDH</translation>
+        <source>This option is the quickest and will cost about ~0.025 KSH to anonymize 10000 KSH</source>
+        <translation>Dette valg er det hurtigste og vil koste i omegnen af 0.025 KSH for at anonymiser 10000 KSH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XDH to anonymize 10000 XDH</source>
-        <translation>Dette valg er relativt hurtigt og vil koste i omegnen af 0.05 XDH for at anonymiser 10000 XDH</translation>
+        <source>This option is moderately fast and will cost about 0.05 KSH to anonymize 10000 KSH</source>
+        <translation>Dette valg er relativt hurtigt og vil koste i omegnen af 0.05 KSH for at anonymiser 10000 KSH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Denne mulighed er den langsomste og det mest sikre valg. Valg af maksimal tilsløring vil koste</translation>
     </message>
     <message>
-        <source>0.1 XDH per 10000 XDH you anonymize.</source>
-        <translation>0.1 pr 10000 XDH for at tilsløre.</translation>
+        <source>0.1 KSH per 10000 KSH you anonymize.</source>
+        <translation>0.1 pr 10000 KSH for at tilsløre.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1948,28 +1948,28 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>MAP port ved hjælp af UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XDH units to zXDH</source>
-        <translation>Aktivér automatisk mintning af XDH-enheder til zXDH</translation>
+        <source>Enable automatic minting of KSH units to zKSH</source>
+        <translation>Aktivér automatisk mintning af KSH-enheder til zKSH</translation>
     </message>
     <message>
-        <source>Enable zXDH Automint</source>
-        <translation>Aktivér zXDH Automint</translation>
+        <source>Enable zKSH Automint</source>
+        <translation>Aktivér zKSH Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming XDH which get automatically converted to zXDH via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procentdelen af indkommende XDH, som automatisk konverteres til zXDH via Zerocoin Protocol (min: 10%)</translation>
+        <source>Percentage of incoming KSH which get automatically converted to zKSH via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procentdelen af indkommende KSH, som automatisk konverteres til zKSH via Zerocoin Protocol (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zXDH</source>
-        <translation>Procentdel af automatiseret zXDH</translation>
+        <source>Percentage of autominted zKSH</source>
+        <translation>Procentdel af automatiseret zKSH</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough XDH for this denomination is available</source>
-        <translation>Vent med automatisk konvertering til Zerocoin, indtil nok XDH til denne betegnelse er tilgængelig</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough KSH for this denomination is available</source>
+        <translation>Vent med automatisk konvertering til Zerocoin, indtil nok KSH til denne betegnelse er tilgængelig</translation>
     </message>
     <message>
-        <source>Preferred Automint zXDH Denomination</source>
-        <translation>Foretrukket Automint zXDH Denomination</translation>
+        <source>Preferred Automint zKSH Denomination</source>
+        <translation>Foretrukket Automint zKSH Denomination</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -2131,8 +2131,8 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Samlet saldo, inklusive alle utilgængelige mønter.</translation>
     </message>
     <message>
-        <source>XDH Balance</source>
-        <translation>XDH Balance</translation>
+        <source>KSH Balance</source>
+        <translation>KSH Balance</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2159,14 +2159,14 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Din nuværende Kahsh-saldo, ubekræftede og umodne transaktioner inkluderet</translation>
     </message>
     <message>
-        <source>zXDH Balance</source>
-        <translation>zXDH-saldo</translation>
+        <source>zKSH Balance</source>
+        <translation>zKSH-saldo</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zXDH are spendable.</source>
+These zKSH are spendable.</source>
         <translation>Ældre: mere end 20 bekræftelser og mere end 1 minutter med samme betegnelse, efter at den blev minted
-Disse zXDH kan bruges.</translation>
+Disse zKSH kan bruges.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2219,8 +2219,8 @@ Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at d
         <translation>Brugbare:</translation>
     </message>
     <message>
-        <source>Locked XDH or Masternode collaterals. These are excluded from zXDH minting.</source>
-        <translation>Låste XDH eller Masternode collaterals. Disse er udelukket fra zXDH-mintning.</translation>
+        <source>Locked KSH or Masternode collaterals. These are excluded from zKSH minting.</source>
+        <translation>Låste KSH eller Masternode collaterals. Disse er udelukket fra zKSH-mintning.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2231,8 +2231,8 @@ Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at d
         <translation>Ubekræftet:</translation>
     </message>
     <message>
-        <source>Your current zXDH balance, unconfirmed and immature zXDH included.</source>
-        <translation>Din nuværende zXDH-saldo, ubekræftede og umodne zXDH inkluderet.</translation>
+        <source>Your current zKSH balance, unconfirmed and immature zKSH included.</source>
+        <translation>Din nuværende zKSH-saldo, ubekræftede og umodne zKSH inkluderet.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2243,10 +2243,10 @@ Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at d
         <translation>Ude af synk</translation>
     </message>
     <message>
-        <source>Current percentage of zXDH.
+        <source>Current percentage of zKSH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Nuværende procentdel af zXDH
+        <translation>Nuværende procentdel af zKSH
 Hvis AutoMint er aktiveret, vil denne procentdel sætte sig omkring den konfigurerede AutoMint-procent (default = 10%)</translation>
     </message>
     <message>
@@ -2389,8 +2389,8 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2401,8 +2401,8 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>Til rådighed til Minting:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XDH</source>
-        <translation>0.000 000 00 XDH</translation>
+        <source>0.000 000 00 KSH</source>
+        <translation>0.000 000 00 KSH</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2441,16 +2441,16 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>PRIVATLIV</translation>
     </message>
     <message>
-        <source>Enter an amount of Xdh to convert to zXDH</source>
+        <source>Enter an amount of Xdh to convert to zKSH</source>
         <translation>Indtast en mængde Xdh for at konvertere til zXdh</translation>
     </message>
     <message>
-        <source>zXDH Control</source>
-        <translation>zXDH Control</translation>
+        <source>zKSH Control</source>
+        <translation>zKSH Control</translation>
     </message>
     <message>
-        <source>zXDH Selected:</source>
-        <translation>zXDH Selected:</translation>
+        <source>zKSH Selected:</source>
+        <translation>zKSH Selected:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2465,24 +2465,24 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>Tilbring Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending</source>
-        <translation>Tilgængelig (moden og brugt) zXDH for udgifter</translation>
+        <source>Available (mature and spendable) zKSH for spending</source>
+        <translation>Tilgængelig (moden og brugt) zKSH for udgifter</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Disponibel saldo:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending
+        <source>Available (mature and spendable) zKSH for spending
 
-zXDH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Tilgængelig (moden og brugt) zXDH for spending
+zKSH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Tilgængelig (moden og brugt) zKSH for spending
 
-zXDH er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med samme betegnelse, efter at de blev præsenteret</translation>
+zKSH er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med samme betegnelse, efter at de blev præsenteret</translation>
     </message>
     <message>
-        <source>0 zXDH</source>
-        <translation>0 zXDH</translation>
+        <source>0 zKSH</source>
+        <translation>0 zKSH</translation>
     </message>
     <message>
         <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
@@ -2553,8 +2553,8 @@ zXDH er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med 
         <translation>Zerocoin Stats:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zXDH</source>
-        <translation>Samlet saldo inklusive ubekræftede og umodne zXDH</translation>
+        <source>Total Balance including unconfirmed and immature zKSH</source>
+        <translation>Samlet saldo inklusive ubekræftede og umodne zKSH</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2575,24 +2575,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at den blev mønnet</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zXDH minting.
+        <source>Show the current status of automatic zKSH minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to kahsh.conf
 - disable: add 'enablezeromint=0' to kahsh.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zXDH
+- menu Settings-&gt;Options-&gt;Percentage of autominted zKSH
 
 </source>
-        <translation>Vis den aktuelle status for automatisk zXDH minting.øj
+        <translation>Vis den aktuelle status for automatisk zKSH minting.øj
 
 For at ændre status (genstart kræves):.
 - aktiver: tilføj 'enablezeromint = 1' til kahsh.conf
 - deaktiver: tilføj 'enablezeromint = 0' til kahsh.conf
 
 For at ændre procentdelen (ingen genstart kræves):.
-- menu Indstillinger-&gt; Indstillinger-&gt; Procentdel af automatiseret zXDH
+- menu Indstillinger-&gt; Indstillinger-&gt; Procentdel af automatiseret zKSH
 </translation>
     </message>
     <message>
@@ -2788,12 +2788,12 @@ Maximum allowed: </source>
 Maksimum tilladt:</translation>
     </message>
     <message>
-        <source>zXDH Spend #: </source>
-        <translation>zXDH Spend #: </translation>
+        <source>zKSH Spend #: </source>
+        <translation>zKSH Spend #: </translation>
     </message>
     <message>
-        <source>zXDH Mint</source>
-        <translation>zXDH Mint</translation>
+        <source>zKSH Mint</source>
+        <translation>zKSH Mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2808,12 +2808,12 @@ Maksimum tilladt:</translation>
         <translation>Konfigureret målprocent:&lt;b&gt;</translation>
     </message>
     <message>
-        <source>zXDH is currently disabled due to maintenance.</source>
-        <translation>zXDH er i øjeblikket deaktiveret på grund af vedligeholdelse.</translation>
+        <source>zKSH is currently disabled due to maintenance.</source>
+        <translation>zKSH er i øjeblikket deaktiveret på grund af vedligeholdelse.</translation>
     </message>
     <message>
-        <source>zXDH is currently undergoing maintenance.</source>
-        <translation>zXDH er i øjeblikket under opretholdelse.</translation>
+        <source>zKSH is currently undergoing maintenance.</source>
+        <translation>zKSH er i øjeblikket under opretholdelse.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2900,8 +2900,8 @@ Maksimum tilladt:</translation>
         <translation>Mynt succesfuldt</translation>
     </message>
     <message>
-        <source> zXDH in </source>
-        <translation> zXDH i</translation>
+        <source> zKSH in </source>
+        <translation> zKSH i</translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2960,12 +2960,12 @@ Maksimum tilladt:</translation>
         <translation>Bekræft at De vil sende mønter</translation>
     </message>
     <message>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zXDH kræver et sikkerhedsniveau på 100 til succes.</translation>
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
+        <translation>Version 1 zKSH kræver et sikkerhedsniveau på 100 til succes.</translation>
     </message>
     <message>
-        <source>Failed to spend zXDH</source>
-        <translation>Kunne ikke bruge zXDH</translation>
+        <source>Failed to spend zKSH</source>
+        <translation>Kunne ikke bruge zKSH</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2987,7 +2987,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XDH to convert to zXDH</comment>
+        <comment>Enter an amount of KSH to convert to zKSH</comment>
         <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
@@ -3304,8 +3304,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Brugerdefineret Backup-sti:</translation>
     </message>
     <message>
-        <source>Custom zXDH Backup Path:</source>
-        <translation>Brugerdefineret zXDH Backup-sti:</translation>
+        <source>Custom zKSH Backup Path:</source>
+        <translation>Brugerdefineret zKSH Backup-sti:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3748,8 +3748,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>UTXO størrelse:</translation>
     </message>
     <message>
-        <source>0 XDH</source>
-        <translation>0 XDH</translation>
+        <source>0 KSH</source>
+        <translation>0 KSH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3804,12 +3804,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Mønter vælges automatisk</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uXDHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uXDHs in fee,&lt;br /&gt;while "at least" pays 1000 uXDHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uXDHs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uXDH i gebyr, &lt;br /&gt; mens "mindst" udbetaler 1000 uXDHs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
+        <source>If the custom fee is set to 1000 uKSHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKSHs in fee,&lt;br /&gt;while "at least" pays 1000 uKSHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uKSHs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uKSH i gebyr, &lt;br /&gt; mens "mindst" udbetaler 1000 uKSHs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uXDHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uXDHs in fee,&lt;br /&gt;while "total at least" pays 1000 uXDHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uXDHs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uXDH i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uXDHs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
+        <source>If the custom fee is set to 1000 uKSHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKSHs in fee,&lt;br /&gt;while "total at least" pays 1000 uKSHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uKSHs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uKSH i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uKSHs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Kahsh transactions than the network can process.</source>
@@ -3860,8 +3860,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Tilføj &amp;Modtager</translation>
     </message>
     <message>
-        <source>Anonymized XDH</source>
-        <translation>Tilsløret XDH</translation>
+        <source>Anonymized KSH</source>
+        <translation>Tilsløret KSH</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4524,12 +4524,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Modtaget via tilsløring</translation>
     </message>
     <message>
-        <source>XDH Stake</source>
-        <translation>XDH Stake</translation>
+        <source>KSH Stake</source>
+        <translation>KSH Stake</translation>
     </message>
     <message>
-        <source>zXDH Stake</source>
-        <translation>zXDH Stake</translation>
+        <source>zKSH Stake</source>
+        <translation>zKSH Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4548,32 +4548,32 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Opret tilsløret designering</translation>
     </message>
     <message>
-        <source>Converted XDH to zXDH</source>
-        <translation>Konverteret XDH til zXDH</translation>
+        <source>Converted KSH to zKSH</source>
+        <translation>Konverteret KSH til zKSH</translation>
     </message>
     <message>
-        <source>Spent zXDH</source>
+        <source>Spent zKSH</source>
         <translation>Brugt zXdh</translation>
     </message>
     <message>
-        <source>Received XDH from zXDH</source>
+        <source>Received KSH from zKSH</source>
         <translation>Modtaget Xdh fra zXdh</translation>
     </message>
     <message>
-        <source>Minted Change as zXDH from zXDH Spend</source>
-        <translation>Minted Change som zXDH fra zXDH Spend</translation>
+        <source>Minted Change as zKSH from zKSH Spend</source>
+        <translation>Minted Change som zKSH fra zKSH Spend</translation>
     </message>
     <message>
-        <source>Converted zXDH to XDH</source>
-        <translation>Konverteret XDH til zXDH</translation>
+        <source>Converted zKSH to KSH</source>
+        <translation>Konverteret KSH til zKSH</translation>
     </message>
     <message>
-        <source>Anonymous (zXDH Transaction)</source>
-        <translation>Anonym (zXDH Transaction)</translation>
+        <source>Anonymous (zKSH Transaction)</source>
+        <translation>Anonym (zKSH Transaction)</translation>
     </message>
     <message>
-        <source>Anonymous (zXDH Stake)</source>
-        <translation>Anonym (zXDH Stake)</translation>
+        <source>Anonymous (zKSH Stake)</source>
+        <translation>Anonym (zKSH Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4783,12 +4783,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Eksporteret!</translation>
     </message>
     <message>
-        <source>Received XDH from zXDH</source>
+        <source>Received KSH from zKSH</source>
         <translation>Modtaget Xdh fra zXdh</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zXDH</source>
-        <translation>Zerocoin Spend, Ændring i zXDH</translation>
+        <source>Zerocoin Spend, Change in zKSH</source>
+        <translation>Zerocoin Spend, Ændring i zKSH</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4824,8 +4824,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Send mønter</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 XDH.</source>
-        <translation>SwiftTx understøtter ikke afsendelse af så store beløb endnu. Transaktioner er for tiden begrænsede til %1XDH.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 KSH.</source>
+        <translation>SwiftTx understøtter ikke afsendelse af så store beløb endnu. Transaktioner er for tiden begrænsede til %1KSH.</translation>
     </message>
 </context>
 <context>
@@ -4858,8 +4858,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
 <context>
     <name>ZXdhControlDialog</name>
     <message>
-        <source>Select zXDH to Spend</source>
-        <translation>Vælg zXDH for at bruge</translation>
+        <source>Select zKSH to Spend</source>
+        <translation>Vælg zKSH for at bruge</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4870,8 +4870,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4938,16 +4938,16 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
 &lt;http://www.opensource.org/licenses/mit-license.php&gt;. </translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zXDH minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zKSH minting (0-1, default: %u)</source>
         <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zXdh-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for XDH inputs (0-1, default: %u)</source>
-        <translation>Aktiver eller deaktiver staking-funktionalitet for XDH-indgange (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for KSH inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for KSH-indgange (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zXDH inputs (0-1, default: %u)</source>
-        <translation>Aktiver eller deaktiver staking-funktionalitet for zXDH-indgange (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for zKSH inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for zKSH-indgange (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4982,12 +4982,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Udfør en kommando når den bedste blok ændres (%s in cmd erstattes med blok hashen)</translation>
     </message>
     <message>
-        <source>Fees (in XDH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Gebyrer (in XDH/kb) lavere end dette betragtes som et nul-gebyr for at videresende (default: %s)</translation>
+        <source>Fees (in KSH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Gebyrer (in KSH/kb) lavere end dette betragtes som et nul-gebyr for at videresende (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XDH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Gebyrer (in XDH/kb) lavere end dette betragtes som et nul-gebyr for at oprette en transaktion (default: %s)</translation>
+        <source>Fees (in KSH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Gebyrer (in KSH/kb) lavere end dette betragtes som et nul-gebyr for at oprette en transaktion (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5094,12 +5094,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret designeret indestående for at gennemføre denne transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XDH.</source>
-        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 XDH.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KSH.</source>
+        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 KSH.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XDH.</source>
-        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 10000 XDH.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 KSH.</source>
+        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 10000 KSH.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5410,8 +5410,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Læsning af blokken mislykkedes</translation>
     </message>
     <message>
-        <source>Fee (in XDH/kB) to add to transactions you send (default: %s)</source>
-        <translation>Gebyr (i XDH/kB) som skal tilføjes transaktionen der sendes (default: %s)</translation>
+        <source>Fee (in KSH/kB) to add to transactions you send (default: %s)</source>
+        <translation>Gebyr (i KSH/kB) som skal tilføjes transaktionen der sendes (default: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5542,8 +5542,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Procentdel af automatisk mintede Zerocoin (10-100, standard: %u)</translation>
     </message>
     <message>
-        <source>Reindex the XDH and zXDH money supply statistics</source>
-        <translation>Reindex XDH og zXDH pengemængde statistikker</translation>
+        <source>Reindex the KSH and zKSH money supply statistics</source>
+        <translation>Reindex KSH og zKSH pengemængde statistikker</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5618,8 +5618,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Foretrukken Betegnelse for automatisk mintede Zerocoin (1/5/10/50/100/500/1000/5000), 0 uden præference. standard: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zXDH backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Angiv brugerdefineret backup-vej for at tilføje en kopi af enhver zXDH-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup. Hvis backupath er indstillet, vil der ske 4 sikkerhedskopier</translation>
+        <source>Specify custom backup path to add a copy of any automatic zKSH backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Angiv brugerdefineret backup-vej for at tilføje en kopi af enhver zKSH-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup. Hvis backupath er indstillet, vil der ske 4 sikkerhedskopier</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -6118,8 +6118,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Synkroniserer sporks...</translation>
     </message>
     <message>
-        <source>Syncing zXDH wallet...</source>
-        <translation>Syncing zXDH wallet ..</translation>
+        <source>Syncing zKSH wallet...</source>
+        <translation>Syncing zKSH wallet ..</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -6266,8 +6266,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Brugernavn til JSON-RPC forbindelser</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zXDH</source>
-        <translation>Værdien er under den mindste tilgængelige værdi (= 1) for zXDH</translation>
+        <source>Value is below the smallest available denomination (= 1) of zKSH</source>
+        <translation>Værdien er under den mindste tilgængelige værdi (= 1) for zKSH</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6282,8 +6282,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Verificerer  tegnebog</translation>
     </message>
     <message>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zXDH kræver et sikkerhedsniveau på 100 til succes.</translation>
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
+        <translation>Version 1 zKSH kræver et sikkerhedsniveau på 100 til succes.</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>

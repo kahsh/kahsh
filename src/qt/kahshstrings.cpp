@@ -60,12 +60,12 @@ QT_TRANSLATE_NOOP("kahsh-core", ""
 QT_TRANSLATE_NOOP("kahsh-core", ""
 "Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
-"Enable automatic wallet backups triggered after each zXDH minting (0-1, "
+"Enable automatic wallet backups triggered after each zKSH minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
-"Enable or disable staking functionality for XDH inputs (0-1, default: %u)"),
+"Enable or disable staking functionality for KSH inputs (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
-"Enable or disable staking functionality for zXDH inputs (0-1, default: %u)"),
+"Enable or disable staking functionality for zKSH inputs (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
 "Enable spork administration functionality with the appropriate private key."),
 QT_TRANSLATE_NOOP("kahsh-core", ""
@@ -104,10 +104,10 @@ QT_TRANSLATE_NOOP("kahsh-core", ""
 QT_TRANSLATE_NOOP("kahsh-core", ""
 "Failed to find coin set amongst held coins with less than maxNumber of Spends"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
-"Fees (in XDH/Kb) smaller than this are considered zero fee for relaying "
+"Fees (in KSH/Kb) smaller than this are considered zero fee for relaying "
 "(default: %s)"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
-"Fees (in XDH/Kb) smaller than this are considered zero fee for transaction "
+"Fees (in KSH/Kb) smaller than this are considered zero fee for transaction "
 "creation (default: %s)"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
 "Flush database activity from memory pool to disk log every <n> megabytes "
@@ -180,7 +180,7 @@ QT_TRANSLATE_NOOP("kahsh-core", ""
 "Show N confirmations for a successfully locked transaction (0-9999, default: "
 "%u)"),
 QT_TRANSLATE_NOOP("kahsh-core", ""
-"Specify custom backup path to add a copy of any automatic zXDH backup. If "
+"Specify custom backup path to add a copy of any automatic zKSH backup. If "
 "set as dir, every backup generates a timestamped file. If set as file, will "
 "rewrite to that file every backup. If backuppath is set as well, 4 backups "
 "will happen"),
@@ -215,10 +215,10 @@ QT_TRANSLATE_NOOP("kahsh-core", ""
 "Unable to locate enough Obfuscation denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("kahsh-core", ""
 "Unable to locate enough Obfuscation non-denominated funds for this "
-"transaction that are not equal 10000 XDH."),
+"transaction that are not equal 10000 KSH."),
 QT_TRANSLATE_NOOP("kahsh-core", ""
 "Unable to locate enough funds for this transaction that are not equal 10000 "
-"XDH."),
+"KSH."),
 QT_TRANSLATE_NOOP("kahsh-core", ""
 "Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: "
 "%s)"),
@@ -340,7 +340,7 @@ QT_TRANSLATE_NOOP("kahsh-core", "Failed to read block"),
 QT_TRANSLATE_NOOP("kahsh-core", "Failed to select a zerocoin"),
 QT_TRANSLATE_NOOP("kahsh-core", "Failed to wipe zerocoinDB"),
 QT_TRANSLATE_NOOP("kahsh-core", "Failed to write coin serial number into wallet"),
-QT_TRANSLATE_NOOP("kahsh-core", "Fee (in XDH/kB) to add to transactions you send (default: %s)"),
+QT_TRANSLATE_NOOP("kahsh-core", "Fee (in KSH/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("kahsh-core", "Finalizing transaction."),
 QT_TRANSLATE_NOOP("kahsh-core", "Force safe mode (default: %u)"),
 QT_TRANSLATE_NOOP("kahsh-core", "Found enough users, signing ( waiting %s )"),
@@ -429,7 +429,7 @@ QT_TRANSLATE_NOOP("kahsh-core", "Randomly drop 1 of every <n> network messages")
 QT_TRANSLATE_NOOP("kahsh-core", "Randomly fuzz 1 of every <n> network messages"),
 QT_TRANSLATE_NOOP("kahsh-core", "Rebuild block chain index from current blk000??.dat files"),
 QT_TRANSLATE_NOOP("kahsh-core", "Receive and display P2P network alerts (default: %u)"),
-QT_TRANSLATE_NOOP("kahsh-core", "Reindex the XDH and zXDH money supply statistics"),
+QT_TRANSLATE_NOOP("kahsh-core", "Reindex the KSH and zKSH money supply statistics"),
 QT_TRANSLATE_NOOP("kahsh-core", "Reindex the accumulator database"),
 QT_TRANSLATE_NOOP("kahsh-core", "Reindexing zerocoin database..."),
 QT_TRANSLATE_NOOP("kahsh-core", "Reindexing zerocoin failed"),
@@ -482,7 +482,7 @@ QT_TRANSLATE_NOOP("kahsh-core", "Synchronizing budgets..."),
 QT_TRANSLATE_NOOP("kahsh-core", "Synchronizing masternode winners..."),
 QT_TRANSLATE_NOOP("kahsh-core", "Synchronizing masternodes..."),
 QT_TRANSLATE_NOOP("kahsh-core", "Synchronizing sporks..."),
-QT_TRANSLATE_NOOP("kahsh-core", "Syncing zXDH wallet..."),
+QT_TRANSLATE_NOOP("kahsh-core", "Syncing zKSH wallet..."),
 QT_TRANSLATE_NOOP("kahsh-core", "The coin spend has been used"),
 QT_TRANSLATE_NOOP("kahsh-core", "The new spend coin transaction did not verify"),
 QT_TRANSLATE_NOOP("kahsh-core", "The selected mint coin is an invalid coin"),
@@ -521,11 +521,11 @@ QT_TRANSLATE_NOOP("kahsh-core", "Use block spam filter (default: %u)"),
 QT_TRANSLATE_NOOP("kahsh-core", "Use the test network"),
 QT_TRANSLATE_NOOP("kahsh-core", "User Agent comment (%s) contains unsafe characters."),
 QT_TRANSLATE_NOOP("kahsh-core", "Username for JSON-RPC connections"),
-QT_TRANSLATE_NOOP("kahsh-core", "Value is below the smallest available denomination (= 1) of zXDH"),
+QT_TRANSLATE_NOOP("kahsh-core", "Value is below the smallest available denomination (= 1) of zKSH"),
 QT_TRANSLATE_NOOP("kahsh-core", "Value more than Obfuscation pool maximum allows."),
 QT_TRANSLATE_NOOP("kahsh-core", "Verifying blocks..."),
 QT_TRANSLATE_NOOP("kahsh-core", "Verifying wallet..."),
-QT_TRANSLATE_NOOP("kahsh-core", "Version 1 zXDH require a security level of 100 to successfully spend."),
+QT_TRANSLATE_NOOP("kahsh-core", "Version 1 zKSH require a security level of 100 to successfully spend."),
 QT_TRANSLATE_NOOP("kahsh-core", "Wallet %s resides outside data directory %s"),
 QT_TRANSLATE_NOOP("kahsh-core", "Wallet is locked."),
 QT_TRANSLATE_NOOP("kahsh-core", "Wallet needed to be rewritten: restart Kahsh Core to complete"),

@@ -9,7 +9,7 @@
 #include "main.h"
 
 /****** Thread ********/
-void CLightWorker::ThreadLightZXDHSimplified() {
+void CLightWorker::ThreadLightZKSHSimplified() {
     RenameThread("kahsh-light-thread");
     isWorkerRunning = true;
     while (true) {
@@ -62,7 +62,7 @@ void CLightWorker::ThreadLightZXDHSimplified() {
                         );
 
                     } catch (NotEnoughMintsException e) {
-                        LogPrintStr(std::string("ThreadLightZXDHSimplified: ") + e.message + "\n");
+                        LogPrintStr(std::string("ThreadLightZKSHSimplified: ") + e.message + "\n");
                         rejectWork(genWit, blockHeight, NOT_ENOUGH_MINTS);
                         continue;
                     }

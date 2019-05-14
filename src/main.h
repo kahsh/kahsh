@@ -238,8 +238,8 @@ bool GetTransaction(const uint256& hash, CTransaction& tx, uint256& hashBlock, b
 
 // ***TODO***
 double ConvertBitsToDouble(unsigned int nBits);
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZXDHStake);
-int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZXDHStake);
+int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZKSHStake);
+int64_t GetDevelopmentPayment(int nHeight, int64_t blockValue, bool isZKSHStake);
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock, bool fProofOfStake);
 
 bool IsMasternodeCollateral(CAmount value);
@@ -364,9 +364,9 @@ bool IsTransactionInChain(const uint256& txId, int& nHeightTx, CTransaction& tx)
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx);
 bool IsBlockHashInChain(const uint256& hashBlock);
 bool ValidOutPoint(const COutPoint out, int nHeight);
-void RecalculateZXDHSpent();
-void RecalculateZXDHMinted();
-bool RecalculateXDHSupply(int nHeightStart);
+void RecalculateZKSHSpent();
+void RecalculateZKSHMinted();
+bool RecalculateKSHSupply(int nHeightStart);
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError);
 
 

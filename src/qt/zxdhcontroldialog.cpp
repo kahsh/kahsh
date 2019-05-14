@@ -129,7 +129,7 @@ void ZXdhControlDialog::updateList()
             if(nConfirmations < Params().Zerocoin_MintRequiredConfirmations())
                 strReason = strprintf("Needs %d more confirmations", Params().Zerocoin_MintRequiredConfirmations() - nConfirmations);
             else if (!mint.isSeedCorrect)
-                strReason = "The zXDH seed used to mint this zXDH is not the same as currently hold in the wallet";
+                strReason = "The zKSH seed used to mint this zKSH is not the same as currently hold in the wallet";
             else
                 strReason = strprintf("Needs %d more mints added to network", Params().Zerocoin_RequiredAccumulation());
 

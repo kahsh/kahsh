@@ -87,30 +87,30 @@ enum AvailableCoinsType {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT10000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 XDH at the same time
+    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 KSH at the same time
     ONLY_10000 = 5,                        // find masternode outputs including locked ones (use with caution)
     STAKABLE_COINS = 6                          // UTXO's that are valid for staking
 };
 
-// Possible states for zXDH send
+// Possible states for zKSH send
 enum ZerocoinSpendStatus {
-    ZXDH_SPEND_OKAY = 0,                            // No error
-    ZXDH_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text
-    ZXDH_WALLET_LOCKED = 2,                         // Wallet was locked
-    ZXDH_COMMIT_FAILED = 3,                         // Commit failed, reset status
-    ZXDH_ERASE_SPENDS_FAILED = 4,                   // Erasing spends during reset failed
-    ZXDH_ERASE_NEW_MINTS_FAILED = 5,                // Erasing new mints during reset failed
-    ZXDH_TRX_FUNDS_PROBLEMS = 6,                    // Everything related to available funds
-    ZXDH_TRX_CREATE = 7,                            // Everything related to create the transaction
-    ZXDH_TRX_CHANGE = 8,                            // Everything related to transaction change
-    ZXDH_TXMINT_GENERAL = 9,                        // General errors in MintToTxIn
-    ZXDH_INVALID_COIN = 10,                         // Selected mint coin is not valid
-    ZXDH_FAILED_ACCUMULATOR_INITIALIZATION = 11,    // Failed to initialize witness
-    ZXDH_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify
-    ZXDH_BAD_SERIALIZATION = 13,                    // Transaction verification failed
-    ZXDH_SPENT_USED_ZXDH = 14,                      // Coin has already been spend
-    ZXDH_TX_TOO_LARGE = 15,                          // The transaction is larger than the max tx size
-    ZXDH_SPEND_V1_SEC_LEVEL                         // Spend is V1 and security level is not set to 100
+    ZKSH_SPEND_OKAY = 0,                            // No error
+    ZKSH_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text
+    ZKSH_WALLET_LOCKED = 2,                         // Wallet was locked
+    ZKSH_COMMIT_FAILED = 3,                         // Commit failed, reset status
+    ZKSH_ERASE_SPENDS_FAILED = 4,                   // Erasing spends during reset failed
+    ZKSH_ERASE_NEW_MINTS_FAILED = 5,                // Erasing new mints during reset failed
+    ZKSH_TRX_FUNDS_PROBLEMS = 6,                    // Everything related to available funds
+    ZKSH_TRX_CREATE = 7,                            // Everything related to create the transaction
+    ZKSH_TRX_CHANGE = 8,                            // Everything related to transaction change
+    ZKSH_TXMINT_GENERAL = 9,                        // General errors in MintToTxIn
+    ZKSH_INVALID_COIN = 10,                         // Selected mint coin is not valid
+    ZKSH_FAILED_ACCUMULATOR_INITIALIZATION = 11,    // Failed to initialize witness
+    ZKSH_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify
+    ZKSH_BAD_SERIALIZATION = 13,                    // Transaction verification failed
+    ZKSH_SPENT_USED_ZKSH = 14,                      // Coin has already been spend
+    ZKSH_TX_TOO_LARGE = 15,                          // The transaction is larger than the max tx size
+    ZKSH_SPEND_V1_SEC_LEVEL                         // Spend is V1 and security level is not set to 100
 };
 
 struct CompactTallyItem {
@@ -218,7 +218,7 @@ public:
     void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, std::list<CDeterministicMint>& listDMintsRestored);
     void ZXdhBackupWallet();
     bool GetZerocoinKey(const CBigNum& bnSerial, CKey& key);
-    bool CreateZXDHOutPut(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
+    bool CreateZKSHOutPut(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
     bool GetMint(const uint256& hashSerial, CZerocoinMint& mint);
     bool GetMintFromStakeHash(const uint256& hashStake, CZerocoinMint& mint);
     bool DatabaseMint(CDeterministicMint& dMint);
@@ -241,7 +241,7 @@ public:
      */
     mutable CCriticalSection cs_wallet;
 
-    CzXDHWallet* zwalletMain;
+    CzKSHWallet* zwalletMain;
 
     std::set<CBitcoinAddress> setAutoConvertAddresses;
 
@@ -249,7 +249,7 @@ public:
     bool fWalletUnlockAnonymizeOnly;
     std::string strWalletFile;
     bool fBackupMints;
-    std::unique_ptr<CzXDHTracker> zxdhTracker;
+    std::unique_ptr<CzKSHTracker> zxdhTracker;
 
     std::set<int64_t> setKeyPool;
     std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
@@ -334,13 +334,13 @@ public:
         return nZeromintPercentage;
     }
 
-    void setZWallet(CzXDHWallet* zwallet)
+    void setZWallet(CzKSHWallet* zwallet)
     {
         zwalletMain = zwallet;
-        zxdhTracker = std::unique_ptr<CzXDHTracker>(new CzXDHTracker(strWalletFile));
+        zxdhTracker = std::unique_ptr<CzKSHTracker>(new CzKSHTracker(strWalletFile));
     }
 
-    CzXDHWallet* getZWallet() { return zwalletMain; }
+    CzKSHWallet* getZWallet() { return zwalletMain; }
 
     bool isZeromintEnabled()
     {
@@ -680,8 +680,8 @@ public:
     /** MultiSig address added */
     boost::signals2::signal<void(bool fHaveMultiSig)> NotifyMultiSigChanged;
 
-    /** zXDH reset */
-    boost::signals2::signal<void()> NotifyzXDHReset;
+    /** zKSH reset */
+    boost::signals2::signal<void()> NotifyzKSHReset;
 
     /** notify wallet file backed up */
     boost::signals2::signal<void (const bool& fSuccess, const std::string& filename)> NotifyWalletBacked;

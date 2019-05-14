@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 The XDHX developers
+// Copyright (c) 2017-2018 The KSHX developers
 // Copyright (c) 2018-2019 The Kahsh Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -514,7 +514,7 @@ BOOST_AUTO_TEST_CASE(deterministic_tests)
     CWalletDB walletdb(strWalletFile, "cr+");
 
     CWallet wallet(strWalletFile);
-    CzXDHWallet zWallet(wallet.strWalletFile);
+    CzKSHWallet zWallet(wallet.strWalletFile);
     zWallet.SetMasterSeed(seedMaster);
     wallet.setZWallet(&zWallet);
 
@@ -526,7 +526,7 @@ BOOST_AUTO_TEST_CASE(deterministic_tests)
     for (int i = 0; i < nTests; i++) {
         PrivateCoin coin(Params().Zerocoin_Params(false), denom, false);
         CDeterministicMint dMint;
-        zWallet.GenerateDeterministicZXDH(denom, coin, dMint);
+        zWallet.GenerateDeterministicZKSH(denom, coin, dMint);
         vCoins.emplace_back(coin);
     }
 

@@ -78,7 +78,7 @@ private:
 
     int nDisplayUnit;
     bool updateLabel(const QString& address);
-    void sendzXDH();
+    void sendzKSH();
 
 private slots:
     void on_payTo_textChanged(const QString& address);
@@ -98,10 +98,10 @@ private slots:
 //    void coinControlClipboardLowOutput();
 //    void coinControlClipboardChange();
 
-    void on_pushButtonMintzXDH_clicked();
+    void on_pushButtonMintzKSH_clicked();
     void on_pushButtonMintReset_clicked();
     void on_pushButtonSpentReset_clicked();
-    void on_pushButtonSpendzXDH_clicked();
+    void on_pushButtonSpendzKSH_clicked();
     void on_pushButtonZXdhControl_clicked();
     void on_pushButtonHideDenoms_clicked();
     void on_pushButtonShowDenoms_clicked();

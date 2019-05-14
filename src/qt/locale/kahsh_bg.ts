@@ -176,7 +176,7 @@
         <translation>Потвърдете шифрирането на портфейла</translation>
     </message>
     <message>
-        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XDHs from being stolen by malware infecting your computer.</source>
+        <source>Kahsh will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KSHs from being stolen by malware infecting your computer.</source>
         <translation>Kahsh сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия Kahsh от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@
         <translation>Сигурни ли сте, че искате да шифрирате вашия портфейл?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XDH&lt;/b&gt;!</source>
-        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ XDH&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR KSH&lt;/b&gt;!</source>
+        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ KSH&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -433,8 +433,8 @@
         <translation>История на транзакциите</translation>
     </message>
     <message>
-        <source>Privacy Actions for zXDH</source>
-        <translation>Поверителни Действия за ZXDH</translation>
+        <source>Privacy Actions for zKSH</source>
+        <translation>Поверителни Действия за ZKSH</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -1677,8 +1677,8 @@ Please be patient after clicking import.</source>
         <translation>Адрес / Сума:</translation>
     </message>
     <message>
-        <source>Add destinations to send XDH to</source>
-        <translation>Добави получател на XDH</translation>
+        <source>Add destinations to send KSH to</source>
+        <translation>Добави получател на KSH</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1776,32 +1776,32 @@ Please be patient after clicking import.</source>
         <translation>Изберете ниво на поверителност.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 XDH</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 KSH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XDH</source>
-        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 XDH</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 KSH</source>
+        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 KSH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Използвай 16 различни мастърноуда</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XDH to anonymize 10000 XDH</source>
-        <translation>Това е най-бързия метод и ще струва около 0.025 XDH за да скриете 10000 XDH</translation>
+        <source>This option is the quickest and will cost about ~0.025 KSH to anonymize 10000 KSH</source>
+        <translation>Това е най-бързия метод и ще струва около 0.025 KSH за да скриете 10000 KSH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XDH to anonymize 10000 XDH</source>
-        <translation>Тази опция е сравнително бърза и ще струва около 0.05 XDH за да скриете 10000 XDH</translation>
+        <source>This option is moderately fast and will cost about 0.05 KSH to anonymize 10000 KSH</source>
+        <translation>Тази опция е сравнително бърза и ще струва около 0.05 KSH за да скриете 10000 KSH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Това е най-бавния и най-сигурен вариант за скриване на XDH. Използването й ще струва</translation>
+        <translation>Това е най-бавния и най-сигурен вариант за скриване на KSH. Използването й ще струва</translation>
     </message>
     <message>
-        <source>0.1 XDH per 10000 XDH you anonymize.</source>
-        <translation>0.1 XDH за 10000 скрити XDH</translation>
+        <source>0.1 KSH per 10000 KSH you anonymize.</source>
+        <translation>0.1 KSH за 10000 скрити KSH</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1944,28 +1944,28 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Картографирай портовете използвайки &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XDH units to zXDH</source>
-        <translation>Включи автоматичното емитиране на XDH единици в zXDH</translation>
+        <source>Enable automatic minting of KSH units to zKSH</source>
+        <translation>Включи автоматичното емитиране на KSH единици в zKSH</translation>
     </message>
     <message>
-        <source>Enable zXDH Automint</source>
-        <translation>Включи Автоматично емитиране на zXDH</translation>
+        <source>Enable zKSH Automint</source>
+        <translation>Включи Автоматично емитиране на zKSH</translation>
     </message>
     <message>
-        <source>Percentage of incoming XDH which get automatically converted to zXDH via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент от входящите XDH, който автоматично да се конвертира в zXDH посредтвом Zerocoin Протокола (мин: 10%)</translation>
+        <source>Percentage of incoming KSH which get automatically converted to zKSH via Zerocoin Protocol (min: 10%)</source>
+        <translation>Процент от входящите KSH, който автоматично да се конвертира в zKSH посредтвом Zerocoin Протокола (мин: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zXDH</source>
-        <translation>Процент автоматично сечени zXDH</translation>
+        <source>Percentage of autominted zKSH</source>
+        <translation>Процент автоматично сечени zKSH</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough XDH for this denomination is available</source>
-        <translation>Не бързай с автоматичното конвертиране в zXDH докато не се съберат достатъчно XDH за тази деноминация</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough KSH for this denomination is available</source>
+        <translation>Не бързай с автоматичното конвертиране в zKSH докато не се съберат достатъчно KSH за тази деноминация</translation>
     </message>
     <message>
-        <source>Preferred Automint zXDH Denomination</source>
-        <translation>Предпочитани деноминации, в които да се сече автоматичен zXDH</translation>
+        <source>Preferred Automint zKSH Denomination</source>
+        <translation>Предпочитани деноминации, в които да се сече автоматичен zKSH</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -2127,8 +2127,8 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Обща Наличност, включително и неналичните монети.</translation>
     </message>
     <message>
-        <source>XDH Balance</source>
-        <translation>XDH Наличности</translation>
+        <source>KSH Balance</source>
+        <translation>KSH Наличности</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2155,14 +2155,14 @@ https://www.transifex.com/kahsh-project/kahsh-project-translations</translation>
         <translation>Вашите Kahsh наличности, включително непотвърдените и неузрели преводи</translation>
     </message>
     <message>
-        <source>zXDH Balance</source>
-        <translation>zXDH Наличности</translation>
+        <source>zKSH Balance</source>
+        <translation>zKSH Наличности</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zXDH are spendable.</source>
+These zKSH are spendable.</source>
         <translation>Узрели: повече от 20 потвърждения и повече от 1 емисии от същата деноминация след като е била емитирана.
-Тези zXDH могат да се похарчат.</translation>
+Тези zKSH могат да се похарчат.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2215,8 +2215,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>Налични за харчене:</translation>
     </message>
     <message>
-        <source>Locked XDH or Masternode collaterals. These are excluded from zXDH minting.</source>
-        <translation>Заключен XDH или допълнителни гаранции в Главни Възли. Тези не са включени в zXDH емитирането.</translation>
+        <source>Locked KSH or Masternode collaterals. These are excluded from zKSH minting.</source>
+        <translation>Заключен KSH или допълнителни гаранции в Главни Възли. Тези не са включени в zKSH емитирането.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2227,8 +2227,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>Непотвърден</translation>
     </message>
     <message>
-        <source>Your current zXDH balance, unconfirmed and immature zXDH included.</source>
-        <translation>Вашите zXDH наличности, включеително непотвърдените и неузрелите zXDH.</translation>
+        <source>Your current zKSH balance, unconfirmed and immature zKSH included.</source>
+        <translation>Вашите zKSH наличности, включеително непотвърдените и неузрелите zKSH.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2378,8 +2378,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in kahsh.conf
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2390,8 +2390,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in kahsh.conf
         <translation>Налични за сечене:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XDH</source>
-        <translation>0.000 000 00 XDH</translation>
+        <source>0.000 000 00 KSH</source>
+        <translation>0.000 000 00 KSH</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2430,16 +2430,16 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in kahsh.conf
         <translation>КОНФИДЕНЦИАЛНОСТ</translation>
     </message>
     <message>
-        <source>Enter an amount of Xdh to convert to zXDH</source>
-        <translation>Въведете колко XDH  да се конвертират в zXDH</translation>
+        <source>Enter an amount of Xdh to convert to zKSH</source>
+        <translation>Въведете колко KSH  да се конвертират в zKSH</translation>
     </message>
     <message>
-        <source>zXDH Control</source>
-        <translation>zXDH Контрол</translation>
+        <source>zKSH Control</source>
+        <translation>zKSH Контрол</translation>
     </message>
     <message>
-        <source>zXDH Selected:</source>
-        <translation>Избрани zXDH:</translation>
+        <source>zKSH Selected:</source>
+        <translation>Избрани zKSH:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2454,24 +2454,24 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in kahsh.conf
         <translation>Похарчи Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending</source>
-        <translation>Налични (узрели и готови за харчене) zXDH за употреба</translation>
+        <source>Available (mature and spendable) zKSH for spending</source>
+        <translation>Налични (узрели и готови за харчене) zKSH за употреба</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Налични:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zXDH for spending
+        <source>Available (mature and spendable) zKSH for spending
 
-zXDH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Налични (узрели и готови за харчене) zXDH за употреба
+zKSH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Налични (узрели и готови за харчене) zKSH за употреба
 
-zXDH са узрели, тогава когато имат повече от 20 потвърждения И повече от 2 емисии от същата деноминация след като са биле емитирани</translation>
+zKSH са узрели, тогава когато имат повече от 20 потвърждения И повече от 2 емисии от същата деноминация след като са биле емитирани</translation>
     </message>
     <message>
-        <source>0 zXDH</source>
-        <translation>0 zXDH</translation>
+        <source>0 zKSH</source>
+        <translation>0 zKSH</translation>
     </message>
     <message>
         <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
@@ -2523,7 +2523,7 @@ zXDH са узрели, тогава когато имат повече от 20 
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
-        <translation>Изсечи zXDH от рестото (ще струва допълнително заради таксите)</translation>
+        <translation>Изсечи zKSH от рестото (ще струва допълнително заради таксите)</translation>
     </message>
     <message>
         <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
@@ -2542,8 +2542,8 @@ zXDH са узрели, тогава когато имат повече от 20 
         <translation>Zerocoin статистика:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zXDH</source>
-        <translation>Обща Наличност включеително непотвърдените и неузрели zXDH</translation>
+        <source>Total Balance including unconfirmed and immature zKSH</source>
+        <translation>Обща Наличност включеително непотвърдените и неузрели zKSH</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2564,24 +2564,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Неузрели: потвърдени, но с по-малко от 1 емисии от същата деноминация след като са биле емитирани</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zXDH minting.
+        <source>Show the current status of automatic zKSH minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to kahsh.conf
 - disable: add 'enablezeromint=0' to kahsh.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zXDH
+- menu Settings-&gt;Options-&gt;Percentage of autominted zKSH
 
 </source>
-        <translation>Покажи състоянието на автоматичното zXDH емитиране.
+        <translation>Покажи състоянието на автоматичното zKSH емитиране.
 
 За да пормените състоянието (изисква рестарт):
 - вклчване: добавете 'enablezeromint=1' в kahsh.conf
 - изключване: добавете 'enablezeromint=0' в kahsh.conf
 
 За промяна в процентите (не изисква рестарт):
-- меню Настройки -&gt; Опции -&gt; Процент на автоемитиран zXDH
+- меню Настройки -&gt; Опции -&gt; Процент на автоемитиран zKSH
 </translation>
     </message>
     <message>
@@ -2777,12 +2777,12 @@ Maximum allowed: </source>
 Максимум позволени:</translation>
     </message>
     <message>
-        <source>zXDH Spend #: </source>
-        <translation>zXDH Похарчени #:</translation>
+        <source>zKSH Spend #: </source>
+        <translation>zKSH Похарчени #:</translation>
     </message>
     <message>
-        <source>zXDH Mint</source>
-        <translation>Сечене на zXDH</translation>
+        <source>zKSH Mint</source>
+        <translation>Сечене на zKSH</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2797,12 +2797,12 @@ Maximum allowed: </source>
         <translation>Конфигуриран целеви процент: &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zXDH is currently disabled due to maintenance.</source>
-        <translation>В момента zXDH не работи поради ремонт.</translation>
+        <source>zKSH is currently disabled due to maintenance.</source>
+        <translation>В момента zKSH не работи поради ремонт.</translation>
     </message>
     <message>
-        <source>zXDH is currently undergoing maintenance.</source>
-        <translation>В момента zXDH е в ремонт.</translation>
+        <source>zKSH is currently undergoing maintenance.</source>
+        <translation>В момента zKSH е в ремонт.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2889,8 +2889,8 @@ Maximum allowed: </source>
         <translation>Успешно изсечени</translation>
     </message>
     <message>
-        <source> zXDH in </source>
-        <translation>zXDH в</translation>
+        <source> zKSH in </source>
+        <translation>zKSH в</translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2949,12 +2949,12 @@ Maximum allowed: </source>
         <translation>Потвърждаване на изпращането</translation>
     </message>
     <message>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
-        <translation>Версия 1 zXDH изисква ниво на сигурност от 100 за успешно изразходване.</translation>
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
+        <translation>Версия 1 zKSH изисква ниво на сигурност от 100 за успешно изразходване.</translation>
     </message>
     <message>
-        <source>Failed to spend zXDH</source>
-        <translation>Неуспешно изразходване на zXDH</translation>
+        <source>Failed to spend zKSH</source>
+        <translation>Неуспешно изразходване на zKSH</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2976,7 +2976,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XDH to convert to zXDH</comment>
+        <comment>Enter an amount of KSH to convert to zKSH</comment>
         <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
@@ -3293,8 +3293,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Персонален резервен път:</translation>
     </message>
     <message>
-        <source>Custom zXDH Backup Path:</source>
-        <translation>Персонализиран zXDH резервен път:</translation>
+        <source>Custom zKSH Backup Path:</source>
+        <translation>Персонализиран zKSH резервен път:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3737,8 +3737,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Размер на UTXO:</translation>
     </message>
     <message>
-        <source>0 XDH</source>
-        <translation>0 XDH</translation>
+        <source>0 KSH</source>
+        <translation>0 KSH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3793,12 +3793,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Автоматично избрани монети</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uXDHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uXDHs in fee,&lt;br /&gt;while "at least" pays 1000 uXDHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uXDH и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uXDH входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uXDH. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uKSHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKSHs in fee,&lt;br /&gt;while "at least" pays 1000 uKSHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uKSH и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uKSH входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uKSH. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uXDHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uXDHs in fee,&lt;br /&gt;while "total at least" pays 1000 uXDHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uXDH и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uXDH входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uXDH. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uKSHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKSHs in fee,&lt;br /&gt;while "total at least" pays 1000 uKSHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uKSH и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uKSH входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uKSH. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Kahsh transactions than the network can process.</source>
@@ -3849,8 +3849,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Добави Получател</translation>
     </message>
     <message>
-        <source>Anonymized XDH</source>
-        <translation>Анонимизиран XDH</translation>
+        <source>Anonymized KSH</source>
+        <translation>Анонимизиран KSH</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3898,7 +3898,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Warning: Invalid Kahsh address</source>
-        <translation>Предупреждение: Невалиден XDH адрес</translation>
+        <translation>Предупреждение: Невалиден KSH адрес</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -4513,12 +4513,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Получен посредством обфускация</translation>
     </message>
     <message>
-        <source>XDH Stake</source>
-        <translation>XDH Stake</translation>
+        <source>KSH Stake</source>
+        <translation>KSH Stake</translation>
     </message>
     <message>
-        <source>zXDH Stake</source>
-        <translation>zXDH Stake</translation>
+        <source>zKSH Stake</source>
+        <translation>zKSH Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4537,32 +4537,32 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Обфускация и направа на Деноминации</translation>
     </message>
     <message>
-        <source>Converted XDH to zXDH</source>
-        <translation>Конвертиран XDH във zXDH</translation>
+        <source>Converted KSH to zKSH</source>
+        <translation>Конвертиран KSH във zKSH</translation>
     </message>
     <message>
-        <source>Spent zXDH</source>
-        <translation>Похарчени zXDH</translation>
+        <source>Spent zKSH</source>
+        <translation>Похарчени zKSH</translation>
     </message>
     <message>
-        <source>Received XDH from zXDH</source>
-        <translation>Получен XDH от zXDH</translation>
+        <source>Received KSH from zKSH</source>
+        <translation>Получен KSH от zKSH</translation>
     </message>
     <message>
-        <source>Minted Change as zXDH from zXDH Spend</source>
-        <translation>Исечено ресто като zXDH от похарчените zXDH</translation>
+        <source>Minted Change as zKSH from zKSH Spend</source>
+        <translation>Исечено ресто като zKSH от похарчените zKSH</translation>
     </message>
     <message>
-        <source>Converted zXDH to XDH</source>
-        <translation>Конвертиран zXDH във XDH</translation>
+        <source>Converted zKSH to KSH</source>
+        <translation>Конвертиран zKSH във KSH</translation>
     </message>
     <message>
-        <source>Anonymous (zXDH Transaction)</source>
-        <translation>Анонимен (транзакция zXDH)</translation>
+        <source>Anonymous (zKSH Transaction)</source>
+        <translation>Анонимен (транзакция zKSH)</translation>
     </message>
     <message>
-        <source>Anonymous (zXDH Stake)</source>
-        <translation>Анонимен (zXDH Stake)</translation>
+        <source>Anonymous (zKSH Stake)</source>
+        <translation>Анонимен (zKSH Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4772,12 +4772,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Експортирането Успешно</translation>
     </message>
     <message>
-        <source>Received XDH from zXDH</source>
-        <translation>Получен XDH от zXDH</translation>
+        <source>Received KSH from zKSH</source>
+        <translation>Получен KSH от zKSH</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zXDH</source>
-        <translation>Харчене на Zerocoin, Ресто в zXDH</translation>
+        <source>Zerocoin Spend, Change in zKSH</source>
+        <translation>Харчене на Zerocoin, Ресто в zKSH</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4813,8 +4813,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изпрати Монети</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 XDH.</source>
-        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 XDH.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 KSH.</source>
+        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 KSH.</translation>
     </message>
 </context>
 <context>
@@ -4847,8 +4847,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>ZXdhControlDialog</name>
     <message>
-        <source>Select zXDH to Spend</source>
-        <translation>Изберете zXDH за Изпращане</translation>
+        <source>Select zKSH to Spend</source>
+        <translation>Изберете zKSH за Изпращане</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4859,8 +4859,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>0</translation>
     </message>
     <message>
-        <source>zXDH</source>
-        <translation>zXDH</translation>
+        <source>zKSH</source>
+        <translation>zKSH</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4926,12 +4926,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Разпространява се пот MIT софтуерен лиценз, виж съпровождащия файл от &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for XDH inputs (0-1, default: %u)</source>
-        <translation>Активиране или деактивиране на функцията за зареждане за XDH входове (0-1, по подразбиране: %u)</translation>
+        <source>Enable or disable staking functionality for KSH inputs (0-1, default: %u)</source>
+        <translation>Активиране или деактивиране на функцията за зареждане за KSH входове (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zXDH inputs (0-1, default: %u)</source>
-        <translation>Активиране или деактивиране на функцията за зареждане за zXDH входове (0-1, по подразбиране: %u)</translation>
+        <source>Enable or disable staking functionality for zKSH inputs (0-1, default: %u)</source>
+        <translation>Активиране или деактивиране на функцията за зареждане за zKSH входове (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4966,12 +4966,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Командата влиза в сила, когато най-добрия блок се промени (%s в cmd се замества от хаш на блока)</translation>
     </message>
     <message>
-        <source>Fees (in XDH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Такси (в XDH/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
+        <source>Fees (in KSH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Такси (в KSH/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XDH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Такси (в XDH/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
+        <source>Fees (in KSH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Такси (в KSH/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5078,12 +5078,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Не намираме достатъчно Обфускационно деноминирани средства за този превод.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XDH.</source>
-        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 XDH.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KSH.</source>
+        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 KSH.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XDH.</source>
-        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 XDH.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 KSH.</source>
+        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 KSH.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5394,8 +5394,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Неуспешно четене на блок</translation>
     </message>
     <message>
-        <source>Fee (in XDH/kB) to add to transactions you send (default: %s)</source>
-        <translation>Такса (в XDH/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
+        <source>Fee (in KSH/kB) to add to transactions you send (default: %s)</source>
+        <translation>Такса (в KSH/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5526,8 +5526,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Процент автоматично емитирани Zerocoin (1-100, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Reindex the XDH and zXDH money supply statistics</source>
-        <translation>Индексирай наново XDH и zXDH данните по наличности</translation>
+        <source>Reindex the KSH and zKSH money supply statistics</source>
+        <translation>Индексирай наново KSH и zKSH данните по наличности</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5602,8 +5602,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Предпочитани деноминации за автоматично изсечените Zerocoin (1/5/10/50/100/500/1000/5000), 0 за каквито и да е. (По подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zXDH backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Посочете персонализиран път за архивиране, за да добавите копие на всяко автоматично архивиране zXDH. Ако е зададено като реж., Всеки архив генерира файл с времева маркировка. Ако е зададен като файл, ще пренапише към този файл всеки архив. Ако е зададено и резервно копие, ще се случат 4 архиви</translation>
+        <source>Specify custom backup path to add a copy of any automatic zKSH backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Посочете персонализиран път за архивиране, за да добавите копие на всяко автоматично архивиране zKSH. Ако е зададено като реж., Всеки архив генерира файл с времева маркировка. Ако е зададен като файл, ще пренапише към този файл всеки архив. Ако е зададено и резервно копие, ще се случат 4 архиви</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -6102,8 +6102,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Синхронизиране на вилицо-лъжиците...</translation>
     </message>
     <message>
-        <source>Syncing zXDH wallet...</source>
-        <translation>Синхронизиране на zXDH портфейла ...</translation>
+        <source>Syncing zKSH wallet...</source>
+        <translation>Синхронизиране на zKSH портфейла ...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -6250,8 +6250,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Потребителско име за JSON-RPC свръзките</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zXDH</source>
-        <translation>Стойността е под най-малката налична деноминация (= 1) в zXDH</translation>
+        <source>Value is below the smallest available denomination (= 1) of zKSH</source>
+        <translation>Стойността е под най-малката налична деноминация (= 1) в zKSH</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6266,8 +6266,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Проверява портфейла...</translation>
     </message>
     <message>
-        <source>Version 1 zXDH require a security level of 100 to successfully spend.</source>
-        <translation>Версия 1 zXDH изисква ниво на сигурност от 100 за успешно изразходване.</translation>
+        <source>Version 1 zKSH require a security level of 100 to successfully spend.</source>
+        <translation>Версия 1 zKSH изисква ниво на сигурност от 100 за успешно изразходване.</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>

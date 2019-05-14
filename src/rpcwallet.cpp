@@ -364,7 +364,7 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
 
             "\nArguments:\n"
             "1. \"kahshaddress\"  (string, required) The kahsh address to send to.\n"
-            "2. \"amount\"      (numeric, required) The amount in XDH to send. eg 0.1\n"
+            "2. \"amount\"      (numeric, required) The amount in KSH to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
             "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
@@ -412,7 +412,7 @@ UniValue sendtoaddressix(const UniValue& params, bool fHelp)
 
             "\nArguments:\n"
             "1. \"kahshaddress\"  (string, required) The kahsh address to send to.\n"
-            "2. \"amount\"      (numeric, required) The amount in XDH to send. eg 0.1\n"
+            "2. \"amount\"      (numeric, required) The amount in KSH to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
             "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
@@ -464,7 +464,7 @@ UniValue listaddressgroupings(const UniValue& params, bool fHelp)
             "  [\n"
             "    [\n"
             "      \"kahshaddress\",     (string) The kahsh address\n"
-            "      amount,                 (numeric) The amount in XDH\n"
+            "      amount,                 (numeric) The amount in KSH\n"
             "      \"account\"             (string, optional) The account\n"
             "    ]\n"
             "    ,...\n"
@@ -563,7 +563,7 @@ UniValue getreceivedbyaddress(const UniValue& params, bool fHelp)
             "2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
 
             "\nResult:\n"
-            "amount   (numeric) The total amount in XDH received at this address.\n"
+            "amount   (numeric) The total amount in KSH received at this address.\n"
 
             "\nExamples:\n"
             "\nThe amount from transactions with at least 1 confirmation\n" +
@@ -619,7 +619,7 @@ UniValue getreceivedbyaccount(const UniValue& params, bool fHelp)
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
 
             "\nResult:\n"
-            "amount              (numeric) The total amount in XDH received for this account.\n"
+            "amount              (numeric) The total amount in KSH received for this account.\n"
 
             "\nExamples:\n"
             "\nAmount received by the default account with at least 1 confirmation\n" +
@@ -708,7 +708,7 @@ UniValue getbalance(const UniValue& params, bool fHelp)
             "3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
 
             "\nResult:\n"
-            "amount              (numeric) The total amount in XDH received for this account.\n"
+            "amount              (numeric) The total amount in KSH received for this account.\n"
 
             "\nExamples:\n"
             "\nThe total amount in the server across all accounts\n" +
@@ -791,7 +791,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. \"fromaccount\"   (string, required) The name of the account to move funds from. May be the default account using \"\".\n"
             "2. \"toaccount\"     (string, required) The name of the account to move funds to. May be the default account using \"\".\n"
-            "3. amount            (numeric, required) Quantity of XDH to move between accounts.\n"
+            "3. amount            (numeric, required) Quantity of KSH to move between accounts.\n"
             "4. minconf           (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. \"comment\"       (string, optional) An optional comment, stored in the wallet only.\n"
 
@@ -799,9 +799,9 @@ UniValue movecmd(const UniValue& params, bool fHelp)
             "true|false           (boolean) true if successful.\n"
 
             "\nExamples:\n"
-            "\nMove 0.01 XDH from the default account to the account named tabby\n" +
+            "\nMove 0.01 KSH from the default account to the account named tabby\n" +
             HelpExampleCli("move", "\"\" \"tabby\" 0.01") +
-            "\nMove 0.01 XDH from timotei to akiko with a comment\n" +
+            "\nMove 0.01 KSH from timotei to akiko with a comment\n" +
             HelpExampleCli("move", "\"timotei\" \"akiko\" 0.01 1 \"happy birthday!\"") +
             "\nAs a json rpc call\n" +
             HelpExampleRpc("move", "\"timotei\", \"akiko\", 0.01, 1, \"happy birthday!\""));
@@ -863,7 +863,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. \"fromaccount\"       (string, required) The name of the account to send funds from. May be the default account using \"\".\n"
             "2. \"tokahshaddress\"  (string, required) The kahsh address to send funds to.\n"
-            "3. amount                (numeric, required) The amount in XDH. (transaction fee is added on top).\n"
+            "3. amount                (numeric, required) The amount in KSH. (transaction fee is added on top).\n"
             "4. minconf               (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. \"comment\"           (string, optional) A comment used to store what the transaction is for. \n"
             "                                     This is not part of the transaction, just kept in your wallet.\n"
@@ -875,7 +875,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
             "\"transactionid\"        (string) The transaction id.\n"
 
             "\nExamples:\n"
-            "\nSend 0.01 XDH from the default account to the address, must have at least 1 confirmation\n" +
+            "\nSend 0.01 KSH from the default account to the address, must have at least 1 confirmation\n" +
             HelpExampleCli("sendfrom", "\"\" \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\" 0.01") +
             "\nSend 0.01 from the tabby account to the given address, funds must have at least 6 confirmations\n" +
             HelpExampleCli("sendfrom", "\"tabby\" \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\" 0.01 6 \"donation\" \"seans outpost\"") +
@@ -925,7 +925,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
             "1. \"fromaccount\"         (string, required) The account to send the funds from, can be \"\" for the default account\n"
             "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
             "    {\n"
-            "      \"address\":amount   (numeric) The kahsh address is the key, the numeric amount in XDH is the value\n"
+            "      \"address\":amount   (numeric) The kahsh address is the key, the numeric amount in KSH is the value\n"
             "      ,...\n"
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
@@ -1191,7 +1191,7 @@ UniValue listreceivedbyaddress(const UniValue& params, bool fHelp)
             "    \"involvesWatchonly\" : \"true\",    (bool) Only returned if imported addresses were involved in transaction\n"
             "    \"address\" : \"receivingaddress\",  (string) The receiving address\n"
             "    \"account\" : \"accountname\",       (string) The account of the receiving address. The default account is \"\".\n"
-            "    \"amount\" : x.xxx,                  (numeric) The total amount in XDH received by the address\n"
+            "    \"amount\" : x.xxx,                  (numeric) The total amount in KSH received by the address\n"
             "    \"confirmations\" : n                (numeric) The number of confirmations of the most recent transaction included\n"
             "    \"bcconfirmations\" : n              (numeric) The number of blockchain confirmations of the most recent transaction included\n"
             "  }\n"
@@ -1349,11 +1349,11 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
             "                                                transaction between accounts, and not associated with an address,\n"
             "                                                transaction id or block. 'send' and 'receive' transactions are \n"
             "                                                associated with an address, transaction id and block details\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in XDH. This is negative for the 'send' category, and for the\n"
+            "    \"amount\": x.xxx,          (numeric) The amount in KSH. This is negative for the 'send' category, and for the\n"
             "                                         'move' category for moves outbound. It is positive for the 'receive' category,\n"
             "                                         and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in XDH. This is negative and only available for the \n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in KSH. This is negative and only available for the \n"
             "                                         'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and \n"
             "                                         'receive' category of transactions.\n"
@@ -1540,10 +1540,10 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
             "    \"account\":\"accountname\",       (string) The account name associated with the transaction. Will be \"\" for the default account.\n"
             "    \"address\":\"kahshaddress\",    (string) The kahsh address of the transaction. Not present for move transactions (category = move).\n"
             "    \"category\":\"send|receive\",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in XDH. This is negative for the 'send' category, and for the 'move' category for moves \n"
+            "    \"amount\": x.xxx,          (numeric) The amount in KSH. This is negative for the 'send' category, and for the 'move' category for moves \n"
             "                                          outbound. It is positive for the 'receive' category, and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in XDH. This is negative and only available for the 'send' category of transactions.\n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in KSH. This is negative and only available for the 'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"bcconfirmations\" : n,    (numeric) The number of blockchain confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"blockhash\": \"hashvalue\",     (string) The block hash containing the transaction. Available for 'send' and 'receive' category of transactions.\n"
@@ -1623,7 +1623,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
 
             "\nResult:\n"
             "{\n"
-            "  \"amount\" : x.xxx,        (numeric) The transaction amount in XDH\n"
+            "  \"amount\" : x.xxx,        (numeric) The transaction amount in KSH\n"
             "  \"confirmations\" : n,     (numeric) The number of confirmations\n"
             "  \"bcconfirmations\" : n,   (numeric) The number of blockchain confirmations\n"
             "  \"blockhash\" : \"hash\",  (string) The block hash\n"
@@ -1637,7 +1637,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
             "      \"account\" : \"accountname\",  (string) The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"address\" : \"kahshaddress\",   (string) The kahsh address involved in the transaction\n"
             "      \"category\" : \"send|receive\",    (string) The category, either 'send' or 'receive'\n"
-            "      \"amount\" : x.xxx                  (numeric) The amount in XDH\n"
+            "      \"amount\" : x.xxx                  (numeric) The amount in KSH\n"
             "      \"vout\" : n,                       (numeric) the vout value\n"
             "    }\n"
             "    ,...\n"
@@ -1758,7 +1758,7 @@ UniValue walletpassphrase(const UniValue& params, bool fHelp)
         throw runtime_error(
             "walletpassphrase \"passphrase\" timeout ( anonymizeonly )\n"
             "\nStores the wallet decryption key in memory for 'timeout' seconds.\n"
-            "This is needed prior to performing transactions related to private keys such as sending XDHs\n"
+            "This is needed prior to performing transactions related to private keys such as sending KSHs\n"
 
             "\nArguments:\n"
             "1. \"passphrase\"     (string, required) The wallet passphrase\n"
@@ -1923,7 +1923,7 @@ UniValue encryptwallet(const UniValue& params, bool fHelp)
             "\nExamples:\n"
             "\nEncrypt you wallet\n" +
             HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending XDHs\n" +
+            "\nNow set the passphrase to use the wallet, such as for signing or sending KSHs\n" +
             HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can so something like sign\n" +
             HelpExampleCli("signmessage", "\"kahshaddress\" \"test message\"") +
@@ -1967,7 +1967,7 @@ UniValue lockunspent(const UniValue& params, bool fHelp)
             "lockunspent unlock [{\"txid\":\"txid\",\"vout\":n},...]\n"
             "\nUpdates list of temporarily unspendable outputs.\n"
             "Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.\n"
-            "A locked transaction output will not be chosen by automatic coin selection, when spending XDHs.\n"
+            "A locked transaction output will not be chosen by automatic coin selection, when spending KSHs.\n"
             "Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list\n"
             "is always cleared (by virtue of process exit) when a node stops or fails.\n"
             "Also see the listunspent call\n"
@@ -2096,7 +2096,7 @@ UniValue settxfee(const UniValue& params, bool fHelp)
             "\nSet the transaction fee per kB.\n"
 
             "\nArguments:\n"
-            "1. amount         (numeric, required) The transaction fee in XDH/kB rounded to the nearest 0.00000001\n"
+            "1. amount         (numeric, required) The transaction fee in KSH/kB rounded to the nearest 0.00000001\n"
 
             "\nResult\n"
             "true|false        (boolean) Returns true if successful\n"
@@ -2124,14 +2124,14 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,         (numeric) the total XDH balance of the wallet\n"
-            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in XDH\n"
-            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in XDH\n"
+            "  \"balance\": xxxxxxx,         (numeric) the total KSH balance of the wallet\n"
+            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in KSH\n"
+            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in KSH\n"
             "  \"txcount\": xxxxxxx,         (numeric) the total number of transactions in the wallet\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
-            "  \"paytxfee\": x.xxxx,         (numeric) the transaction fee configuration, set in XDH/kB\n"
+            "  \"paytxfee\": x.xxxx,         (numeric) the transaction fee configuration, set in KSH/kB\n"
             "  \"automintaddresses\": status (boolean) the status of automint addresses (true if enabled, false if disabled)\n"
             "}\n"
 
@@ -2505,7 +2505,7 @@ UniValue multisend(const UniValue& params, bool fHelp)
     string strAddress = params[0].get_str();
     CBitcoinAddress address(strAddress);
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid XDH address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid KSH address");
     if (std::stoi(params[1].get_str().c_str()) < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected valid percentage");
     if (pwalletMain->IsLocked())
@@ -2550,11 +2550,11 @@ UniValue getzerocoinbalance(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getzerocoinbalance\n"
-            "\nReturn the wallet's total zXDH balance.\n" +
+            "\nReturn the wallet's total zKSH balance.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
-            "amount         (numeric) Total zXDH balance.\n"
+            "amount         (numeric) Total zKSH balance.\n"
 
             "\nExamples:\n" +
             HelpExampleCli("getzerocoinbalance", "") + HelpExampleRpc("getzerocoinbalance", ""));
@@ -2578,7 +2578,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 2)
         throw runtime_error(
             "listmintedzerocoins (fVerbose) (fMatureOnly)\n"
-            "\nList all zXDH mints in the wallet.\n" +
+            "\nList all zKSH mints in the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -2596,7 +2596,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             "  {\n"
             "    \"serial hash\": \"xxx\",   (string) Mint serial hash in hex format.\n"
             "    \"version\": n,   (numeric) Zerocoin version number.\n"
-            "    \"zXDH ID\": \"xxx\",   (string) Pubcoin in hex format.\n"
+            "    \"zKSH ID\": \"xxx\",   (string) Pubcoin in hex format.\n"
             "    \"denomination\": n,   (numeric) Coin denomination.\n"
             "    \"mint height\": n     (numeric) Height of the block containing this mint.\n"
             "    \"confirmations\": n   (numeric) Number of confirmations.\n"
@@ -2629,7 +2629,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             UniValue objMint(UniValue::VOBJ);
             objMint.push_back(Pair("serial hash", m.hashSerial.GetHex()));  // Serial hash
             objMint.push_back(Pair("version", m.nVersion));                 // Zerocoin version
-            objMint.push_back(Pair("zXDH ID", m.hashPubcoin.GetHex()));     // PubCoin
+            objMint.push_back(Pair("zKSH ID", m.hashPubcoin.GetHex()));     // PubCoin
             int denom = libzerocoin::ZerocoinDenominationToInt(m.denom);
             objMint.push_back(Pair("denomination", denom));                 // Denomination
             objMint.push_back(Pair("mint height", m.nHeight));              // Mint Height
@@ -2707,7 +2707,7 @@ UniValue listspentzerocoins(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "listspentzerocoins\n"
-            "\nList all the spent zXDH mints in the wallet.\n" +
+            "\nList all the spent zKSH mints in the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
@@ -2739,11 +2739,11 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "mintzerocoin amount ( utxos )\n"
-            "\nMint the specified zXDH amount\n" +
+            "\nMint the specified zKSH amount\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
-            "1. amount      (numeric, required) Enter an amount of Xdh to convert to zXDH\n"
+            "1. amount      (numeric, required) Enter an amount of Xdh to convert to zKSH\n"
             "2. utxos       (string, optional) A json array of objects.\n"
             "                   Each object needs the txid (string) and vout (numeric)\n"
             "  [\n"
@@ -2787,7 +2787,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
 
     int64_t nTime = GetTimeMillis();
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zXDH is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zKSH is currently disabled due to maintenance.");
 
     EnsureWalletIsUnlocked(true);
 
@@ -2850,7 +2850,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 5 || params.size() < 4)
         throw runtime_error(
             "spendzerocoin amount mintchange minimizechange securitylevel ( \"address\" )\n"
-            "\nSpend zXDH to a XDH address.\n" +
+            "\nSpend zKSH to a KSH address.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -2881,8 +2881,8 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
             "  ],\n"
             "  \"outputs\": [                 (array) JSON array of output objects.\n"
             "    {\n"
-            "      \"value\": amount,         (numeric) Value in XDH.\n"
-            "      \"address\": \"xxx\"         (string) XDH address or \"zerocoinmint\" for reminted change.\n"
+            "      \"value\": amount,         (numeric) Value in KSH.\n"
+            "      \"address\": \"xxx\"         (string) KSH address or \"zerocoinmint\" for reminted change.\n"
             "    }\n"
             "    ,...\n"
             "  ]\n"
@@ -2895,12 +2895,12 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zXDH is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zKSH is currently disabled due to maintenance.");
 
     EnsureWalletIsUnlocked();
 
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
-    bool fMintChange = params[1].get_bool();        // Mint change to zXDH
+    bool fMintChange = params[1].get_bool();        // Mint change to zKSH
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
     int nSecurityLevel = params[3].get_int();       // Security level
     std::string address_str = params.size() > 4 ? params[4].get_str() : "";
@@ -2916,7 +2916,7 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "spendzerocoinmints mints_list (\"address\") \n"
-            "\nSpend zXDH mints to a XDH address.\n" +
+            "\nSpend zKSH mints to a KSH address.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -2939,8 +2939,8 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
             "  ],\n"
             "  \"outputs\": [                 (array) JSON array of output objects.\n"
             "    {\n"
-            "      \"value\": amount,         (numeric) Value in XDH.\n"
-            "      \"address\": \"xxx\"         (string) XDH address or \"zerocoinmint\" for reminted change.\n"
+            "      \"value\": amount,         (numeric) Value in KSH.\n"
+            "      \"address\": \"xxx\"         (string) KSH address or \"zerocoinmint\" for reminted change.\n"
             "    }\n"
             "    ,...\n"
             "  ]\n"
@@ -2953,7 +2953,7 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zXDH is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zKSH is currently disabled due to maintenance.");
 
     std::string address_str = "";
     if (params.size() > 1) {
@@ -3088,7 +3088,7 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzXDHTracker* zxdhTracker = pwalletMain->zxdhTracker.get();
+    CzKSHTracker* zxdhTracker = pwalletMain->zxdhTracker.get();
     set<CMintMeta> setMints = zxdhTracker->ListMints(false, false, true);
     vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     vector<CMintMeta> vMintsMissing;
@@ -3141,7 +3141,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzXDHTracker* zxdhTracker = pwalletMain->zxdhTracker.get();
+    CzKSHTracker* zxdhTracker = pwalletMain->zxdhTracker.get();
     set<CMintMeta> setMints = zxdhTracker->ListMints(false, false, false);
     list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     list<CZerocoinSpend> listUnconfirmedSpends;
@@ -3246,7 +3246,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
 
             "\nArguments:\n"
             "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
-            "2. \"denomination\"         (integer, optional) Export a specific denomination of zXDH\n"
+            "2. \"denomination\"         (integer, optional) Export a specific denomination of zKSH\n"
 
             "\nResult:\n"
             "[                   (array of json object)\n"
@@ -3258,8 +3258,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
             "    \"t\": \"txid\",    (string) The txid that the coin was minted in\n"
             "    \"h\": n,         (numeric) The height the tx was added to the blockchain\n"
             "    \"u\": used,      (boolean) Whether the mint has been spent\n"
-            "    \"v\": version,   (numeric) The version of the zXDH\n"
-            "    \"k\": \"privkey\"  (string) The zXDH private key (V2+ zXDH only)\n"
+            "    \"v\": version,   (numeric) The version of the zKSH\n"
+            "    \"k\": \"privkey\"  (string) The zKSH private key (V2+ zKSH only)\n"
             "  }\n"
             "  ,...\n"
             "]\n"
@@ -3278,7 +3278,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
     if (params.size() == 2)
         denomination = libzerocoin::IntToZerocoinDenomination(params[1].get_int());
 
-    CzXDHTracker* zxdhTracker = pwalletMain->zxdhTracker.get();
+    CzKSHTracker* zxdhTracker = pwalletMain->zxdhTracker.get();
     set<CMintMeta> setMints = zxdhTracker->ListMints(!fIncludeSpent, false, false);
 
     UniValue jsonList(UniValue::VARR);
@@ -3329,7 +3329,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"added\": n,        (numeric) The quantity of zerocoin mints that were added\n"
-            "  \"value\": amount    (numeric) The total zXDH value of zerocoin mints that were added\n"
+            "  \"value\": amount    (numeric) The total zKSH value of zerocoin mints that were added\n"
             "}\n"
 
             "\nExamples\n" +
@@ -3409,7 +3409,7 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || !params.empty())
         throw runtime_error(
             "reconsiderzerocoins\n"
-            "\nCheck archived zXDH list to see if any mints were added to the blockchain.\n" +
+            "\nCheck archived zKSH list to see if any mints were added to the blockchain.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
@@ -3478,7 +3478,7 @@ UniValue setzxdhseed(const UniValue& params, bool fHelp)
     uint256 seed;
     seed.SetHex(params[0].get_str());
 
-    CzXDHWallet* zwallet = pwalletMain->getZWallet();
+    CzKSHWallet* zwallet = pwalletMain->getZWallet();
     bool fSuccess = zwallet->SetMasterSeed(seed, true);
     if (fSuccess)
         zwallet->SyncWithChain();
@@ -3494,18 +3494,18 @@ UniValue getzxdhseed(const UniValue& params, bool fHelp)
     if(fHelp || !params.empty())
         throw runtime_error(
             "getzxdhseed\n"
-            "\nCheck archived zXDH list to see if any mints were added to the blockchain.\n" +
+            "\nCheck archived zKSH list to see if any mints were added to the blockchain.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult\n"
-            "\"seed\" : s,  (string) The deterministic zXDH seed.\n"
+            "\"seed\" : s,  (string) The deterministic zKSH seed.\n"
 
             "\nExamples\n" +
             HelpExampleCli("getzxdhseed", "") + HelpExampleRpc("getzxdhseed", ""));
 
     EnsureWalletIsUnlocked();
 
-    CzXDHWallet* zwallet = pwalletMain->getZWallet();
+    CzKSHWallet* zwallet = pwalletMain->getZWallet();
     uint256 seed = zwallet->GetMasterSeed();
 
     UniValue ret(UniValue::VOBJ);
@@ -3519,12 +3519,12 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
     if(fHelp || params.size() != 2)
         throw runtime_error(
             "generatemintlist\n"
-            "\nShow mints that are derived from the deterministic zXDH seed.\n" +
+            "\nShow mints that are derived from the deterministic zKSH seed.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments\n"
-            "1. \"count\"  : n,  (numeric) Which sequential zXDH to start with.\n"
-            "2. \"range\"  : n,  (numeric) How many zXDH to generate.\n"
+            "1. \"count\"  : n,  (numeric) Which sequential zKSH to start with.\n"
+            "2. \"range\"  : n,  (numeric) How many zKSH to generate.\n"
 
             "\nResult:\n"
             "[\n"
@@ -3544,7 +3544,7 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
 
     int nCount = params[0].get_int();
     int nRange = params[1].get_int();
-    CzXDHWallet* zwallet = pwalletMain->zwalletMain;
+    CzKSHWallet* zwallet = pwalletMain->zwalletMain;
 
     UniValue arrRet(UniValue::VARR);
     for (int i = nCount; i < nCount + nRange; i++) {
@@ -3567,13 +3567,13 @@ UniValue dzxdhstate(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
                 "dzxdhstate\n"
-                        "\nThe current state of the mintpool of the deterministic zXDH wallet.\n" +
+                        "\nThe current state of the mintpool of the deterministic zKSH wallet.\n" +
                 HelpRequiringPassphrase() + "\n"
 
                         "\nExamples\n" +
                 HelpExampleCli("mintpoolstatus", "") + HelpExampleRpc("mintpoolstatus", ""));
 
-    CzXDHWallet* zwallet = pwalletMain->zwalletMain;
+    CzKSHWallet* zwallet = pwalletMain->zwalletMain;
     UniValue obj(UniValue::VOBJ);
     int nCount, nCountLastUsed;
     zwallet->GetState(nCount, nCountLastUsed);
@@ -3584,7 +3584,7 @@ UniValue dzxdhstate(const UniValue& params, bool fHelp) {
 }
 
 
-void static SearchThread(CzXDHWallet* zwallet, int nCountStart, int nCountEnd)
+void static SearchThread(CzKSHWallet* zwallet, int nCountStart, int nCountEnd)
 {
     LogPrintf("%s: start=%d end=%d\n", __func__, nCountStart, nCountEnd);
     CWalletDB walletDB(pwalletMain->strWalletFile);
@@ -3601,7 +3601,7 @@ void static SearchThread(CzXDHWallet* zwallet, int nCountStart, int nCountEnd)
             CBigNum bnSerial;
             CBigNum bnRandomness;
             CKey key;
-            zwallet->SeedToZXDH(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
+            zwallet->SeedToZKSH(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
 
             uint256 hashPubcoin = GetPubCoinHash(bnValue);
             zwallet->AddToMintPool(make_pair(hashPubcoin, i), true);
@@ -3619,12 +3619,12 @@ UniValue searchdzxdh(const UniValue& params, bool fHelp)
     if(fHelp || params.size() != 3)
         throw runtime_error(
             "searchdzxdh\n"
-            "\nMake an extended search for deterministically generated zXDH that have not yet been recognized by the wallet.\n" +
+            "\nMake an extended search for deterministically generated zKSH that have not yet been recognized by the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments\n"
-            "1. \"count\"       (numeric) Which sequential zXDH to start with.\n"
-            "2. \"range\"       (numeric) How many zXDH to generate.\n"
+            "1. \"count\"       (numeric) Which sequential zKSH to start with.\n"
+            "2. \"range\"       (numeric) How many zKSH to generate.\n"
             "3. \"threads\"     (numeric) How many threads should this operation consume.\n"
 
             "\nExamples\n" +
@@ -3642,7 +3642,7 @@ UniValue searchdzxdh(const UniValue& params, bool fHelp)
 
     int nThreads = params[2].get_int();
 
-    CzXDHWallet* zwallet = pwalletMain->zwalletMain;
+    CzKSHWallet* zwallet = pwalletMain->zwalletMain;
 
     boost::thread_group* dzxdhThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
