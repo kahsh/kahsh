@@ -1886,37 +1886,37 @@ int64_t GetBlockValue(int nHeight)
 
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
-        nSubsidy = 80000 * COIN;
+        nSubsidy = 8000000 * COIN;
     } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0) {
-        nSubsidy = 425 * COIN;
+        nSubsidy = 42500 * COIN;
     } else if (nHeight < 1 * 262800 && nHeight >= Params().LAST_POW_BLOCK()) {
-        nSubsidy = 1.20 * COIN;
+        nSubsidy = 86 * COIN;
     } else if (nHeight < 2 * 262800 && nHeight >= 1 * 262800) {
-        nSubsidy = 0.84 * COIN;
+        nSubsidy = 72 * COIN;
     } else if (nHeight < 3 * 262800 && nHeight >= 2 * 262800) {
-        nSubsidy = 0.58 * COIN;
+        nSubsidy = 60 * COIN;
     } else if (nHeight < 4 * 262800 && nHeight >= 3 * 262800) {
-        nSubsidy = 0.75 * COIN;
+        nSubsidy = 53 * COIN;
     } else if (nHeight < 5 * 262800 && nHeight >= 4 * 262800) {
-        nSubsidy = 0.97 * COIN;
+        nSubsidy = 48 * COIN;
     } else if (nHeight < 6 * 262800 && nHeight >= 5 * 262800) {
-        nSubsidy = 1.28 * COIN;
+        nSubsidy = 42 * COIN;
     } else if (nHeight < 7 * 262800 && nHeight >= 6 * 262800) {
-        nSubsidy = 1.65 * COIN;
+        nSubsidy = 37 * COIN;
     } else if (nHeight < 8 * 262800 && nHeight >= 7 * 262800) {
-        nSubsidy = 2.16 * COIN;
+        nSubsidy = 34 * COIN;
     } else if (nHeight < 9 * 262800 && nHeight >= 8 * 262800) {
-        nSubsidy = 1.51 * COIN;
+        nSubsidy = 32 * COIN;
     } else if (nHeight < 10 * 262800 && nHeight >= 9 * 262800) {
-        nSubsidy = 1.06 * COIN;
+        nSubsidy = 27 * COIN;
     } else if (nHeight < 11 * 262800 && nHeight >= 10 * 262800) {
-        nSubsidy = 0.74 * COIN;
+        nSubsidy = 25 * COIN;
     } else if (nHeight < 12 * 262800 && nHeight >= 11 * 262800) {
-        nSubsidy = 0.52 * COIN;
+        nSubsidy = 22 * COIN;
     } else if (nHeight < 13 * 262800 && nHeight >= 12 * 262800) {
-        nSubsidy = 0.36 * COIN;
+        nSubsidy = 18 * COIN;
     } else if (nHeight < 105 * 262800 && nHeight >= 13 * 262800) {
-        nSubsidy = 0.25 * COIN;
+        nSubsidy = 7 * COIN;
     } else {
         nSubsidy = 0 * COIN;
     }
