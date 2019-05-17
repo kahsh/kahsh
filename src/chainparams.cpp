@@ -156,7 +156,7 @@ public:
         nLastPOWBlock = 400;
         nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 30;
-        nZerocoinStartTime = 1652659200;
+        nZerocoinStartTime = 1557431124;
         nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = INT_MAX - 1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = INT_MAX - 1; //First block that bad serials emerged
@@ -164,7 +164,7 @@ public:
         nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0 * COIN;
         nBlockZerocoinV2 = nZerocoinStartHeight;
-        nEnforceNewSporkKey = 1542193313;
+        nEnforceNewSporkKey = 1557431124;
         nRejectOldSporkKey = nEnforceNewSporkKey;
 
         /**
