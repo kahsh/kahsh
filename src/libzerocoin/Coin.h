@@ -10,7 +10,9 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Kahsh Core developers
+// Copyright (c) 2018-2019 The Dilithium Core developers
+// Copyright (c) 2019 The Kahsh Core developers
+
 
 #ifndef COIN_H_
 #define COIN_H_
