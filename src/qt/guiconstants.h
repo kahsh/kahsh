@@ -25,9 +25,9 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define STYLE_INVALID "background:#FF8080"
 
 /* Transaction list -- unconfirmed transaction */
-#define COLOR_UNCONFIRMED QColor(23, 60, 40)
+#define COLOR_UNCONFIRMED QColor(243, 248, 6)
 /* Transaction list -- negative amount */
-#define COLOR_NEGATIVE QColor(0, 163, 0)
+#define COLOR_NEGATIVE QColor(7, 242, 7)
 /* Transaction list -- bare address (without label) */
 #define COLOR_BAREADDRESS QColor(140, 140, 140)
 /* Transaction list -- TX status decoration - open until date */
@@ -36,9 +36,9 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define COLOR_TX_STATUS_OFFLINE QColor(192, 192, 192)
 /* Transaction list -- TX status decoration - default color */
 #define COLOR_BLACK QColor(51, 51, 51)
-/* Transaction list -- TX status decoration - conflicted */
 #define COLOR_GRAY71 QColor(181,181,181)
-#define COLOR_CONFLICTED QColor(255, 0, 0)
+/* Transaction list -- TX status decoration - conflicted */
+#define COLOR_CONFLICTED QColor(255, 158, 0)
 /* Transaction list -- TX status decoration - orphan (Light Gray #D3D3D3) */
 #define COLOR_ORPHAN QColor(211, 211, 211)
 /* Transaction list -- TX status decoration - stake (Green #002913) */
