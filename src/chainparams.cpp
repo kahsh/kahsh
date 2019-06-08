@@ -197,7 +197,7 @@ public:
         assert(hashGenesisBlock == uint256("0x000004fac39621b6b0a0abb110ad82ae384ac4a7fac2b1b5a79aa8521e771a4f"));
         assert(genesis.hashMerkleRoot == uint256("0x2419010ffd3d2c65d091afbaff796197ea7b1321f7690be5a1c943c0113dfa8c"));
 
-        // vSeeds.push_back(CDNSSeedData("kahsh.io", "xdhseed.cryptertech.io"));
+        vSeeds.push_back(CDNSSeedData("dnsseed.kahsh.info", "dnsseed.kahsh.info"));
         // vSeeds.push_back(CDNSSeedData("kahsh.io", "xdhseed2.cryptertech.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 107);

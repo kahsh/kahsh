@@ -89,8 +89,13 @@ background-color: #010101;
 color:#fff;
 }
 
+QToolBar > QToolButton:hover:!checked {
+background-color: #3f3f3f;
+color:#fff;
+}
+
 QToolBar > QToolButton#ToolbarSpacer:hover:!selected {
-background-color: #323538; /* Do not highlight placeholder on hover */
+background-color: #3f3f3f; /* Do not highlight placeholder on hover */
 }
 
 QToolBar > QToolButton:pressed {
