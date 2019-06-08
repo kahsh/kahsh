@@ -2,19 +2,14 @@ Kahsh Core integration/staging repository
 =======================
 
 ### Technology
-Kahsh is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
+Kahsh 
 
-* Proof-of-stake (PoS) network consensus with low transaction fees & environmental footprint.
-* Anonymized transactions & consensus using the Zerocoin Protocol and zPoS.
-* Masternode technology used to secure the network and provide additional features, each Masternode is secured with collateral of 1000 KSH.
-* Fast transactions featuring guaranteed zero confirmation transactions, we call it SwiftX.
-* Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus dolor sit amet eros mattis, non lobortis risus suscipit. Ut turpis lacus, sodales nec commodo non, accumsan et augue. Integer commodo pulvinar erat, vulputate pharetra ligula rhoncus vitae. Quisque consectetur dignissim gravida. In quis sem velit. Nulla in turpis dapibus purus aliquam facilisis vitae eget libero. Suspendisse non dolor faucibus, luctus metus id, suscipit nisl.
+
+Aliquam feugiat at lorem ac volutpat. Donec rhoncus ex interdum, tincidunt leo in, rutrum odio. Ut dapibus suscipit ligula, id tincidunt dolor congue eu. Aenean pharetra magna vitae aliquet euismod. Quisque porttitor est et nunc vehicula volutpat. Vivamus fringilla tellus in tincidunt pharetra. Aenean mauris sapien, convallis sit amet rhoncus ac, pretium sit amet mauris. Curabitur at consectetur magna, non dignissim odio. Donec at lectus semper, lobortis quam et, sagittis risus. Donec interdum sem sit amet elit malesuada dictum. Integer in lacus mattis, tincidunt erat quis, porta sapien. Fusce porta orci ac metus gravida, vitae malesuada ex porttitor. Sed ornare semper varius.
 
 ### Links
 * Official Website(https://kahsh.io/)
 * Official Discord(https://discord.gg/3Vmc9Hm)
 * Kahsh Twitter(https://twitter.com/kahsh)
 
-<p><strong>Kahsh</strong> is an exciting new project designed to shape how augmented reality data is delivered.  By abandoning monolithic silo applications in favor of <em>widgetized</em> content, the <strong>Kahsh Display Manager</strong> will allow multiple content providers to share the Augmented Reality screen space by providing micro-services to create a unique and customizable user experience.</p>
-<p><strong>The Kahsh Economic Platform</strong> will then provide an accounting mechanism to support pay-per-use and subscription models to compensate providers for their content and services.<p>
-<p><strong>Kahsh Coin</strong> (KSH) is the foundation of the Kahsh Ecosystem.  Managed by a highly experienced and active team with years of blockchain experience, KSH uses established proof of stake 3.0 consensus algorithms with masternodes to secure the network.  The KSH project team plans to develop and deploy a <strong>next generation</strong> masternode network that will include long living masternode quorums within the year.  These features will make up the Kahsh <strong>proof of service</strong> system; enabling masternode network nodes to become true workhorses for delivery of advanced features to network users.</p>
