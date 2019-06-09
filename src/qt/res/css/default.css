@@ -875,8 +875,13 @@ background:#fff;
 /**************************** HELP MENU *************************************************/
 
 /* Command Line Options Dialog */
+QDialog#HelpMessageDialog {
+background-color:#fff;
+}
+
 QDialog#HelpMessageDialog QScrollArea * {
 background-color:#fff;
+color: #036DEF;
 }
 
 QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScrollBar:horizontal {
