@@ -1,3 +1,5 @@
+![alt text](https://kahsh-public.s3.amazonaws.com/logo.png "x")
+
 Welcome to Kahsh Coin Resources
 ==
 Want to create a masternode and need some help?
